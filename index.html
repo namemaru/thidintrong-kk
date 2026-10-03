@@ -1370,9 +1370,12 @@ boot();
 (function(){
   function go(){try{window.__appMain();}finally{document.documentElement.classList.remove('i18n-wait');}}
   if(window.LANG==='th'){window.I18N={};go();return;}
-  var sc=document.createElement('script');sc.src='lang/'+window.LANG+'.js?v=f7bcf47b';
-  sc.onload=go;sc.onerror=function(){window.LANG='th';document.documentElement.lang='th';window.I18N={};go();};
-  document.head.appendChild(sc);
+  var paths=['lang/'+window.LANG+'.js?v=f7bcf47b',window.LANG+'.js?v=f7bcf47b'],i=0;
+  function next(){
+    if(i>=paths.length){window.LANG='th';document.documentElement.lang='th';window.I18N={};go();return;}
+    var sc=document.createElement('script');sc.src=paths[i++];sc.onload=go;sc.onerror=next;document.head.appendChild(sc);
+  }
+  next();
 })();
 </script>
 
