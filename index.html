@@ -90,6 +90,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .muted{color:var(--muted)}
 .small{font-size:14px}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tabdot{display:inline-flex;min-width:20px;height:20px;padding:0 6px;margin-left:7px;border-radius:999px;background:var(--danger);color:#fff;font-size:12px;font-weight:700;align-items:center;justify-content:center;vertical-align:middle;line-height:1}
 .notice{border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.6}
 .notice.o{background:var(--ochre-soft);color:var(--ochre-text)}
 .notice.g{background:var(--green-soft);color:var(--green-text)}
@@ -518,7 +519,7 @@ footer .wrap{padding-block:22px;line-height:1.7}
   <div class="stack">
     <div class="row" style="justify-content:space-between">
       <h1 style="font-family:var(--font-display);font-size:clamp(26px,3vw,36px);margin:0">จัดการประกาศ</h1>
-      <button class="btn" type="button" id="adminReload">โหลดข้อมูลใหม่</button>
+      <div class="row" style="gap:8px"><button class="btn" type="button" id="adminReload">โหลดข้อมูลใหม่</button><button class="btn" type="button" id="notifPerm">เปิดแจ้งเตือนเด้ง</button></div>
     </div>
     <p class="notice g" style="margin:0">เห็นหน้านี้เฉพาะเจ้าของเว็บและผู้มีสิทธิ์แก้ไข ประกาศที่คุณลงเองจะเผยแพร่ทันทีโดยไม่ต้องรอตรวจ</p>
     <h2 style="margin:12px 0 0;font-size:21px">รอตรวจ / ขอปิดประกาศ</h2>
@@ -1119,7 +1120,7 @@ async function loadAdmin(){
     for(const u of users.docs){const s=await S.db.collection('subs/'+u.id+'/items').get();s.docs.forEach(d=>{const x=d.data()||{};if(x.status==='pending'||(x.status==='approved'&&x.withdraw))items.push({...x,_id:d.id,_uid:u.id,_path:'subs/'+u.id+'/items/'+d.id});});}
     pend.textContent='';
     if(!items.length)pend.append(h('div',{class:'empty'},_t('ไม่มีประกาศรอตรวจ')));
-    items.sort((a,b)=>num(a.createdAt)-num(b.createdAt)).forEach(it=>pend.append(adminCard(it)));
+    items.sort((a,b)=>num(a.createdAt)-num(b.createdAt)).forEach(it=>pend.append(adminCard(it)));setTabBadge(items.length);if(items.length>notifShown)notifShown=items.length;
     const rs=await S.db.collection('reports').get();const reps=[];
     for(const u of rs.docs){const s=await S.db.collection('reports/'+u.id+'/items').get();s.docs.forEach(d=>reps.push({...(d.data()||{}),_path:'reports/'+u.id+'/items/'+d.id}));}
     if(!reps.length)rep.append(h('div',{class:'empty'},_t('ไม่มีรายงาน')));
@@ -1295,6 +1296,44 @@ async function saveRevealLimit(){
   const n=Math.max(3,Math.min(500,num($('#cfgRevealLimit').value)||20));
   try{await S.db.doc('config/site').set(Object.assign({},S.config,{revealLimit:n,updatedAt:Date.now()}));S.config.revealLimit=n;toast(_t('บันทึกแล้ว'));loadReveals();}catch(e){toast(errText(e));}
 }
+/* ---------- in-web admin alert: badge + browser notification for new pending listings ---------- */
+let unsubPending=null, notifShown=0, baseTitle=null;
+function setTabBadge(n){
+  if(baseTitle==null)baseTitle=document.title.replace(/^\(\d+\)\s*/,'');
+  const tab=document.getElementById('adminTab');
+  if(tab){
+    let dot=tab.querySelector('.tabdot');
+    if(n>0){ if(!dot){dot=h('span',{class:'tabdot'});tab.appendChild(dot);} dot.textContent=n>99?'99+':String(n); }
+    else if(dot){ dot.remove(); }
+  }
+  document.title = n>0 ? '('+n+') '+baseTitle : baseTitle;
+}
+function notifyPending(n){
+  setTabBadge(n);
+  if(n>notifShown && n>0 && 'Notification' in window && Notification.permission==='granted'){
+    try{
+      const nt=new Notification(_t('ที่ดินตรง ขอนแก่น'),{body:_t('มีประกาศรอตรวจ ')+n+_t(' รายการ · แตะเพื่อเปิดหน้าจัดการประกาศ'),tag:'tdt-pending',icon:'favicon.svg'});
+      nt.onclick=()=>{try{window.focus();}catch(e){}go('admin');nt.close();};
+    }catch(e){}
+  }
+  notifShown=n;
+}
+function startPendingWatch(){
+  stopPendingWatch();
+  if(!S.db||!S.isAdmin)return;
+  try{
+    unsubPending=S.db.collectionGroup('items').onSnapshot(snap=>{
+      let n=0;snap.docs.forEach(d=>{const x=d.data()||{};if(x.status==='pending'||(x.status==='approved'&&x.withdraw))n++;});
+      notifyPending(n);
+    },()=>{});
+  }catch(e){}
+}
+function stopPendingWatch(){ if(unsubPending){try{unsubPending();}catch(e){}unsubPending=null;} notifShown=0; setTabBadge(0); }
+function askNotifyPerm(){
+  if(!('Notification' in window)){ toast(_t('เบราว์เซอร์นี้ไม่รองรับการแจ้งเตือนเด้ง')); return; }
+  if(Notification.permission==='granted'){ toast(_t('เปิดการแจ้งเตือนแล้ว')); return; }
+  Notification.requestPermission().then(p=>{ toast(p==='granted'?_t('เปิดการแจ้งเตือนแล้ว'):_t('ยังไม่ได้อนุญาตการแจ้งเตือน ปรับได้ที่ไอคอนรูปกุญแจข้าง URL')); }).catch(()=>{});
+}
 async function saveConfig(){
   const msg=$('#cfgMsg');msg.textContent=_t('กำลังบันทึก…');
   try{
@@ -1344,6 +1383,7 @@ function makeDbAdapter(fs, db) {
   });
   return {
     doc: docRef,
+    collectionGroup: id => wrapQ(fs.collectionGroup(db, id)),
     collection: p => {
       const c = fs.collection(db, p);
       return Object.assign(wrapQ(c), {
@@ -1482,6 +1522,7 @@ async function onUser(u) {
   S.user = u || null; S.uid = u ? u.uid : null; S.isAdmin = false;
   if (u) { try { S.isAdmin = (await S.db.doc('admins/' + u.uid).get()).exists; } catch (e) { S.isAdmin = false; } }
   $('#adminTab').hidden = !S.isAdmin; setWho();
+  if (S.isAdmin) { startPendingWatch(); if ('Notification' in window && Notification.permission === 'default') { try { Notification.requestPermission(); } catch (e) {} } } else { stopPendingWatch(); }
   if (u) {
     if (!$('#cName').value && u.displayName) $('#cName').value = u.displayName;
     if (u.phoneNumber && !$('#cPhone').value) $('#cPhone').value = LOCAL_PHONE(u.phoneNumber);
@@ -1497,7 +1538,7 @@ async function boot(){
   try{GM=await loadGMaps();}catch(e){GM=null;}
   if(GM)$$('.mapnote').forEach(n=>n.hidden=true);
   initLang();initSearch();initPost();initLogin();renderSearch();renderDonate();
-  $('#adminReload').addEventListener('click',loadAdmin);$('#cfgSave').addEventListener('click',saveConfig);$('#cfgRevealSave').addEventListener('click',saveRevealLimit);
+  $('#adminReload').addEventListener('click',loadAdmin);$('#notifPerm').addEventListener('click',askNotifyPerm);$('#cfgSave').addEventListener('click',saveConfig);$('#cfgRevealSave').addEventListener('click',saveRevealLimit);
   if(!configReady()){S.loaded=true;renderSearch();$('#count').textContent=_t('ยังไม่ได้ตั้งค่า Firebase ในไฟล์ config.js');return;}
   let db;try{db=await initFirebase();}catch(e){S.loaded=true;renderSearch();$('#count').textContent=_t('เชื่อมต่อ Firebase ไม่ได้ กรุณาตรวจไฟล์ config.js');return;}
   S.db=db;setWho();
@@ -1517,7 +1558,7 @@ boot();
 (function(){
   function go(){try{window.__appMain();}finally{document.documentElement.classList.remove('i18n-wait');}}
   if(window.LANG==='th'){window.I18N={};go();return;}
-  var paths=['lang/'+window.LANG+'.js?v=bf357f4a',window.LANG+'.js?v=bf357f4a'],i=0;
+  var paths=['lang/'+window.LANG+'.js?v=cf256102',window.LANG+'.js?v=cf256102'],i=0;
   function next(){
     if(i>=paths.length){window.LANG='th';document.documentElement.lang='th';window.I18N={};go();return;}
     var sc=document.createElement('script');sc.src=paths[i++];sc.onload=go;sc.onerror=next;document.head.appendChild(sc);
