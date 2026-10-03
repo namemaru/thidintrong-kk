@@ -1,0 +1,1380 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="ประกาศซื้อ ขาย ให้เช่า และตามหาที่ดิน บ้าน คอนโด อพาร์ทเม้นท์ หอพัก ในจังหวัดขอนแก่น คุยตรงกับเจ้าของ ไม่ผ่านนายหน้า ลงประกาศฟรี">
+<meta property="og:title" content="ที่ดินตรง ขอนแก่น · ลงประกาศฟรี ไม่ผ่านนายหน้า">
+<meta property="og:description" content="ที่ดิน บ้าน คอนโด หอพักในขอนแก่น ดูตำแหน่งบนแผนที่ พร้อมข้อมูลความเสี่ยงน้ำท่วม คุยตรงกับเจ้าของ">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1F5A41">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>
+(function(){
+  var ok={th:1,lo:1,en:1,zh:1},L=null,q=null;
+  try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
+  if(q&&ok[q]){L=q;try{localStorage.setItem('lang',q);}catch(e){}}
+  if(!L){try{var sv=localStorage.getItem('lang');if(sv&&ok[sv])L=sv;}catch(e){}}
+  if(!L){var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'th']);
+    for(var i=0;i<ls.length&&!L;i++){var c=String(ls[i]).toLowerCase().slice(0,2);if(ok[c])L=c;}
+    if(!L)L='th';}
+  window.LANG=L;
+  document.documentElement.lang={th:'th',lo:'lo',en:'en',zh:'zh-CN'}[L];
+  if(L!=='th'){document.documentElement.className+=' i18n-wait';setTimeout(function(){document.documentElement.classList.remove('i18n-wait');},4000);}
+  if(L==='lo'){var k=document.createElement('link');k.rel='stylesheet';k.href='https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700&family=Noto+Serif+Lao:wght@600;700&display=swap';document.head.appendChild(k);}
+})();
+</script>
+<style>.i18n-wait body{visibility:hidden}</style>
+<script src="config.js"></script>
+<title>ที่ดินตรง ขอนแก่น</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@600;700&display=swap">
+<style>
+/* Layout: sticky tab bar; search view = filter strip + map/list split (stacks on phone); other views = single centered column */
+:root{
+  --bg:#F4F1E8; --surface:#FFFFFF; --surface-2:#EFEADD; --ink:#1E2421; --muted:#56615B; --line:#DDD7CA; --line-strong:#C9C1AD;
+  --green:#1F5A41; --green-ink:#FFFFFF; --green-soft:#E3EDE6; --green-text:#1F5A41;
+  --ochre:#9A5418; --ochre-ink:#FFFFFF; --ochre-soft:#F6E6D5; --ochre-text:#87470F;
+  --land:#E8E2D1; --land-hover:#DDD5BF; --land-active:#CFE0D3; --district-edge:#FFFFFF; --map-label:#47524C; --map-bg:#F0ECE1;
+  --danger:#A23B2A; --danger-soft:#F8E1DC;
+  --shadow:0 6px 24px rgba(20,30,25,.14);
+  --font-display:'Noto Serif Thai','Noto Serif',Georgia,serif;
+  --font-body:'IBM Plex Sans Thai','Noto Sans Thai',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121614; --surface:#1A201D; --surface-2:#232B27; --ink:#E8E6DF; --muted:#A5AEA8; --line:#2E3732; --line-strong:#425049;
+  --green:#6CC197; --green-ink:#0D1A13; --green-soft:#1C3328; --green-text:#86D3AC;
+  --ochre:#E3A466; --ochre-ink:#22160A; --ochre-soft:#3A2A1A; --ochre-text:#F2BC84;
+  --land:#232B27; --land-hover:#2C3631; --land-active:#24402F; --district-edge:#121614; --map-label:#BAC3BD; --map-bg:#171C19;
+  --danger:#F28B78; --danger-soft:#3B201B; --shadow:0 6px 24px rgba(0,0,0,.5); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121614; --surface:#1A201D; --surface-2:#232B27; --ink:#E8E6DF; --muted:#A5AEA8; --line:#2E3732; --line-strong:#425049;
+  --green:#6CC197; --green-ink:#0D1A13; --green-soft:#1C3328; --green-text:#86D3AC;
+  --ochre:#E3A466; --ochre-ink:#22160A; --ochre-soft:#3A2A1A; --ochre-text:#F2BC84;
+  --land:#232B27; --land-hover:#2C3631; --land-active:#24402F; --district-edge:#121614; --map-label:#BAC3BD; --map-bg:#171C19;
+  --danger:#F28B78; --danger-soft:#3B201B; --shadow:0 6px 24px rgba(0,0,0,.5); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+a{color:var(--green-text)}
+h1,h2,h3{text-wrap:balance;line-height:1.35}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.wrap{padding-inline:24px}}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);background:none;border:0;padding:0;cursor:pointer}
+.brand b{font-family:var(--font-display);font-size:21px;font-weight:700;display:block;line-height:1.1}
+.brand small{display:block;font-size:12.5px;color:var(--muted);line-height:1.2}
+.tabs{display:flex;gap:4px;flex:1 1 auto;overflow-x:auto;scrollbar-width:none}
+.tab{border:0;background:none;padding:10px 12px;border-radius:8px;font-weight:500;cursor:pointer;white-space:nowrap;color:var(--muted);min-height:44px}
+.tab[aria-current="page"]{color:var(--ink);background:var(--surface-2)}
+.tab.cta{background:var(--green);color:var(--green-ink);font-weight:600}
+.tab.cta[aria-current="page"]{box-shadow:inset 0 0 0 2px var(--green-ink)}
+.who{font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
+.badge.g{background:var(--green-soft);color:var(--green-text)}
+.badge.o{background:var(--ochre-soft);color:var(--ochre-text)}
+.badge.r{background:var(--danger-soft);color:var(--danger)}
+
+/* common */
+.view{padding-block:24px 56px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);cursor:pointer;font-weight:500;text-decoration:none;color:var(--ink)}
+.btn.primary{background:var(--green);border-color:var(--green);color:var(--green-ink);font-weight:600}
+.btn.ochre{background:var(--ochre);border-color:var(--ochre);color:var(--ochre-ink);font-weight:600}
+.btn.danger{color:var(--danger);border-color:var(--danger)}
+.btn.sm{min-height:38px;padding:0 12px;font-size:14px}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.notice{border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.6}
+.notice.o{background:var(--ochre-soft);color:var(--ochre-text)}
+.notice.g{background:var(--green-soft);color:var(--green-text)}
+.notice.r{background:var(--danger-soft);color:var(--danger)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--ochre-text);margin:0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:10px;font-size:15px;z-index:50;max-width:calc(100% - 32px);box-shadow:var(--shadow)}
+
+/* search */
+.hero{display:flex;flex-wrap:wrap;gap:8px 32px;align-items:flex-end;justify-content:space-between}
+.hero h1{font-family:var(--font-display);font-size:clamp(26px,3.2vw,40px);margin:4px 0 0;max-width:780px}
+.hero p{margin:6px 0 0;color:var(--muted);max-width:640px}
+.filters{margin-top:18px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.seg{display:inline-flex;background:var(--surface-2);border-radius:10px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:none;border-radius:8px;padding:8px 14px;min-height:40px;cursor:pointer;font-weight:500;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:600}
+.chip{border:1px solid var(--line-strong);background:var(--surface);border-radius:999px;padding:6px 14px;min-height:40px;cursor:pointer;font-size:15px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fgrid{display:flex;flex-wrap:wrap;gap:10px}
+.fgrid > *{flex:1 1 170px;min-width:0}
+.fgrid .q{flex:3 1 260px}
+.field{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:500;color:var(--muted)}
+.input,select.input,textarea.input{width:100%;min-height:46px;padding:0 12px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink);font-size:16px}
+textarea.input{padding:10px 12px;min-height:96px;resize:vertical}
+.switch{display:inline-flex;align-items:center;gap:10px;border:0;background:none;cursor:pointer;min-height:44px;padding:0;text-align:left}
+.switch .tr{width:44px;height:26px;border-radius:999px;background:var(--line-strong);position:relative;flex:0 0 44px;transition:background .15s}
+.switch .tr::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:999px;background:var(--surface);box-shadow:0 1px 2px rgba(0,0,0,.3);transition:left .15s}
+.switch[aria-pressed="true"] .tr{background:var(--green)}
+.switch[aria-pressed="true"] .tr::after{left:21px}
+.split{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;align-items:flex-start}
+.mapbox{flex:999 1 560px;min-width:0;position:relative;height:640px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--map-bg)}
+@media (max-width:700px){.mapbox{height:420px}}
+.list{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:10px;max-height:640px;overflow-y:auto;padding-right:2px}
+@media (max-width:900px){.list{max-height:none;overflow:visible}}
+.count{font-size:14.5px;color:var(--muted);margin:10px 0 0}
+
+/* map */
+.map-svg{width:100%;height:100%;display:block;touch-action:none;cursor:grab;user-select:none}
+.map-svg.dragging{cursor:grabbing}
+.district{fill:var(--land);stroke:var(--district-edge);stroke-width:1.4;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .12s}
+.district:hover{fill:var(--land-hover)}
+.district.active{fill:var(--land-active)}
+.district.s1{fill:var(--ochre-soft)}
+.district.s2{fill:color-mix(in srgb,var(--ochre) 38%,var(--land))}
+.outline{fill:none;stroke:var(--line-strong);stroke-width:2;vector-effect:non-scaling-stroke;pointer-events:none}
+.mlabel{fill:var(--map-label);font-family:var(--font-body);font-weight:500;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:var(--map-bg);stroke-width:3px;stroke-linejoin:round}
+.pin{cursor:pointer}
+.pin path{fill:var(--green);stroke:var(--surface);stroke-width:2}
+.pin circle{fill:var(--surface)}
+.pin.sel path{fill:var(--ochre)}
+.pin:focus-visible path{stroke:var(--ochre);stroke-width:3}
+.mapctl{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:6px}
+.mapctl button{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.maptag{position:absolute;left:12px;top:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font-size:13px;max-width:calc(100% - 90px)}
+.mapnote{position:absolute;left:12px;bottom:10px;right:12px;font-size:12px;color:var(--muted);pointer-events:none}
+.peek{position:absolute;left:12px;bottom:34px;width:min(380px,calc(100% - 24px));padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;z-index:3}
+
+/* listing card */
+.lcard{display:flex;gap:12px;padding:12px;border:2px solid var(--line);cursor:pointer;text-align:left;width:100%;background:var(--surface);border-radius:14px}
+.lcard.sel{border-color:var(--green)}
+.lcard .plot{flex:0 0 92px;height:92px;border-radius:10px;background:var(--surface-2);display:flex;flex-direction:column;justify-content:flex-end;padding:8px;font-size:12.5px;line-height:1.3;color:var(--muted)}
+.lcard .plot b{font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums}
+.lcard .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.lcard h3{margin:0;font-size:16px;font-weight:600;line-height:1.45;overflow-wrap:anywhere}
+.price{font-weight:700;color:var(--green-text);font-size:18px;font-variant-numeric:tabular-nums}
+.empty{padding:28px 20px;text-align:center;border:1px dashed var(--line-strong);border-radius:14px;color:var(--muted);background:var(--surface)}
+.empty h3{color:var(--ink);margin:0 0 6px;font-size:18px}
+
+/* detail */
+.dgrid{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;margin-top:18px}
+.dmain{flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.dside{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.sec{padding:20px}
+.sec h2{margin:0 0 12px;font-size:20px}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;margin:0}
+.specs dt{font-size:13.5px;color:var(--muted)}
+.specs dd{margin:2px 0 0;font-weight:600;overflow-wrap:anywhere}
+.minimap{height:300px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--map-bg);position:relative}
+.coord{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;user-select:all}
+.bigprice{font-size:32px;font-weight:700;color:var(--green-text);margin:0;font-variant-numeric:tabular-nums;line-height:1.2}
+.contact{font-size:20px;font-weight:700;user-select:all;font-variant-numeric:tabular-nums}
+ul.check{margin:0;padding-left:20px;line-height:1.9}
+
+/* post form */
+.form{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.fs{padding:22px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);margin:0;min-width:0}
+.fs legend{font-size:20px;font-weight:600;padding:0 6px;margin-left:-6px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{flex:1 1 200px;text-align:left;padding:14px;border-radius:12px;border:2px solid var(--line-strong);background:var(--surface);cursor:pointer;display:flex;flex-direction:column;gap:2px}
+.opt[aria-pressed="true"]{border-color:var(--green);background:var(--green-soft)}
+.opt b{font-size:16.5px}
+.opt span{font-size:14px;color:var(--muted)}
+.two{display:flex;flex-wrap:wrap;gap:12px}
+.two > *{flex:1 1 200px;min-width:0}
+.checks{display:flex;flex-wrap:wrap;gap:6px 18px}
+.checks label{display:inline-flex;align-items:center;gap:8px;min-height:40px;font-size:15px;color:var(--ink);font-weight:400}
+.checks input,.agree input{width:19px;height:19px;accent-color:var(--green)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pills label{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 12px;border:1px solid var(--line-strong);border-radius:999px;font-size:14px;cursor:pointer;color:var(--ink);font-weight:400}
+.pills input{accent-color:var(--green)}
+.pickmap{height:360px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--map-bg);position:relative}
+.agree{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.6}
+.agree input{margin-top:3px;flex:0 0 19px}
+.err{color:var(--danger);font-size:14px;margin:0}
+.hint{font-size:13.5px;color:var(--muted);margin:0;font-weight:400}
+
+/* mine / admin */
+.stack{display:flex;flex-direction:column;gap:12px;max-width:960px;margin:0 auto}
+.item{padding:16px;display:flex;flex-direction:column;gap:8px}
+.item h3{margin:0;font-size:17px;overflow-wrap:anywhere}
+.kv{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px;color:var(--muted)}
+.kv b{color:var(--ink);font-weight:600}
+
+/* donate */
+.donate{display:flex;flex-wrap:wrap;gap:24px;align-items:center;padding:28px;max-width:960px;margin:0 auto}
+.donate .txt{flex:1 1 420px;min-width:0}
+.qr{flex:0 0 auto;width:260px;max-width:100%;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.qr .box{width:200px;height:200px;max-width:100%;border:2px dashed var(--ochre);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:14px;color:var(--ochre-text);font-weight:600;background:var(--surface)}
+.qr img{width:240px;max-width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)}
+
+/* flood assessment */
+.risk{display:flex;flex-wrap:wrap;gap:16px;align-items:stretch}
+.risk .lvl{flex:0 0 auto;min-width:150px;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.risk .lvl b{font-size:26px;line-height:1.2}
+.risk .lvl.g{background:var(--green-soft);color:var(--green-text)}
+.risk .lvl.o{background:var(--ochre-soft);color:var(--ochre-text)}
+.risk .lvl.r{background:var(--danger-soft);color:var(--danger)}
+.risk .facts{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.risk .big{font-size:19px;font-weight:600}
+.meter{display:flex;gap:3px;margin-top:4px}
+.meter i{flex:1;height:8px;border-radius:3px;background:var(--line)}
+.meter i.on{background:currentColor}
+.why{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;font-size:14.5px}
+.why li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding:4px 0}
+.why li span:last-child{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.faform{display:flex;flex-direction:column;gap:12px;margin-top:12px;padding:14px;border-radius:12px;background:var(--surface-2)}
+
+body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+.gmap{position:absolute;inset:0}
+.modal{position:fixed;inset:0;z-index:60;background:rgba(10,14,12,.55);display:flex;align-items:center;justify-content:center;padding:16px}
+.modal .box{background:var(--surface);color:var(--ink);border-radius:16px;padding:22px;width:min(420px,100%);display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow);max-height:calc(100vh - 32px);overflow:auto}
+.modal h2{margin:0;font-size:20px}
+.divider{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+:root[lang="lo"]{--font-body:'Noto Sans Lao','IBM Plex Sans Thai','Phetsarath OT','Lao UI',system-ui,sans-serif;--font-display:'Noto Serif Lao','Noto Sans Lao','Phetsarath OT',serif}
+:root[lang|="zh"]{--font-body:'IBM Plex Sans Thai','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;--font-display:'Noto Serif Thai','Songti SC','Noto Serif SC','SimSun',serif}
+.langpick{display:inline-flex;align-items:center;gap:6px;color:var(--muted)}
+.langpick select{min-height:40px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);padding:0 8px;font-size:14px;font-family:'IBM Plex Sans Thai','Noto Sans Lao','PingFang SC','Microsoft YaHei',system-ui,sans-serif}
+footer{border-top:1px solid var(--line);background:var(--surface);font-size:13.5px;color:var(--muted)}
+footer .wrap{padding-block:22px;line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <button class="brand" type="button" data-go="search" aria-label="ที่ดินตรง ขอนแก่น หน้าแรก">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M4 27 L11 8 L32 11 L28 31 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="color:var(--green)"></path><path d="M18 12c-3 0-5.2 2.2-5.2 5 0 3.7 5.2 8.2 5.2 8.2s5.2-4.5 5.2-8.2c0-2.8-2.2-5-5.2-5z" style="fill:var(--ochre)"></path><circle cx="18" cy="17" r="1.9" style="fill:var(--surface)"></circle></svg>
+      <span><b>ที่ดินตรง</b><small>ขอนแก่น · ไม่ผ่านนายหน้า</small></span>
+    </button>
+    <nav class="tabs" aria-label="เมนูหลัก">
+      <button class="tab" type="button" data-go="search">ค้นหาที่ดิน</button>
+      <button class="tab" type="button" data-go="mine">ประกาศของฉัน</button>
+      <button class="tab" type="button" data-go="donate">สนับสนุนเว็บไซต์</button>
+      <button class="tab" type="button" data-go="admin" id="adminTab" hidden>จัดการประกาศ</button>
+      <button class="tab cta" type="button" data-go="post">ลงประกาศฟรี</button>
+    </nav>
+    <div class="who" id="who"></div>
+    <label class="langpick" translate="no"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><select id="langSel" aria-label="ภาษา · ພາສາ · Language · 语言"><option value="th">ไทย</option><option value="lo">ລາວ</option><option value="en">English</option><option value="zh">中文</option></select></label>
+  </div>
+</header>
+
+<main>
+<!-- SEARCH -->
+<section class="view wrap" id="v-search">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">ลงประกาศฟรี · ไม่มีค่าคอมมิชชั่น · เฉพาะจังหวัดขอนแก่น</p>
+      <h1>หาที่ดินพ้นน้ำในขอนแก่น คุยตรงกับเจ้าของ</h1>
+      <p>ที่ดิน บ้าน คอนโด อพาร์ทเม้นท์ และหอพัก ดูตำแหน่งบนแผนที่ เปิดใน Google Maps หรือตรวจรูปแปลงกับ LandsMaps ของกรมที่ดิน แล้วติดต่อเจ้าของได้ทันที</p>
+    </div>
+  </div>
+  <div class="card filters">
+    <div class="row" style="justify-content:space-between;gap:10px">
+      <div class="seg" role="group" aria-label="ประเภทประกาศ" id="modeSeg">
+        <button type="button" data-mode="sale" aria-pressed="true">ประกาศขาย</button>
+        <button type="button" data-mode="rent" aria-pressed="false">รับเช่าซื้อ</button>
+        <button type="button" data-mode="lease" aria-pressed="false">ให้เช่ารายเดือน</button>
+        <button type="button" data-mode="wanted" aria-pressed="false">ประกาศตามหา</button>
+      </div>
+      <div class="row" role="group" aria-label="ประเภทอสังหาริมทรัพย์" id="typeChips">
+        <button class="chip" type="button" data-pt="all" aria-pressed="true">ทั้งหมด</button>
+        <button class="chip" type="button" data-pt="land" aria-pressed="false">ที่ดินเปล่า</button>
+        <button class="chip" type="button" data-pt="house" aria-pressed="false">บ้านพร้อมที่ดิน</button>
+        <button class="chip" type="button" data-pt="town" aria-pressed="false">ทาวน์โฮม / อาคาร</button>
+        <button class="chip" type="button" data-pt="condo" aria-pressed="false">คอนโด</button>
+        <button class="chip" type="button" data-pt="apt" aria-pressed="false">อพาร์ทเม้นท์</button>
+        <button class="chip" type="button" data-pt="dorm" aria-pressed="false">หอพัก</button>
+      </div>
+    </div>
+    <div class="fgrid">
+      <label class="field q" for="fq">ค้นหา<input class="input" id="fq" type="search" placeholder="ตำบล ชื่อถนน หรือสถานที่ใกล้เคียง"></label>
+      <label class="field" for="fAmphoe">อำเภอ<select class="input" id="fAmphoe"></select></label>
+      <label class="field" for="fBudget" id="fBudgetWrap">งบประมาณ<select class="input" id="fBudget"></select></label>
+      <label class="field" for="fSize" id="fSizeWrap">ขนาดที่ดิน<select class="input" id="fSize">
+        <option value="">ทุกขนาด</option><option value="0-100">ไม่เกิน 100 ตร.ว.</option><option value="100-400">100 ตร.ว. – 1 ไร่</option><option value="400-2000">1 – 5 ไร่</option><option value="2000-">มากกว่า 5 ไร่</option></select></label>
+      <label class="field" for="fRisk" id="fRiskWrap">ความเสี่ยงน้ำท่วม<select class="input" id="fRisk">
+        <option value="">ทุกระดับ</option><option value="low">เสี่ยงต่ำเท่านั้น</option><option value="mid">ไม่เกินเสี่ยงปานกลาง</option><option value="any">เฉพาะแปลงที่ประเมินแล้ว</option></select></label>
+      <label class="field" for="fSort">เรียงตาม<select class="input" id="fSort"><option value="new">ประกาศล่าสุด</option><option value="low">ราคาต่ำไปสูง</option><option value="high">ราคาสูงไปต่ำ</option></select></label>
+    </div>
+    <div class="row">
+      <button class="switch" type="button" id="fDry" aria-pressed="false"><span class="tr" aria-hidden="true"></span>เฉพาะที่เจ้าของแจ้งว่าไม่เคยน้ำท่วม</button>
+    </div>
+  </div>
+  <p class="count" id="count" aria-live="polite">กำลังโหลดประกาศ…</p>
+  <div class="split">
+    <div class="mapbox" id="mapHost">
+      <div class="mapctl">
+        <button type="button" id="zIn" aria-label="ซูมเข้า"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+        <button type="button" id="zOut" aria-label="ซูมออก"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+        <button type="button" id="zAll" aria-label="ดูทั้งจังหวัด"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button>
+      </div>
+      <div class="maptag" id="mapTag">แตะอำเภอเพื่อซูม · ลากเพื่อเลื่อนแผนที่</div>
+      <div class="card peek" id="peek" hidden></div>
+      <div class="mapnote">ขอบเขตอำเภอ: OpenGISData-Thailand · ตำแหน่งแปลงจริงดูต่อใน Google Maps / LandsMaps</div>
+    </div>
+    <div class="list" id="list"></div>
+  </div>
+</section>
+
+<!-- DETAIL -->
+<section class="view wrap" id="v-detail" hidden></section>
+
+<!-- POST -->
+<section class="view wrap" id="v-post" hidden>
+  <div class="form">
+    <div>
+      <h1 style="font-family:var(--font-display);font-size:clamp(28px,3vw,38px);margin:0">ลงประกาศฟรี</h1>
+      <p class="muted" style="margin:6px 0 0">ไม่มีค่าใช้จ่าย ไม่ผ่านนายหน้า ทีมงานตรวจประกาศก่อนแสดงบนแผนที่</p>
+    </div>
+    <div class="notice r" id="postBlocked" hidden></div>
+    <form id="postForm" novalidate style="display:flex;flex-direction:column;gap:18px">
+      <fieldset class="fs">
+        <legend>1. ต้องการประกาศอะไร</legend>
+        <div class="opts" role="group" aria-label="ประเภทประกาศ" id="kindOpts">
+          <button type="button" class="opt" data-kind="sale" aria-pressed="true"><b>ขายที่ดิน / บ้าน</b><span>เจ้าของประกาศขายเอง</span></button>
+          <button type="button" class="opt" data-kind="rent" aria-pressed="false"><b>ให้เช่าซื้อ</b><span>ผู้ซื้อผ่อนตรงกับเจ้าของ</span></button>
+          <button type="button" class="opt" data-kind="lease" aria-pressed="false"><b>ให้เช่ารายเดือน</b><span>ห้องเช่า หอพัก คอนโด บ้านเช่า</span></button>
+          <button type="button" class="opt" data-kind="wanted" aria-pressed="false"><b>ตามหาที่ดิน / ที่พัก</b><span>บอกงบและทำเล ให้เจ้าของติดต่อคุณ</span></button>
+        </div>
+        <div class="field">ประเภทอสังหาริมทรัพย์
+          <div class="row" role="group" aria-label="ประเภทอสังหาริมทรัพย์" id="ptypeChips">
+            <button class="chip" type="button" data-pt="land" aria-pressed="true">ที่ดินเปล่า</button>
+            <button class="chip" type="button" data-pt="house" aria-pressed="false">บ้านพร้อมที่ดิน</button>
+            <button class="chip" type="button" data-pt="town" aria-pressed="false">ทาวน์โฮม / อาคาร</button>
+            <button class="chip" type="button" data-pt="condo" aria-pressed="false">คอนโด</button>
+            <button class="chip" type="button" data-pt="apt" aria-pressed="false">อพาร์ทเม้นท์</button>
+            <button class="chip" type="button" data-pt="dorm" aria-pressed="false">หอพัก</button>
+          </div>
+        </div>
+        <label class="field" for="pTitle">หัวข้อประกาศ<input class="input" id="pTitle" maxlength="90" placeholder="เช่น ที่ดินเปล่า 2 ไร่ ติดถนนลาดยาง ใกล้ตลาด"></label>
+      </fieldset>
+
+      <fieldset class="fs" data-for="offer">
+        <legend>2. ตำแหน่งแปลง</legend>
+        <label class="field" for="pCoord">วางพิกัดหรือลิงก์ Google Maps
+          <input class="input" id="pCoord" placeholder="เช่น 16.4530, 102.7420">
+          <span class="hint">วิธีหาพิกัด: เปิดแอป Google Maps กดค้างที่กลางแปลง แล้วคัดลอกตัวเลขพิกัดมาวาง หรือแตะบนแผนที่ด้านล่าง</span>
+        </label>
+        <p class="err" id="coordErr" hidden></p>
+        <div class="pickmap" id="pickHost">
+          <div class="maptag" id="pickTag">แตะอำเภอเพื่อซูม แล้วแตะจุดที่ตั้งแปลง</div>
+          <div class="mapctl">
+            <button type="button" id="pAll" aria-label="ดูทั้งจังหวัด"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button>
+          </div>
+        </div>
+        <div class="two">
+          <label class="field" for="pAmphoe">อำเภอ<select class="input" id="pAmphoe"></select></label>
+          <label class="field" for="pTambon">ตำบล<input class="input" id="pTambon" maxlength="40" placeholder="เช่น บ้านทุ่ม"></label>
+        </div>
+        <button class="switch" type="button" id="pApprox" aria-pressed="true"><span class="tr" aria-hidden="true"></span>แสดงตำแหน่งแบบประมาณ (คลาดเคลื่อนราว 500 ม.) เพื่อความเป็นส่วนตัว</button>
+      </fieldset>
+
+      <fieldset class="fs" data-for="offer">
+        <legend id="offerLegend">3. ข้อมูลแปลงและราคา</legend>
+        <div id="deedBox" style="display:flex;flex-direction:column;gap:16px">
+        <div class="two">
+          <label class="field" for="pDeed">ประเภทเอกสารสิทธิ์<select class="input" id="pDeed">
+            <option value="chanote">โฉนดที่ดิน (น.ส.4 จ.)</option><option value="ns3k">น.ส.3 ก.</option><option value="ns3">น.ส.3</option><option value="condo">หนังสือกรรมสิทธิ์ห้องชุด (อ.ช.2)</option><option value="spk">ส.ป.ก. 4-01</option><option value="other">อื่นๆ</option></select></label>
+          <label class="field" for="pDeedNo">เลขที่โฉนด / เลขที่ดิน / เลขห้องชุด<input class="input" id="pDeedNo" maxlength="20" inputmode="numeric" placeholder="แสดงต่อสาธารณะเพียง 2 หลักท้าย"></label>
+        </div>
+        <p class="notice o" id="spkWarn" hidden>ที่ดิน ส.ป.ก. 4-01 เปลี่ยนมือได้เฉพาะกรณีที่กฎหมายกำหนด ระบบจึงไม่รับประกาศขายหรือให้เช่าซื้อที่ดินประเภทนี้</p>
+        </div>
+        <div id="roomBox" hidden style="display:flex;flex-direction:column;gap:16px">
+          <div class="two">
+            <label class="field" for="rProject">ชื่อโครงการ / อาคาร<input class="input" id="rProject" maxlength="80" placeholder="เช่น ชื่อคอนโด อพาร์ทเม้นท์ หรือหอพัก"></label>
+            <label class="field" for="rSize">ขนาดห้อง (ตร.ม.)<input class="input" id="rSize" inputmode="decimal" placeholder="เช่น 28"></label>
+            <label class="field" for="rFloor">ชั้น<input class="input" id="rFloor" maxlength="10" placeholder="เช่น 5"></label>
+          </div>
+          <div class="two">
+            <label class="field" for="rBed">ห้องนอน<select class="input" id="rBed"><option value="studio">สตูดิโอ (ห้องเดียว)</option><option value="1">1 ห้องนอน</option><option value="2">2 ห้องนอน</option><option value="3">3 ห้องนอนขึ้นไป</option></select></label>
+            <label class="field" for="rBath">ห้องน้ำ<select class="input" id="rBath"><option value="1">ห้องน้ำในตัว 1 ห้อง</option><option value="2">ห้องน้ำ 2 ห้องขึ้นไป</option><option value="shared">ห้องน้ำรวม</option></select></label>
+            <label class="field" for="rGender" id="rGenderWrap">หอพักสำหรับ<select class="input" id="rGender"><option value="mixed">ชาย-หญิง (รวม)</option><option value="female">หญิงล้วน</option><option value="male">ชายล้วน</option></select></label>
+            <label class="field" for="rCommon" id="rCommonWrap">ค่าส่วนกลาง (บาท/เดือน)<input class="input" id="rCommon" inputmode="numeric" placeholder="เช่น 900"></label>
+          </div>
+          <div class="field">สิ่งอำนวยความสะดวก
+            <div class="checks" id="rFac">
+              <label><input type="checkbox" value="แอร์">แอร์</label>
+              <label><input type="checkbox" value="เฟอร์นิเจอร์">เฟอร์นิเจอร์</label>
+              <label><input type="checkbox" value="เครื่องทำน้ำอุ่น">เครื่องทำน้ำอุ่น</label>
+              <label><input type="checkbox" value="ตู้เย็น">ตู้เย็น</label>
+              <label><input type="checkbox" value="Wi-Fi">Wi-Fi</label>
+              <label><input type="checkbox" value="ที่จอดรถ">ที่จอดรถ</label>
+              <label><input type="checkbox" value="ลิฟต์">ลิฟต์</label>
+              <label><input type="checkbox" value="คีย์การ์ด / CCTV">คีย์การ์ด / CCTV</label>
+              <label><input type="checkbox" value="รปภ. 24 ชม.">รปภ. 24 ชม.</label>
+              <label><input type="checkbox" value="เครื่องซักผ้า">เครื่องซักผ้า</label>
+              <label><input type="checkbox" value="เลี้ยงสัตว์ได้">เลี้ยงสัตว์ได้</label>
+              <label><input type="checkbox" value="สระว่ายน้ำ / ฟิตเนส">สระว่ายน้ำ / ฟิตเนส</label>
+            </div>
+          </div>
+          <label class="field" for="rNear">ใกล้สถานที่สำคัญ<input class="input" id="rNear" maxlength="120" placeholder="เช่น ม.ขอนแก่น 1 กม., ตลาด, รถสองแถวผ่านหน้าหอ"></label>
+        </div>
+        <div class="field" id="landArea">เนื้อที่
+          <div class="two">
+            <label class="row" for="pRai" style="flex-wrap:nowrap;color:var(--ink);font-weight:400"><input class="input" id="pRai" inputmode="numeric" placeholder="0">ไร่</label>
+            <label class="row" for="pNgan" style="flex-wrap:nowrap;color:var(--ink);font-weight:400"><input class="input" id="pNgan" inputmode="numeric" placeholder="0">งาน</label>
+            <label class="row" for="pWa" style="flex-wrap:nowrap;color:var(--ink);font-weight:400"><input class="input" id="pWa" inputmode="decimal" placeholder="0">ตร.ว.</label>
+          </div>
+        </div>
+        <div data-for="sale">
+          <label class="field" for="pPrice" style="max-width:360px">ราคาขาย (บาท)<input class="input" id="pPrice" inputmode="numeric" placeholder="เช่น 1,850,000"></label>
+        </div>
+        <div class="two" data-for="rent">
+          <label class="field" for="pDown">เงินดาวน์ (บาท)<input class="input" id="pDown" inputmode="numeric"></label>
+          <label class="field" for="pMonthly">ค่างวดต่อเดือน (บาท)<input class="input" id="pMonthly" inputmode="numeric"></label>
+          <label class="field" for="pMonths">จำนวนงวด (เดือน)<input class="input" id="pMonths" inputmode="numeric"></label>
+        </div>
+        <div data-for="lease" style="display:flex;flex-direction:column;gap:16px">
+          <div class="two">
+            <label class="field" for="lRent">ค่าเช่าต่อเดือน (บาท)<input class="input" id="lRent" inputmode="numeric" placeholder="เช่น 3,500"></label>
+            <label class="field" for="lDeposit">เงินประกัน / ค่าล่วงหน้า<input class="input" id="lDeposit" maxlength="60" placeholder="เช่น ประกัน 1 เดือน + ล่วงหน้า 1 เดือน"></label>
+            <label class="field" for="lMin">สัญญาขั้นต่ำ (เดือน)<input class="input" id="lMin" inputmode="numeric" placeholder="เช่น 6"></label>
+          </div>
+          <div class="two">
+            <label class="field" for="lWater">ค่าน้ำ<input class="input" id="lWater" maxlength="40" placeholder="เช่น 18 บาท/หน่วย หรือ เหมา 150 บาท"></label>
+            <label class="field" for="lElec">ค่าไฟ<input class="input" id="lElec" maxlength="40" placeholder="เช่น 7 บาท/หน่วย"></label>
+            <label class="field" for="lVacant">ห้องว่างตอนนี้ (ห้อง)<input class="input" id="lVacant" inputmode="numeric" placeholder="เช่น 3"></label>
+          </div>
+        </div>
+        <label class="field" for="pFlood" style="max-width:460px">ประวัติน้ำท่วมของพื้นที่<select class="input" id="pFlood">
+          <option value="never">ไม่เคยท่วม</option><option value="minor">เคยท่วมขังเล็กน้อย ระบายได้ใน 1–2 วัน</option><option value="yes">เคยท่วม</option><option value="unknown">ไม่ทราบ</option></select></label>
+        <label class="field" for="pDesc">รายละเอียดเพิ่มเติม<textarea class="input" id="pDesc" maxlength="1500" placeholder="เช่น สภาพถนน ไฟฟ้า ประปา สิ่งปลูกสร้าง ระยะทางไปโรงเรียน ตลาด โรงพยาบาล"></textarea></label>
+      </fieldset>
+
+      <fieldset class="fs" data-for="wanted" hidden>
+        <legend>2. ความต้องการของคุณ</legend>
+        <div class="field">อำเภอที่สนใจ (เลือกได้หลายอำเภอ)<div class="pills" id="wAmphoes"></div></div>
+        <div class="two">
+          <label class="field" for="wMin">งบต่ำสุด (บาท)<input class="input" id="wMin" inputmode="numeric"></label>
+          <label class="field" for="wMax">งบสูงสุด (บาท)<input class="input" id="wMax" inputmode="numeric"></label>
+          <label class="field" for="wSize">ขนาดที่ต้องการ<input class="input" id="wSize" maxlength="60" placeholder="เช่น 50–100 ตร.ว. หรือ 1–3 ไร่"></label>
+        </div>
+        <div class="field">เงื่อนไขสำคัญ
+          <div class="checks" id="wNeeds">
+            <label><input type="checkbox" value="ต้องไม่เคยน้ำท่วม" checked>ต้องไม่เคยน้ำท่วม</label>
+            <label><input type="checkbox" value="ใกล้โรงเรียน">ใกล้โรงเรียน</label>
+            <label><input type="checkbox" value="ใกล้โรงพยาบาล">ใกล้โรงพยาบาล</label>
+            <label><input type="checkbox" value="มีน้ำประปา/ไฟฟ้า">มีน้ำประปา / ไฟฟ้า</label>
+            <label><input type="checkbox" value="รับเช่าซื้อ">รับเช่าซื้อ / ผ่อนกับเจ้าของ</label>
+          </div>
+        </div>
+        <label class="field" for="wDesc">รายละเอียดเพิ่มเติม<textarea class="input" id="wDesc" maxlength="1500" placeholder="เช่น จำนวนสมาชิกในบ้าน ช่วงเวลาที่ต้องการย้ายเข้า"></textarea></label>
+        <label class="field" for="wFrom" style="max-width:360px">ย้ายมาจากจังหวัด (ไม่บังคับ)<input class="input" id="wFrom" maxlength="40" placeholder="เช่น พระนครศรีอยุธยา"></label>
+      </fieldset>
+
+      <fieldset class="fs">
+        <legend id="contactLegend">4. ช่องทางติดต่อ</legend>
+        <div class="two">
+          <label class="field" for="cName">ชื่อที่แสดง<input class="input" id="cName" maxlength="40"></label>
+          <label class="field" for="cPhone">เบอร์โทรศัพท์<input class="input" id="cPhone" type="tel" inputmode="tel" maxlength="15" placeholder="08X-XXX-XXXX"></label>
+          <label class="field" for="cLine">LINE ID (ไม่บังคับ)<input class="input" id="cLine" maxlength="40"></label>
+        </div>
+        <label class="agree" for="aOwner"><input type="checkbox" id="aOwner"><span id="ownerText">ข้าพเจ้าเป็นเจ้าของกรรมสิทธิ์ หรือผู้รับมอบอำนาจโดยชอบ ไม่ใช่นายหน้า</span></label>
+        <label class="agree" for="aPdpa"><input type="checkbox" id="aPdpa"><span>ยินยอมให้แสดงชื่อ เบอร์โทร และ LINE ID บนประกาศ และเข้าใจว่าขอปิดประกาศได้ทุกเมื่อ</span></label>
+        <p class="err" id="postErr" hidden></p>
+        <div class="row"><button class="btn primary" type="submit" id="postBtn" style="min-height:50px;padding:0 28px;font-size:17px">ส่งประกาศ</button></div>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<!-- MINE -->
+<section class="view wrap" id="v-mine" hidden>
+  <div class="stack">
+    <h1 style="font-family:var(--font-display);font-size:clamp(26px,3vw,36px);margin:0">ประกาศของฉัน</h1>
+    <p class="muted" style="margin:0">ดูสถานะการตรวจ ขอปิดประกาศ หรือลบคำขอที่ยังไม่อนุมัติ</p>
+    <div id="mineList" class="stack" style="max-width:none;width:100%"></div>
+    <p class="small muted" id="uidLine" hidden style="margin:8px 0 0"></p>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="view wrap" id="v-donate" hidden>
+  <div class="card donate">
+    <div class="txt">
+      <p class="eyebrow">ไม่มีค่าประกาศ · ไม่มีค่านายหน้า</p>
+      <h1 style="font-family:var(--font-display);font-size:clamp(26px,3vw,36px);margin:6px 0 10px">เว็บนี้ฟรีสำหรับทุกคน อยู่ได้ด้วยการสนับสนุน</h1>
+      <p style="margin:0 0 14px;line-height:1.8">เงินสนับสนุนใช้เป็นค่าระบบ ค่าแผนที่ และเวลาตรวจสอบประกาศ การบริจาคไม่มีผลกับลำดับหรือการอนุมัติประกาศใดๆ</p>
+      <div class="row" role="group" aria-label="ยอดแนะนำ" id="amtChips"></div>
+      <p class="muted small" id="amtText" style="margin:10px 0 0"></p>
+      <div id="stripeBox" style="margin-top:16px"></div>
+    </div>
+    <div class="qr" id="qrBox"></div>
+  </div>
+</section>
+
+<!-- ADMIN -->
+<section class="view wrap" id="v-admin" hidden>
+  <div class="stack">
+    <div class="row" style="justify-content:space-between">
+      <h1 style="font-family:var(--font-display);font-size:clamp(26px,3vw,36px);margin:0">จัดการประกาศ</h1>
+      <button class="btn" type="button" id="adminReload">โหลดข้อมูลใหม่</button>
+    </div>
+    <p class="notice g" style="margin:0">เห็นหน้านี้เฉพาะเจ้าของเว็บและผู้มีสิทธิ์แก้ไข ประกาศที่คุณลงเองจะเผยแพร่ทันทีโดยไม่ต้องรอตรวจ</p>
+    <h2 style="margin:12px 0 0;font-size:21px">รอตรวจ / ขอปิดประกาศ</h2>
+    <div id="admPending" class="stack" style="max-width:none;width:100%"></div>
+    <h2 style="margin:12px 0 0;font-size:21px">รายงานจากผู้ใช้</h2>
+    <div id="admReports" class="stack" style="max-width:none;width:100%"></div>
+    <h2 style="margin:12px 0 0;font-size:21px">ประกาศที่เผยแพร่อยู่</h2>
+    <div id="admLive" class="stack" style="max-width:none;width:100%"></div>
+    <h2 style="margin:12px 0 0;font-size:21px">ตั้งค่าการรับบริจาค</h2>
+    <div class="card sec" style="display:flex;flex-direction:column;gap:12px">
+      <label class="field" for="cfgName">ชื่อบัญชีที่แสดงใต้ QR<input class="input" id="cfgName" maxlength="60"></label>
+      <p class="hint">รูป QR พร้อมเพย์อยู่ในไฟล์ public/donate-qr.png ถ้าจะเปลี่ยน ให้แทนที่ไฟล์นี้ด้วยรูปใหม่ชื่อเดิม แล้ว deploy อีกครั้ง</p>
+      <label class="field" for="cfgStripe">ลิงก์ Stripe Payment Link (ไม่บังคับ)<input class="input" id="cfgStripe" type="url" inputmode="url" maxlength="300" placeholder="https://buy.stripe.com/..."></label>
+      <p class="hint">สร้างใน Stripe Dashboard › Payment Links แล้วเลือกให้ผู้สนับสนุนระบุยอดเงินเอง จากนั้นคัดลอกลิงก์มาวางที่นี่ ห้ามวาง Secret key หรือ API key</p>
+      <div class="row"><button class="btn primary" type="button" id="cfgSave">บันทึกการตั้งค่า</button><span class="small muted" id="cfgMsg"></span></div>
+    </div>
+    <h2 style="margin:12px 0 0;font-size:21px">ดึงข้อมูลน้ำท่วม GISTDA อัตโนมัติ</h2>
+    <div class="card sec"><p style="margin:0" id="gistdaStatus"></p></div>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="loginModal" hidden role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="box">
+    <h2 id="loginTitle">เข้าสู่ระบบ</h2>
+    <p class="small muted" style="margin:0">ใช้ยืนยันตัวตนผู้ลงประกาศ เพื่อป้องกันนายหน้าและสแปม</p>
+    <button class="btn" type="button" id="loginGoogle">เข้าสู่ระบบด้วยบัญชี Google</button>
+    <div id="phoneBox" style="display:flex;flex-direction:column;gap:10px">
+      <div class="divider">ยืนยันด้วยเบอร์โทร (OTP)</div>
+      <label class="field" for="otpPhone">เบอร์โทรศัพท์<input class="input" id="otpPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08X-XXX-XXXX"></label>
+      <p class="hint">เบอร์ประเทศอื่น เช่น ลาว ให้พิมพ์ +856 นำหน้า</p>
+      <button class="btn primary" type="button" id="otpSend">ส่งรหัส OTP</button>
+      <div id="otpStep2" hidden style="display:flex;flex-direction:column;gap:10px">
+        <label class="field" for="otpCode">รหัส 6 หลักจาก SMS<input class="input" id="otpCode" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></label>
+        <button class="btn primary" type="button" id="otpVerify">ยืนยันรหัส</button>
+      </div>
+      <div id="recaptchaBox"></div>
+    </div>
+    <p class="err" id="loginErr" hidden></p>
+    <button class="btn sm" type="button" id="loginClose" style="align-self:flex-end">ปิด</button>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">ที่ดินตรง ขอนแก่น เป็นพื้นที่ประกาศระหว่างผู้ซื้อและผู้ขายโดยตรง ไม่ใช่นายหน้า ไม่รับรองกรรมสิทธิ์ และไม่รับเงินแทนผู้ใด ข้อมูลน้ำท่วมมาจากเจ้าของแปลงและสถิติ GISTDA โปรดตรวจเอกสารสิทธิ์ที่สำนักงานที่ดินก่อนทำนิติกรรมทุกครั้ง · ขอบเขตอำเภอ: OpenGISData-Thailand</div>
+</footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const GEO = {"proj":{"minLng":101.75075152846644,"maxLat":17.087013381116467,"c":0.9595132583829682,"k":727.0314683487588},"w":1000.0,"h":1057.8,"districts":[{"n":"พล","d":"M648.6 956.5 L644.2 975.9 L647.6 987.8 L638.9 996.9 L619.5 997.3 L599.2 987.8 L590.5 999.4 L561.6 1005.5 L545.4 1000.0 L531.9 988.1 L509.9 995.7 L489.7 996.4 L496.1 985.6 L492.3 960.6 L495.9 948.9 L508.7 944.6 L524.4 946.0 L527.7 935.0 L521.9 907.4 L529.5 896.1 L534.6 871.1 L547.6 874.1 L563.1 864.8 L576.6 853.5 L573.3 840.1 L585.3 838.1 L600.1 855.2 L612.7 851.2 L624.0 857.9 L659.1 860.5 L668.5 887.2 L659.1 904.6 L658.8 911.1 L664.8 921.2 L653.1 942.0 L654.4 950.5 L648.6 956.5Z","lx":593.5,"ly":928.1,"lat":15.8105,"lng":102.6015,"b":[489.7,838.1,178.8,167.3],"e":"Phon"},{"n":"แวงใหญ่","d":"M576.6 853.5 L547.6 874.1 L534.6 871.1 L533.9 876.5 L515.5 878.6 L483.8 876.5 L469.5 883.8 L458.3 882.8 L445.0 874.8 L420.0 867.5 L420.3 856.7 L426.0 848.1 L423.8 843.6 L426.6 842.0 L421.5 840.6 L427.6 839.2 L431.3 827.7 L435.3 829.2 L432.4 827.3 L435.0 823.4 L431.3 824.0 L433.0 820.7 L429.8 822.6 L433.2 808.1 L442.8 804.3 L442.5 800.4 L446.0 805.7 L447.5 799.7 L456.0 803.9 L461.8 801.3 L459.1 800.5 L460.9 796.4 L462.9 797.5 L461.8 793.4 L465.4 797.0 L467.3 791.7 L469.1 796.5 L471.6 793.1 L480.8 805.0 L506.6 817.4 L522.5 805.4 L531.1 809.3 L542.9 808.6 L545.6 814.6 L557.9 811.7 L565.3 817.4 L560.4 825.3 L573.3 840.1 L576.6 853.5Z","lx":499.0,"ly":835.4,"lat":15.938,"lng":102.4661,"b":[420.0,791.7,156.6,92.1],"e":"Waeng Yai"},{"n":"บ้านไผ่","d":"M770.1 819.4 L758.0 844.8 L735.9 853.7 L718.7 879.6 L709.2 878.2 L708.4 868.7 L700.1 869.2 L703.4 831.4 L707.8 821.3 L696.2 809.7 L685.9 804.8 L669.7 782.3 L647.6 767.4 L648.3 761.0 L630.3 759.6 L631.5 751.3 L625.2 745.5 L629.2 738.2 L629.1 716.6 L619.6 704.4 L619.6 690.6 L624.8 683.9 L623.8 675.8 L627.7 676.2 L625.9 673.8 L630.7 669.9 L635.1 670.5 L631.5 666.1 L633.1 661.3 L638.6 663.4 L639.2 660.1 L643.5 659.9 L640.1 658.9 L640.2 654.3 L649.5 654.5 L655.8 666.3 L652.1 682.9 L696.4 688.5 L697.5 684.8 L710.4 679.7 L740.6 680.0 L751.7 673.9 L764.0 683.0 L770.2 697.1 L777.1 700.5 L779.7 698.0 L774.5 721.9 L765.7 738.0 L775.2 748.9 L771.3 755.8 L773.5 761.1 L788.9 756.8 L794.3 750.2 L795.4 754.0 L798.5 751.6 L795.3 756.1 L797.6 757.1 L796.2 761.4 L791.3 762.7 L795.0 764.8 L790.1 779.7 L797.5 795.4 L805.3 802.3 L805.6 809.5 L793.3 806.9 L783.3 810.8 L770.1 819.4Z","lx":721.2,"ly":766.1,"lat":16.0332,"lng":102.7845,"b":[619.6,654.3,186.0,225.3],"e":"Ban Phai"},{"n":"เปือยน้อย","d":"M815.1 919.5 L818.5 920.9 L807.7 929.6 L802.3 909.3 L792.2 900.1 L774.7 893.3 L767.6 893.8 L765.0 898.2 L751.2 897.8 L740.5 902.0 L717.0 884.4 L735.9 853.7 L758.0 844.8 L770.1 819.4 L793.3 806.9 L805.6 809.5 L795.1 836.0 L808.5 845.0 L803.2 855.3 L803.7 861.3 L805.9 865.4 L811.9 865.4 L822.9 873.4 L817.6 885.1 L819.0 890.4 L815.7 905.8 L817.8 909.2 L815.1 919.5Z","lx":771.4,"ly":869.4,"lat":15.8912,"lng":102.8566,"b":[717.0,806.9,105.9,122.7],"e":"Pueai Noi"},{"n":"ชนบท","d":"M618.3 827.3 L623.1 852.8 L630.3 857.2 L624.0 857.9 L612.7 851.2 L600.1 855.2 L585.3 838.1 L573.3 840.1 L560.4 825.3 L565.3 817.4 L557.9 811.7 L545.6 814.6 L542.9 808.6 L531.1 809.3 L522.5 805.4 L506.6 817.4 L480.8 805.0 L470.4 791.2 L473.1 792.5 L477.0 786.7 L473.9 783.2 L479.7 778.9 L475.9 779.4 L475.0 776.8 L477.6 770.3 L481.4 768.5 L485.2 771.8 L490.2 768.9 L488.1 765.8 L491.3 765.0 L490.3 758.7 L485.1 751.5 L497.9 746.9 L508.8 753.4 L509.5 744.8 L515.1 744.1 L517.7 732.5 L522.9 725.7 L525.8 728.6 L522.7 733.5 L531.0 733.3 L531.3 727.7 L534.4 726.1 L551.3 736.7 L557.0 734.0 L549.1 731.9 L552.0 728.7 L561.5 725.2 L579.9 724.8 L578.1 721.3 L574.0 723.5 L571.2 719.5 L572.9 712.3 L581.6 711.5 L575.4 708.1 L577.9 704.1 L580.1 705.9 L578.6 702.5 L583.5 695.7 L583.5 699.1 L592.3 702.2 L595.1 700.3 L592.6 697.8 L599.1 694.4 L598.1 696.7 L601.4 697.7 L604.0 692.5 L606.7 698.1 L610.3 696.1 L607.9 694.8 L610.6 691.5 L609.5 686.7 L613.6 688.2 L616.3 684.5 L615.5 688.4 L619.6 690.6 L619.6 704.4 L629.1 716.6 L629.2 738.2 L605.6 775.7 L594.5 783.0 L593.6 787.2 L599.4 792.9 L601.9 803.8 L618.3 827.3Z","lx":547.7,"ly":771.1,"lat":16.0265,"lng":102.5358,"b":[470.4,684.5,159.9,173.4],"e":"Chonnabot"},{"n":"เขาสวนกวาง","d":"M793.4 161.1 L814.2 183.2 L814.5 191.7 L804.4 210.3 L783.5 211.0 L771.0 204.5 L764.1 209.8 L746.7 198.1 L738.3 200.2 L724.4 188.0 L716.3 184.6 L713.5 186.0 L714.3 191.2 L707.9 192.3 L699.7 184.0 L694.5 190.7 L684.1 195.9 L678.2 189.3 L680.6 186.3 L675.9 181.1 L686.3 175.6 L684.1 165.1 L686.0 149.2 L694.4 126.8 L687.8 96.5 L669.1 91.9 L661.8 84.9 L647.9 86.5 L640.9 67.9 L648.0 51.9 L648.0 26.5 L654.4 16.8 L661.4 12.4 L661.9 0.0 L667.9 0.3 L674.1 16.2 L673.1 21.3 L677.8 27.1 L697.2 33.0 L705.6 43.3 L723.0 51.9 L728.8 57.3 L733.2 71.7 L749.6 84.1 L734.9 94.7 L735.2 98.3 L746.5 107.9 L738.2 124.8 L740.7 133.0 L739.2 142.0 L746.0 150.4 L748.9 163.5 L754.6 158.6 L761.0 158.9 L760.8 156.0 L765.5 155.4 L769.8 148.6 L778.7 151.5 L782.6 149.7 L785.7 156.2 L790.1 153.8 L793.4 161.1Z","lx":715.1,"ly":103.1,"lat":16.9452,"lng":102.7758,"b":[640.9,0.0,173.6,211.0],"e":"Khao Suan Kwang"},{"n":"ภูเวียง","d":"M563.5 341.0 L551.9 357.4 L559.6 367.6 L561.9 379.0 L556.4 386.1 L546.1 384.3 L543.6 386.9 L545.7 389.4 L542.7 389.6 L538.5 387.0 L536.5 398.2 L528.9 399.1 L522.7 394.3 L516.1 399.4 L509.1 394.1 L501.0 394.3 L500.4 382.7 L493.7 373.2 L487.4 355.3 L470.6 351.9 L461.3 364.6 L453.3 369.1 L438.8 366.0 L425.3 373.3 L417.2 372.0 L403.7 376.0 L399.7 380.9 L390.3 378.1 L371.7 381.8 L374.6 373.3 L386.6 371.8 L394.1 366.3 L389.6 358.0 L374.1 353.7 L365.6 343.5 L399.8 322.3 L415.7 308.3 L425.8 281.7 L427.4 268.8 L424.8 257.0 L454.4 255.6 L456.8 250.1 L468.8 247.8 L468.3 230.8 L475.9 212.5 L484.6 214.6 L487.8 212.4 L486.2 206.6 L490.3 204.4 L490.3 200.7 L502.6 206.9 L508.0 203.3 L520.3 206.0 L549.1 219.8 L600.0 229.5 L597.9 280.6 L568.2 312.5 L563.5 325.0 L563.5 341.0Z","lx":497.9,"ly":301.8,"lat":16.6719,"lng":102.4645,"b":[365.6,200.7,234.3,198.6],"e":"Phu Wiang"},{"n":"มัญจาคีรี","d":"M572.9 712.3 L571.2 719.5 L574.0 723.5 L578.1 721.3 L579.9 724.8 L561.5 725.2 L552.0 728.7 L549.1 731.9 L557.0 734.0 L551.3 736.7 L534.4 726.1 L531.3 727.7 L531.0 733.3 L522.7 733.5 L525.8 728.6 L522.9 725.7 L517.7 732.5 L506.7 719.0 L496.4 718.2 L497.9 705.4 L487.4 697.9 L484.9 678.0 L477.8 680.2 L468.5 678.0 L463.0 681.9 L461.8 688.5 L465.8 692.8 L461.1 710.1 L464.0 714.5 L457.4 710.9 L454.5 696.2 L436.3 675.3 L414.8 673.8 L455.2 613.7 L463.0 607.6 L460.9 593.7 L470.2 564.0 L479.0 551.3 L478.3 545.8 L485.0 533.6 L485.9 515.1 L494.4 503.7 L502.2 509.4 L507.3 508.0 L508.4 514.2 L514.7 517.9 L518.5 525.9 L535.5 532.9 L543.1 541.3 L545.7 564.0 L553.5 568.1 L572.7 560.9 L581.3 567.8 L588.2 578.7 L595.9 582.4 L605.1 581.8 L612.2 587.2 L626.9 590.0 L644.7 600.9 L647.0 609.4 L653.1 612.6 L657.5 624.4 L654.0 623.5 L651.9 627.8 L645.6 618.8 L645.9 622.8 L644.3 621.0 L638.6 624.0 L642.9 631.1 L636.0 636.5 L647.6 644.2 L646.3 646.4 L642.8 644.0 L642.1 648.2 L649.5 654.5 L640.2 654.3 L640.1 658.9 L643.5 659.9 L639.2 660.1 L638.6 663.4 L633.1 661.3 L631.5 666.1 L635.1 670.5 L630.7 669.9 L625.9 673.8 L627.7 676.2 L623.8 675.8 L624.8 683.9 L619.6 690.6 L615.5 688.4 L616.3 684.5 L613.6 688.2 L609.5 686.7 L610.6 691.5 L607.9 694.8 L610.3 696.1 L606.7 698.1 L604.0 692.5 L601.4 697.7 L598.1 696.7 L599.1 694.4 L592.6 697.8 L595.1 700.3 L592.3 702.2 L583.5 699.1 L583.5 695.7 L578.6 702.5 L580.1 705.9 L577.9 704.1 L575.4 708.1 L581.6 711.5 L572.9 712.3Z","lx":548.4,"ly":619.9,"lat":16.2344,"lng":102.5369,"b":[414.8,503.7,242.7,233.0],"e":"Mancha Khiri"},{"n":"แวงน้อย","d":"M489.7 996.4 L467.2 1011.6 L455.6 1008.0 L453.0 1000.8 L438.0 985.4 L425.9 986.4 L422.9 979.0 L426.9 959.3 L413.7 950.1 L402.6 933.0 L401.2 919.7 L397.3 917.2 L400.4 913.9 L394.2 901.5 L397.6 901.1 L395.1 898.4 L398.6 894.3 L398.4 887.2 L410.0 881.8 L409.5 877.9 L413.4 876.0 L412.0 871.9 L420.3 862.3 L420.0 867.5 L445.0 874.8 L458.3 882.8 L469.5 883.8 L483.8 876.5 L515.5 878.6 L533.9 876.5 L529.5 896.1 L521.9 907.4 L527.7 935.0 L524.4 946.0 L508.7 944.6 L495.9 948.9 L492.3 960.6 L496.1 985.6 L489.7 996.4Z","lx":466.6,"ly":939.8,"lat":15.7944,"lng":102.4197,"b":[394.2,862.3,139.7,149.3],"e":"Waeng Noi"},{"n":"หนองสองห้อง","d":"M765.9 1054.7 L736.8 1057.8 L725.5 1052.4 L722.2 1057.1 L715.8 1056.3 L718.0 1048.4 L713.0 1042.5 L705.2 1042.7 L696.3 1036.2 L695.2 1029.3 L673.9 1033.1 L667.9 1018.4 L659.2 1015.1 L660.3 1011.0 L654.3 1004.2 L658.7 996.9 L656.1 990.9 L647.6 987.8 L644.2 975.9 L648.6 956.5 L654.4 950.5 L653.1 942.0 L664.8 921.2 L658.8 911.1 L659.1 904.6 L668.5 887.2 L659.1 860.5 L700.1 869.2 L708.4 868.7 L709.2 878.2 L718.7 879.6 L717.0 884.4 L740.5 902.0 L751.2 897.8 L765.0 898.2 L767.6 893.8 L774.7 893.3 L792.2 900.1 L802.3 909.3 L807.7 929.6 L818.5 920.9 L823.9 925.0 L823.0 938.5 L790.0 953.1 L784.1 982.3 L785.3 1002.8 L779.9 1012.6 L785.0 1026.0 L786.4 1024.1 L786.3 1026.6 L791.8 1028.0 L790.6 1032.9 L776.7 1040.3 L774.0 1051.3 L765.9 1054.7Z","lx":718.5,"ly":958.1,"lat":15.7693,"lng":102.7807,"b":[644.2,860.5,179.7,197.4],"e":"Nong Song Hong"},{"n":"หนองนาคำ","d":"M447.1 201.1 L456.9 198.7 L467.2 212.2 L475.9 212.5 L468.3 230.8 L468.8 247.8 L456.8 250.1 L454.4 255.6 L424.8 257.0 L419.3 246.0 L411.5 239.2 L377.6 225.3 L366.5 213.7 L364.7 194.0 L359.9 183.0 L341.6 167.6 L333.2 169.2 L322.7 164.0 L331.3 158.7 L332.7 154.0 L336.6 154.1 L337.2 150.4 L342.8 153.6 L344.6 149.5 L347.8 151.4 L348.4 142.2 L351.5 139.8 L380.5 142.6 L376.6 146.8 L388.2 147.5 L384.5 152.3 L390.9 159.2 L400.3 159.6 L394.3 168.7 L404.3 168.5 L405.3 173.4 L399.4 174.9 L410.8 181.7 L408.2 186.0 L409.9 191.3 L415.6 196.2 L418.5 186.6 L425.9 196.7 L437.3 201.0 L437.6 196.1 L447.1 201.1Z","lx":396.8,"ly":197.7,"lat":16.8151,"lng":102.3195,"b":[322.7,139.8,153.2,117.3],"e":"Nong Na Kham"},{"n":"บ้านแฮด","d":"M765.8 644.3 L764.4 654.6 L772.7 671.3 L771.6 676.3 L764.0 683.0 L751.7 673.9 L740.6 680.0 L710.4 679.7 L697.5 684.8 L696.4 688.5 L652.1 682.9 L655.8 666.3 L649.5 654.5 L642.1 648.2 L642.8 644.0 L646.3 646.4 L647.6 644.2 L636.0 636.5 L642.9 631.1 L638.6 624.0 L644.3 621.0 L645.9 622.8 L645.6 618.8 L651.9 627.8 L654.0 623.5 L657.5 624.4 L653.1 612.6 L655.7 614.1 L657.3 611.6 L658.7 616.2 L660.7 612.4 L664.8 614.7 L670.0 610.4 L682.6 613.1 L682.8 609.9 L685.9 613.4 L693.7 613.7 L692.6 609.6 L699.6 603.8 L705.9 591.3 L707.4 582.2 L705.0 580.3 L708.7 575.5 L710.3 579.7 L712.6 573.4 L715.0 583.0 L727.2 582.9 L737.4 594.1 L747.9 597.2 L753.1 602.3 L756.0 612.8 L762.9 614.0 L767.0 628.4 L763.1 639.1 L765.8 644.3Z","lx":704.3,"ly":629.7,"lat":16.2208,"lng":102.7604,"b":[636.0,573.4,136.7,115.1],"e":"Ban Haet"},{"n":"ซำสูง","d":"M932.1 414.8 L899.2 433.5 L893.5 426.5 L883.0 445.8 L877.8 435.4 L851.0 423.0 L843.0 413.5 L843.1 401.5 L853.0 393.1 L869.0 386.2 L876.5 374.4 L873.8 353.0 L866.1 330.0 L926.5 339.2 L968.6 327.1 L976.6 334.3 L979.2 342.6 L977.1 348.1 L955.9 359.5 L954.4 378.2 L944.1 387.9 L941.7 396.7 L932.6 406.3 L932.1 414.8Z","lx":906.0,"ly":387.1,"lat":16.5546,"lng":103.0495,"b":[843.0,327.1,136.3,118.8],"e":"Sam Sung"},{"n":"โคกโพธิ์ไชย","d":"M485.1 751.5 L490.3 758.7 L491.3 765.0 L488.1 765.8 L490.2 768.9 L485.2 771.8 L481.4 768.5 L477.6 770.3 L475.0 776.8 L475.9 779.4 L479.7 778.9 L473.9 783.2 L477.0 786.7 L473.1 792.5 L470.4 791.2 L469.1 796.5 L467.3 791.7 L465.4 797.0 L461.8 793.4 L462.9 797.5 L460.9 796.4 L459.1 800.5 L461.8 801.3 L456.0 803.9 L447.5 799.7 L446.0 805.7 L442.5 800.4 L442.3 792.3 L437.4 794.1 L435.2 790.1 L434.1 793.2 L430.9 785.4 L428.8 789.1 L421.7 786.5 L417.7 773.6 L419.4 771.2 L414.4 768.3 L413.8 764.6 L408.6 762.2 L402.1 768.0 L391.3 759.1 L384.8 761.9 L369.4 735.1 L375.1 723.9 L402.1 695.8 L414.8 673.8 L436.3 675.3 L454.5 696.2 L457.4 710.9 L464.0 714.5 L461.1 710.1 L465.8 692.8 L461.8 688.5 L463.0 681.9 L468.5 678.0 L477.8 680.2 L484.9 678.0 L487.4 697.9 L497.9 705.4 L496.4 718.2 L506.7 719.0 L517.7 732.5 L515.1 744.1 L509.5 744.8 L508.8 753.4 L497.9 746.9 L485.1 751.5Z","lx":444.6,"ly":741.7,"lat":16.0669,"lng":102.3881,"b":[369.4,673.8,148.3,131.9],"e":"Khok Pho Chai"},{"n":"ภูผาม่าน","d":"M140.9 289.5 L144.9 326.5 L142.9 331.6 L131.4 327.6 L129.8 330.7 L122.8 329.3 L118.1 331.5 L118.4 334.1 L113.5 329.2 L107.9 333.5 L106.1 326.5 L93.5 321.3 L85.6 323.0 L82.6 318.1 L72.1 317.6 L71.0 312.5 L62.3 314.4 L54.7 312.1 L50.2 317.3 L48.5 314.4 L38.3 315.6 L16.5 333.2 L19.2 319.9 L9.3 313.8 L2.2 316.1 L0.0 304.6 L0.6 297.7 L10.6 296.0 L15.0 290.5 L17.9 272.2 L28.5 261.9 L24.5 250.3 L27.2 247.3 L22.4 242.1 L25.9 234.6 L79.7 213.8 L89.8 200.9 L107.5 198.2 L131.7 180.9 L134.2 185.2 L134.8 219.7 L128.4 235.7 L129.3 253.2 L132.7 260.3 L129.4 268.0 L134.8 271.8 L134.3 277.4 L140.9 289.5Z","lx":78.9,"ly":256.7,"lat":16.7339,"lng":101.8638,"b":[0.0,180.9,144.9,153.3],"e":"Phu Pha Man"},{"n":"โนนศิลา","d":"M637.2 858.5 L623.1 852.8 L618.3 827.3 L601.9 803.8 L599.4 792.9 L593.6 787.2 L594.5 783.0 L605.6 775.7 L625.2 745.5 L631.5 751.3 L630.3 759.6 L648.3 761.0 L647.6 767.4 L669.7 782.3 L685.9 804.8 L696.2 809.7 L707.8 821.3 L703.4 831.4 L700.1 869.2 L637.2 858.5Z","lx":647.7,"ly":807.2,"lat":15.9767,"lng":102.6792,"b":[593.6,745.5,114.2,123.7],"e":"Non Sila"},{"n":"เวียงเก่า","d":"M425.8 281.7 L415.7 308.3 L399.8 322.3 L365.6 343.5 L328.3 354.5 L321.3 352.6 L313.5 362.4 L300.9 359.5 L295.9 351.7 L285.5 350.2 L285.2 336.2 L288.5 326.1 L309.4 315.9 L314.9 309.9 L313.2 304.9 L316.4 290.5 L337.8 245.8 L339.2 229.7 L330.8 203.5 L335.3 171.6 L333.2 169.2 L341.6 167.6 L359.9 183.0 L364.7 194.0 L366.5 213.7 L377.6 225.3 L411.5 239.2 L419.3 246.0 L427.4 268.8 L425.8 281.7Z","lx":377.5,"ly":262.9,"lat":16.7254,"lng":102.2919,"b":[284.4,167.6,143.0,194.7],"e":"Wiang Kao"},{"n":"เมืองขอนแก่น","d":"M764.2 592.0 L765.6 607.9 L762.9 614.0 L756.0 612.8 L753.1 602.3 L747.9 597.2 L737.4 594.1 L727.2 582.9 L715.0 583.0 L717.6 567.1 L716.5 557.9 L712.8 555.7 L717.6 552.4 L720.8 556.0 L726.2 544.7 L684.7 543.6 L682.3 546.8 L671.3 545.9 L665.8 541.1 L657.6 539.6 L651.4 517.8 L645.4 514.4 L652.8 496.0 L639.2 465.0 L626.3 452.0 L621.0 433.1 L626.4 417.1 L622.3 417.1 L621.7 410.0 L613.5 401.0 L638.8 366.0 L654.6 350.8 L652.6 340.2 L660.7 330.3 L678.1 327.0 L699.5 348.7 L708.1 348.8 L726.2 336.6 L735.5 334.2 L741.3 336.8 L757.1 329.0 L762.7 328.9 L772.9 337.6 L769.0 342.4 L766.9 340.3 L764.2 342.2 L768.3 347.9 L766.4 352.0 L771.4 351.2 L773.7 354.7 L776.5 351.2 L777.7 357.7 L773.9 358.2 L772.7 364.2 L777.0 365.4 L776.5 362.0 L781.8 358.1 L781.9 361.9 L790.2 365.2 L783.4 367.5 L788.8 376.2 L783.2 377.2 L789.0 381.8 L782.3 384.7 L792.9 394.2 L792.5 397.8 L799.5 398.6 L804.6 393.7 L833.0 402.7 L838.5 395.9 L843.1 401.5 L843.0 413.5 L851.0 423.0 L877.8 435.4 L883.0 445.8 L838.7 461.8 L845.1 477.8 L854.4 480.9 L852.2 485.1 L842.7 481.0 L838.8 488.8 L841.2 490.0 L833.8 493.3 L833.8 497.8 L840.5 498.2 L836.0 507.7 L829.7 504.9 L829.4 510.0 L827.2 507.5 L825.7 511.5 L827.9 516.0 L818.7 514.2 L815.0 519.1 L820.5 524.0 L815.3 524.8 L813.9 522.1 L811.4 527.6 L805.5 528.9 L807.7 537.0 L798.6 535.8 L797.2 560.9 L781.6 571.4 L764.2 592.0Z","lx":742.8,"ly":473.2,"lat":16.4362,"lng":102.8156,"b":[613.5,327.0,269.6,287.1],"e":"Mueang Khon Kaen"},{"n":"บ้านฝาง","d":"M639.2 465.0 L652.8 496.0 L642.0 518.8 L629.9 521.2 L624.4 515.1 L613.6 517.5 L613.7 525.6 L600.7 533.2 L594.3 530.5 L590.5 536.3 L568.8 538.0 L554.4 531.2 L543.6 545.8 L543.1 541.3 L535.5 532.9 L553.3 517.9 L558.0 504.7 L559.5 469.6 L566.4 454.7 L574.0 422.3 L580.9 369.4 L578.0 359.3 L578.6 341.5 L575.2 333.9 L579.3 322.3 L608.2 308.5 L653.6 316.0 L660.7 330.3 L652.6 340.2 L654.6 350.8 L638.8 366.0 L613.5 401.0 L621.7 410.0 L622.3 417.1 L626.4 417.1 L621.0 433.1 L626.3 452.0 L639.2 465.0Z","lx":597.8,"ly":427.7,"lat":16.4987,"lng":102.6076,"b":[535.5,308.5,125.2,237.3],"e":"Ban Fang"},{"n":"กระนวน","d":"M977.0 310.4 L976.6 334.3 L968.6 327.1 L926.5 339.2 L866.1 330.0 L860.5 279.2 L861.7 264.5 L876.9 265.9 L879.1 262.7 L878.7 249.9 L869.4 240.2 L870.7 232.8 L881.1 223.9 L882.6 207.8 L876.5 200.7 L878.2 192.1 L870.2 187.8 L872.0 174.3 L868.7 162.4 L870.2 156.4 L876.6 160.4 L878.3 156.3 L889.0 154.4 L896.9 146.3 L908.3 145.3 L922.9 134.9 L929.0 136.5 L940.1 126.5 L951.5 130.9 L957.8 138.6 L955.1 156.7 L949.6 163.7 L951.1 169.4 L945.7 172.9 L946.3 177.0 L942.6 179.8 L950.9 195.5 L957.3 195.5 L967.5 186.3 L969.3 180.6 L966.3 157.6 L992.4 162.3 L990.5 173.3 L995.8 177.6 L995.0 185.2 L1000.0 193.0 L997.0 218.6 L990.1 231.4 L977.6 236.0 L973.7 247.9 L982.2 257.7 L973.2 280.7 L981.8 303.3 L977.0 310.4Z","lx":926.1,"ly":234.4,"lat":16.7646,"lng":103.0783,"b":[860.5,126.5,139.5,212.7],"e":"Kranuan"},{"n":"น้ำพอง","d":"M876.5 374.4 L869.0 386.2 L853.0 393.1 L843.1 401.5 L838.5 395.9 L833.0 402.7 L804.6 393.7 L799.5 398.6 L792.5 397.8 L792.9 394.2 L782.3 384.7 L789.0 381.8 L783.2 377.2 L788.8 376.2 L783.4 367.5 L790.2 365.2 L781.9 361.9 L781.8 358.1 L776.5 362.0 L777.0 365.4 L772.7 364.2 L773.9 358.2 L777.7 357.7 L776.5 351.2 L773.7 354.7 L771.4 351.2 L766.4 352.0 L768.3 347.9 L764.2 342.2 L766.9 340.3 L769.0 342.4 L772.9 337.6 L762.7 328.9 L757.1 329.0 L741.3 336.8 L735.5 334.2 L726.2 336.6 L708.1 348.8 L699.5 348.7 L678.1 327.0 L678.0 320.0 L685.0 309.0 L685.6 297.8 L689.0 296.6 L691.1 281.9 L688.5 274.6 L696.0 264.0 L698.8 264.5 L698.5 261.1 L686.9 255.1 L677.1 243.8 L684.8 236.2 L679.8 222.7 L685.8 212.0 L684.1 195.9 L694.5 190.7 L699.7 184.0 L707.9 192.3 L714.3 191.2 L713.5 186.0 L716.3 184.6 L724.4 188.0 L738.3 200.2 L746.7 198.1 L764.1 209.8 L771.0 204.5 L783.5 211.0 L804.4 210.3 L814.5 191.7 L814.2 183.2 L854.3 173.8 L868.7 162.4 L872.0 174.3 L870.2 187.8 L878.2 192.1 L876.5 200.7 L882.6 207.8 L881.1 223.9 L870.7 232.8 L869.4 240.2 L878.7 249.9 L879.1 262.7 L876.9 265.9 L861.7 264.5 L860.5 279.2 L866.1 330.0 L873.8 353.0 L876.5 374.4Z","lx":775.8,"ly":289.3,"lat":16.6892,"lng":102.8629,"b":[677.1,162.4,205.6,240.3],"e":"Nam Phong"},{"n":"อุบลรัตน์","d":"M686.9 255.1 L698.5 261.1 L698.8 264.5 L696.0 264.0 L688.5 274.6 L691.1 281.9 L689.0 296.6 L685.6 297.8 L685.0 309.0 L678.0 320.0 L678.1 327.0 L660.7 330.3 L653.6 316.0 L608.2 308.5 L579.3 322.3 L575.2 333.9 L569.5 334.6 L563.5 341.0 L563.5 325.0 L568.2 312.5 L597.9 280.6 L600.0 229.5 L602.9 225.3 L601.5 209.5 L609.4 177.0 L642.0 105.9 L647.9 86.5 L661.8 84.9 L669.1 91.9 L687.8 96.5 L694.4 126.8 L686.0 149.2 L684.1 165.1 L686.3 175.6 L675.9 181.1 L680.6 186.3 L678.2 189.3 L684.1 195.9 L685.8 212.0 L679.8 222.7 L684.8 236.2 L677.1 243.8 L686.9 255.1Z","lx":642.5,"ly":217.3,"lat":16.7881,"lng":102.6718,"b":[563.5,84.9,135.3,256.1],"e":"Ubolratana"},{"n":"ชุมแพ","d":"M384.6 452.9 L378.4 457.1 L383.4 458.0 L380.9 461.6 L383.5 466.6 L378.5 466.0 L375.6 460.2 L367.7 458.1 L367.9 455.5 L366.4 458.9 L361.5 458.9 L358.2 454.5 L351.9 455.0 L352.7 451.0 L343.6 448.4 L341.8 440.6 L337.6 436.7 L332.8 438.2 L322.7 425.9 L317.3 427.7 L317.5 424.4 L312.4 423.7 L307.6 427.8 L301.6 422.2 L294.5 433.2 L292.5 429.0 L287.8 428.6 L289.0 426.1 L283.6 428.1 L284.3 424.2 L277.6 427.9 L272.4 424.5 L267.5 430.1 L247.5 428.7 L243.3 431.1 L239.6 428.3 L233.1 432.6 L229.0 429.4 L226.3 432.2 L221.2 431.3 L224.7 424.8 L203.6 420.7 L194.8 408.3 L197.5 403.4 L193.4 397.0 L196.5 396.4 L190.8 394.0 L190.4 384.1 L189.3 386.1 L187.2 383.4 L178.4 384.7 L172.7 379.4 L170.2 381.8 L166.1 378.4 L165.1 370.3 L168.5 369.8 L166.0 367.4 L168.6 365.2 L162.7 366.3 L158.4 363.0 L162.4 361.1 L159.6 359.6 L162.5 357.0 L156.9 350.8 L158.3 346.7 L154.5 343.3 L152.8 346.0 L151.0 340.5 L149.0 343.2 L144.9 339.6 L143.4 341.9 L139.9 337.3 L144.9 326.5 L141.4 311.3 L140.9 289.5 L134.3 277.4 L134.8 271.8 L129.4 268.0 L132.7 260.3 L129.3 253.2 L128.4 235.7 L134.8 219.7 L134.2 185.2 L131.7 180.9 L138.2 178.8 L135.0 170.0 L143.4 174.4 L147.5 170.5 L153.4 178.1 L159.3 175.8 L159.4 179.6 L165.2 176.7 L168.0 179.9 L173.1 176.3 L171.0 172.2 L174.0 173.0 L178.0 168.7 L173.2 165.1 L181.0 157.7 L185.0 162.1 L186.9 158.9 L193.0 164.1 L193.9 176.8 L197.7 176.8 L196.0 191.2 L189.5 198.3 L183.9 215.7 L185.8 248.9 L181.4 249.6 L181.8 260.5 L178.0 268.8 L186.4 276.8 L210.9 285.5 L214.0 299.8 L219.8 309.1 L243.3 316.8 L250.9 313.4 L267.0 336.5 L285.2 336.2 L285.5 350.2 L295.9 351.7 L300.9 359.5 L313.5 362.4 L321.3 352.6 L328.3 354.5 L365.6 343.5 L374.1 353.7 L389.6 358.0 L394.1 366.3 L386.6 371.8 L374.6 373.3 L370.1 401.6 L377.2 414.4 L374.4 437.0 L378.1 446.5 L384.6 452.9Z","lx":184.8,"ly":312.1,"lat":16.6577,"lng":102.0157,"b":[128.4,157.7,265.7,308.9],"e":"Chum Phae"},{"n":"สีชมพู","d":"M337.8 245.8 L316.4 290.5 L313.2 304.9 L314.9 309.9 L309.4 315.9 L288.5 326.1 L285.2 336.2 L267.0 336.5 L250.9 313.4 L243.3 316.8 L219.8 309.1 L214.0 299.8 L210.9 285.5 L186.4 276.8 L178.0 268.8 L181.8 260.5 L181.4 249.6 L185.8 248.9 L183.9 215.7 L189.5 198.3 L196.0 191.2 L197.7 176.8 L193.9 176.8 L193.0 164.1 L195.6 162.7 L201.8 166.4 L205.2 164.0 L205.1 159.4 L213.0 159.6 L215.4 157.1 L212.2 153.6 L217.6 149.8 L217.5 145.5 L222.3 143.9 L222.9 146.9 L230.5 143.7 L243.2 149.0 L241.4 142.7 L246.9 137.9 L260.3 149.7 L274.4 153.0 L274.4 150.0 L282.5 149.6 L284.4 156.5 L290.8 157.5 L293.4 161.3 L299.7 156.5 L304.8 166.5 L315.9 163.3 L333.2 169.2 L335.3 171.6 L330.8 203.5 L339.2 229.7 L337.8 245.8Z","lx":262.0,"ly":235.4,"lat":16.7632,"lng":102.1263,"b":[178.0,137.9,161.2,198.6],"e":"Si Chomphu"},{"n":"พระยืน","d":"M682.8 609.9 L682.6 613.1 L670.0 610.4 L664.8 614.7 L660.7 612.4 L658.7 616.2 L657.3 611.6 L655.7 614.1 L647.0 609.4 L644.7 600.9 L626.9 590.0 L612.2 587.2 L605.1 581.8 L595.9 582.4 L588.2 578.7 L581.3 567.8 L572.7 560.9 L553.5 568.1 L545.7 564.0 L543.6 545.8 L554.4 531.2 L568.8 538.0 L590.5 536.3 L594.3 530.5 L600.7 533.2 L613.7 525.6 L613.6 517.5 L624.4 515.1 L629.9 521.2 L642.0 518.8 L645.4 514.4 L651.4 517.8 L657.6 539.6 L665.8 541.1 L671.3 545.9 L682.3 546.8 L684.7 543.6 L726.2 544.7 L720.8 556.0 L717.6 552.4 L712.8 555.7 L716.5 557.9 L717.6 567.1 L715.1 577.9 L712.6 573.4 L710.3 579.7 L708.7 575.5 L705.0 580.3 L707.4 582.2 L705.9 591.3 L699.6 603.8 L692.6 609.6 L693.7 613.7 L685.9 613.4 L682.8 609.9Z","lx":648.0,"ly":565.6,"lat":16.3091,"lng":102.6796,"b":[543.6,514.4,182.7,101.8],"e":"Phra Yuen"},{"n":"หนองเรือ","d":"M559.5 469.6 L558.0 504.7 L553.3 517.9 L535.5 532.9 L518.5 525.9 L514.7 517.9 L508.4 514.2 L507.3 508.0 L502.2 509.4 L486.7 501.2 L482.4 493.1 L472.4 489.6 L456.8 469.5 L459.7 454.2 L455.8 455.6 L454.9 451.5 L450.4 451.2 L452.2 456.1 L449.0 456.1 L451.2 457.6 L449.0 459.6 L451.7 465.4 L441.5 468.9 L440.6 466.4 L434.2 473.0 L428.7 471.5 L430.5 464.6 L428.2 461.0 L423.4 464.3 L418.1 461.6 L412.9 465.7 L399.9 466.4 L396.2 466.0 L395.3 458.7 L383.3 464.6 L380.9 461.6 L383.4 458.0 L378.4 457.1 L384.6 452.9 L378.1 446.5 L374.4 437.0 L377.2 414.4 L370.1 401.6 L371.7 381.8 L390.3 378.1 L399.7 380.9 L403.7 376.0 L417.2 372.0 L425.3 373.3 L438.8 366.0 L453.3 369.1 L461.3 364.6 L470.6 351.9 L487.4 355.3 L493.7 373.2 L500.4 382.7 L501.0 394.3 L509.1 394.1 L516.1 399.4 L522.7 394.3 L528.9 399.1 L536.5 398.2 L538.5 387.0 L542.7 389.6 L545.7 389.4 L543.6 386.9 L546.1 384.3 L556.4 386.1 L561.9 379.0 L559.6 367.6 L551.9 357.4 L554.3 351.1 L569.5 334.6 L575.2 333.9 L578.6 341.5 L578.0 359.3 L580.9 369.4 L574.0 422.3 L566.4 454.7 L559.5 469.6Z","lx":473.8,"ly":429.7,"lat":16.496,"lng":102.4299,"b":[370.1,333.9,210.8,199.0],"e":"Nong Ruea"}],"outline":"M438.0 985.4 L425.9 986.4 L422.9 979.0 L426.9 959.3 L413.7 950.1 L402.6 933.0 L401.2 919.7 L397.3 917.2 L400.4 913.9 L394.2 901.5 L397.6 901.1 L395.1 898.4 L398.6 894.3 L398.4 887.2 L410.0 881.8 L409.5 877.9 L413.4 876.0 L412.0 871.9 L420.3 862.3 L420.3 856.7 L426.0 848.1 L423.8 843.6 L426.6 842.0 L421.5 840.6 L427.6 839.2 L431.3 827.7 L435.3 829.2 L432.4 827.3 L435.0 823.4 L431.3 824.0 L433.0 820.7 L429.8 822.6 L429.8 815.6 L433.6 813.6 L433.2 808.1 L442.8 804.3 L442.3 792.3 L437.4 794.1 L435.2 790.1 L434.1 793.2 L430.9 785.4 L428.8 789.1 L421.7 786.5 L417.7 773.6 L419.4 771.2 L414.4 768.3 L413.8 764.6 L408.6 762.2 L402.1 768.0 L391.3 759.1 L384.8 761.9 L369.4 735.1 L375.1 723.9 L402.1 695.8 L455.2 613.7 L463.0 607.6 L460.9 593.7 L470.2 564.0 L479.0 551.3 L478.3 545.8 L485.0 533.6 L485.9 515.1 L494.4 503.7 L486.7 501.2 L482.4 493.1 L472.4 489.6 L461.9 478.8 L456.8 469.5 L459.7 454.2 L455.8 455.6 L454.9 451.5 L450.4 451.2 L452.2 456.1 L449.0 456.1 L451.2 457.6 L449.0 459.6 L451.7 465.4 L441.5 468.9 L440.6 466.4 L434.2 473.0 L428.7 471.5 L430.5 464.6 L428.2 461.0 L423.4 464.3 L418.1 461.6 L412.9 465.7 L399.9 466.4 L396.2 466.0 L395.3 458.7 L383.5 466.6 L378.5 466.0 L375.6 460.2 L367.7 458.1 L367.9 455.5 L366.4 458.9 L361.5 458.9 L358.2 454.5 L351.9 455.0 L352.7 451.0 L343.6 448.4 L341.8 440.6 L337.6 436.7 L332.8 438.2 L322.7 425.9 L317.3 427.7 L317.5 424.4 L312.4 423.7 L307.6 427.8 L301.6 422.2 L294.5 433.2 L292.5 429.0 L287.8 428.6 L289.0 426.1 L283.6 428.1 L284.3 424.2 L277.6 427.9 L272.4 424.5 L267.5 430.1 L247.5 428.7 L243.3 431.1 L239.6 428.3 L233.1 432.6 L229.0 429.4 L226.3 432.2 L221.2 431.3 L224.7 424.8 L203.6 420.7 L194.8 408.3 L197.5 403.4 L193.4 397.0 L196.5 396.4 L190.8 394.0 L190.4 384.1 L189.3 386.1 L187.2 383.4 L178.4 384.7 L172.7 379.4 L170.2 381.8 L166.1 378.4 L165.1 370.3 L168.5 369.8 L166.0 367.4 L168.6 365.2 L162.7 366.3 L158.4 363.0 L162.4 361.1 L159.6 359.6 L162.5 357.0 L156.9 350.8 L158.3 346.7 L154.5 343.3 L152.8 346.0 L151.0 340.5 L149.0 343.2 L144.9 339.6 L143.4 341.9 L139.9 337.3 L142.9 331.6 L131.4 327.6 L129.8 330.7 L122.8 329.3 L118.1 331.5 L118.4 334.1 L113.5 329.2 L107.9 333.5 L106.1 326.5 L93.5 321.3 L85.6 323.0 L82.6 318.1 L72.1 317.6 L71.0 312.5 L62.3 314.4 L54.7 312.1 L50.2 317.3 L48.5 314.4 L38.3 315.6 L16.5 333.2 L19.2 319.9 L9.3 313.8 L2.2 316.1 L0.6 297.7 L10.6 296.0 L15.0 290.5 L17.9 272.2 L28.5 261.9 L24.5 250.3 L27.2 247.3 L22.4 242.1 L25.9 234.6 L79.7 213.8 L89.8 200.9 L107.5 198.2 L138.2 178.8 L135.0 170.0 L143.4 174.4 L147.5 170.5 L153.4 178.1 L159.3 175.8 L159.4 179.6 L165.2 176.7 L168.0 179.9 L173.1 176.3 L171.0 172.2 L174.0 173.0 L178.0 168.7 L173.2 165.1 L181.0 157.7 L185.0 162.1 L186.9 158.9 L193.0 164.1 L195.6 162.7 L201.8 166.4 L205.2 164.0 L205.1 159.4 L213.0 159.6 L215.4 157.1 L212.2 153.6 L217.6 149.8 L217.5 145.5 L222.3 143.9 L222.9 146.9 L230.5 143.7 L243.2 149.0 L241.4 142.7 L246.9 137.9 L260.3 149.7 L274.4 153.0 L274.4 150.0 L282.5 149.6 L284.4 156.5 L290.8 157.5 L293.4 161.3 L299.7 156.5 L304.8 166.5 L315.9 163.3 L324.1 166.3 L322.7 164.0 L331.3 158.7 L332.7 154.0 L336.6 154.1 L337.2 150.4 L342.8 153.6 L344.6 149.5 L347.8 151.4 L348.4 142.2 L351.5 139.8 L380.5 142.6 L376.6 146.8 L388.2 147.5 L384.5 152.3 L390.9 159.2 L400.3 159.6 L394.3 168.7 L404.3 168.5 L405.3 173.4 L399.4 174.9 L410.8 181.7 L408.2 186.0 L409.9 191.3 L415.6 196.2 L418.5 186.6 L425.9 196.7 L437.3 201.0 L437.6 196.1 L447.1 201.1 L456.9 198.7 L467.2 212.2 L484.6 214.6 L487.8 212.4 L486.2 206.6 L490.3 204.4 L490.3 200.7 L502.6 206.9 L508.0 203.3 L520.3 206.0 L549.1 219.8 L600.0 229.5 L602.9 225.3 L601.5 209.5 L609.4 177.0 L642.0 105.9 L647.9 86.5 L640.9 67.9 L648.0 51.9 L648.0 26.5 L654.4 16.8 L661.4 12.4 L661.9 0.0 L667.9 0.3 L674.1 16.2 L673.1 21.3 L677.8 27.1 L697.2 33.0 L705.6 43.3 L723.0 51.9 L728.8 57.3 L733.2 71.7 L749.6 84.1 L734.9 94.7 L735.2 98.3 L746.5 107.9 L738.2 124.8 L740.7 133.0 L739.2 142.0 L746.0 150.4 L748.9 163.5 L754.6 158.6 L761.0 158.9 L760.8 156.0 L765.5 155.4 L769.8 148.6 L778.7 151.5 L782.6 149.7 L785.7 156.2 L790.1 153.8 L793.4 161.1 L814.2 183.2 L835.8 179.5 L854.3 173.8 L868.7 162.4 L870.2 156.4 L876.6 160.4 L878.3 156.3 L889.0 154.4 L896.9 146.3 L908.3 145.3 L922.9 134.9 L929.0 136.5 L940.1 126.5 L951.5 130.9 L957.8 138.6 L955.1 156.7 L949.6 163.7 L951.1 169.4 L945.7 172.9 L946.3 177.0 L942.6 179.8 L950.9 195.5 L957.3 195.5 L967.5 186.3 L969.3 180.6 L966.3 157.6 L992.4 162.3 L990.5 173.3 L995.8 177.6 L995.0 185.2 L1000.0 193.0 L997.0 218.6 L990.1 231.4 L977.6 236.0 L973.7 247.9 L982.2 257.7 L973.2 280.7 L981.8 303.3 L977.0 310.4 L976.6 334.3 L979.2 342.6 L977.1 348.1 L955.9 359.5 L954.4 378.2 L944.1 387.9 L941.7 396.7 L932.6 406.3 L932.1 414.8 L927.1 419.6 L899.2 433.5 L893.5 426.5 L883.0 445.8 L838.7 461.8 L845.1 477.8 L854.4 480.9 L852.2 485.1 L842.7 481.0 L838.8 488.8 L841.2 490.0 L833.8 493.3 L833.8 497.8 L840.5 498.2 L836.0 507.7 L829.7 504.9 L829.4 510.0 L827.2 507.5 L825.7 511.5 L827.9 516.0 L818.7 514.2 L815.0 519.1 L820.5 524.0 L815.3 524.8 L813.9 522.1 L811.4 527.6 L805.5 528.9 L807.7 537.0 L798.6 535.8 L797.2 560.9 L781.6 571.4 L764.2 592.0 L765.6 607.9 L763.1 619.3 L767.0 628.4 L763.1 639.1 L765.8 644.3 L764.4 654.6 L772.7 671.3 L771.6 676.3 L764.0 683.0 L770.2 697.1 L777.1 700.5 L779.7 698.0 L774.5 721.9 L765.7 738.0 L775.2 748.9 L771.3 755.8 L773.5 761.1 L788.9 756.8 L794.3 750.2 L795.4 754.0 L798.5 751.6 L795.3 756.1 L797.6 757.1 L796.2 761.4 L791.3 762.7 L795.0 764.8 L790.1 779.7 L797.5 795.4 L805.3 802.3 L805.6 809.5 L795.1 836.0 L808.5 845.0 L803.2 855.3 L805.9 865.4 L811.9 865.4 L822.9 873.4 L817.6 885.1 L819.0 890.4 L815.7 905.8 L817.8 909.2 L815.1 919.5 L823.9 925.0 L823.0 938.5 L798.3 947.5 L794.8 952.6 L790.0 953.1 L788.3 959.6 L784.1 982.3 L785.3 1002.8 L779.9 1012.6 L785.0 1026.0 L786.4 1024.1 L786.3 1026.6 L791.8 1028.0 L790.6 1032.9 L776.7 1040.3 L774.0 1051.3 L765.9 1054.7 L736.8 1057.8 L725.5 1052.4 L722.2 1057.1 L715.8 1056.3 L718.0 1048.4 L713.0 1042.5 L705.2 1042.7 L696.3 1036.2 L695.2 1029.3 L673.9 1033.1 L667.9 1018.4 L659.2 1015.1 L660.3 1011.0 L654.3 1004.2 L658.7 996.9 L656.1 990.9 L647.6 987.8 L638.9 996.9 L619.5 997.3 L599.2 987.8 L590.5 999.4 L561.6 1005.5 L545.4 1000.0 L531.9 988.1 L509.9 995.7 L489.7 996.4 L467.2 1011.6 L455.6 1008.0 L453.0 1000.8 L438.0 985.4Z"};
+const GEOLL = [{"n":"พล","e":"Phon","r":[[[102.6804,15.7714],[102.6743,15.7447],[102.6791,15.7283],[102.6667,15.7158],[102.6388,15.7153],[102.6097,15.7284],[102.5972,15.7124],[102.5817,15.7068],[102.5652,15.7079],[102.5558,15.704],[102.5326,15.7116],[102.5132,15.728],[102.4817,15.7175],[102.4527,15.7166],[102.462,15.7314],[102.4564,15.7658],[102.4616,15.7818],[102.4799,15.7878],[102.5025,15.7859],[102.5072,15.8009],[102.4988,15.839],[102.5098,15.8545],[102.5172,15.8889],[102.5358,15.8847],[102.5579,15.8975],[102.5773,15.9131],[102.5725,15.9315],[102.5897,15.9342],[102.6109,15.9107],[102.6291,15.9163],[102.6452,15.9069],[102.6956,15.9035],[102.709,15.8667],[102.6956,15.8427],[102.6951,15.8339],[102.7038,15.82],[102.6869,15.7914],[102.6889,15.7796],[102.6804,15.7714]]],"bb":[102.4527,15.704,102.709,15.9342]},{"n":"แวงใหญ่","e":"Waeng Yai","r":[[[102.5773,15.9131],[102.5358,15.8847],[102.5172,15.8889],[102.516,15.8814],[102.4897,15.8785],[102.4443,15.8815],[102.4238,15.8713],[102.4078,15.8728],[102.3887,15.8838],[102.3528,15.8938],[102.3532,15.9086],[102.3614,15.9204],[102.3583,15.9267],[102.3623,15.9289],[102.3549,15.9309],[102.3637,15.9328],[102.369,15.9486],[102.3747,15.9464],[102.3706,15.949],[102.3743,15.9545],[102.369,15.9536],[102.3715,15.9582],[102.3669,15.9556],[102.3669,15.9652],[102.3723,15.968],[102.3718,15.9755],[102.3855,15.9808],[102.3851,15.9861],[102.39,15.9788],[102.3922,15.9871],[102.4045,15.9813],[102.4127,15.9848],[102.4089,15.986],[102.4114,15.9916],[102.4143,15.9901],[102.4127,15.9957],[102.4179,15.9908],[102.4207,15.998],[102.4231,15.9914],[102.4268,15.9961],[102.44,15.9797],[102.4769,15.9628],[102.4878,15.9679],[102.4998,15.9792],[102.5121,15.9739],[102.529,15.9748],[102.5329,15.9666],[102.5505,15.9705],[102.5611,15.9627],[102.554,15.9518],[102.5725,15.9315],[102.5773,15.9131]]],"bb":[102.3528,15.8713,102.5773,15.998]},{"n":"บ้านไผ่","e":"Ban Phai","r":[[[102.8546,15.96],[102.8373,15.9251],[102.8056,15.9128],[102.7809,15.8771],[102.7674,15.8792],[102.7662,15.8922],[102.7543,15.8915],[102.7591,15.9435],[102.7654,15.9573],[102.7487,15.9734],[102.734,15.9801],[102.7108,16.011],[102.679,16.0315],[102.6801,16.0402],[102.6543,16.0423],[102.6559,16.0537],[102.647,16.0616],[102.6527,16.0716],[102.6505,16.0903],[102.6525,16.1014],[102.6389,16.1181],[102.639,16.1371],[102.6465,16.1463],[102.6449,16.1575],[102.6506,16.1569],[102.6479,16.1602],[102.6549,16.1656],[102.6611,16.1648],[102.6561,16.1708],[102.6584,16.1774],[102.6662,16.1745],[102.6671,16.179],[102.6733,16.1794],[102.6683,16.1807],[102.6684,16.1871],[102.6818,16.1867],[102.6909,16.1706],[102.6855,16.1477],[102.749,16.14],[102.7506,16.1451],[102.7691,16.1521],[102.8124,16.1517],[102.8283,16.1601],[102.846,16.1476],[102.8548,16.1281],[102.8646,16.1235],[102.8685,16.127],[102.8611,16.094],[102.8483,16.0719],[102.862,16.057],[102.8564,16.0474],[102.8595,16.0402],[102.8816,16.046],[102.8893,16.0551],[102.8909,16.0499],[102.8954,16.0533],[102.8909,16.047],[102.8941,16.0457],[102.8921,16.0397],[102.8851,16.038],[102.8904,16.035],[102.8833,16.0145],[102.894,15.993],[102.9051,15.9834],[102.9055,15.9735],[102.888,15.9771],[102.8736,15.9717],[102.8546,15.96]]],"bb":[102.6389,15.8771,102.9055,16.1871]},{"n":"เปือยน้อย","e":"Pueai Noi","r":[[[102.9192,15.8222],[102.924,15.8203],[102.9086,15.8084],[102.9008,15.8363],[102.8864,15.8489],[102.8613,15.8583],[102.8511,15.8577],[102.8474,15.8516],[102.8276,15.8521],[102.8123,15.8464],[102.7786,15.8706],[102.8056,15.9128],[102.8373,15.9251],[102.8546,15.96],[102.888,15.9771],[102.9055,15.9735],[102.8906,15.9371],[102.9098,15.9247],[102.9021,15.9106],[102.9029,15.9024],[102.9061,15.8966],[102.9146,15.8967],[102.9304,15.8858],[102.9227,15.8696],[102.9247,15.8623],[102.92,15.8411],[102.923,15.8365],[102.9192,15.8222]]],"bb":[102.7786,15.8084,102.9304,15.9771]},{"n":"ชนบท","e":"Chonnabot","r":[[[102.6371,15.949],[102.644,15.914],[102.6542,15.908],[102.6452,15.9069],[102.6291,15.9163],[102.6109,15.9107],[102.5897,15.9342],[102.5725,15.9315],[102.554,15.9518],[102.5611,15.9627],[102.5505,15.9705],[102.5329,15.9666],[102.529,15.9748],[102.5121,15.9739],[102.4998,15.9792],[102.4878,15.9679],[102.4769,15.9628],[102.44,15.9797],[102.425,15.9987],[102.429,15.997],[102.4345,16.0049],[102.4301,16.0097],[102.4383,16.0156],[102.433,16.0149],[102.4317,16.0185],[102.4354,16.0274],[102.4408,16.03],[102.4463,16.0255],[102.4535,16.0294],[102.4504,16.0337],[102.455,16.0347],[102.4536,16.0434],[102.4462,16.0534],[102.4645,16.0597],[102.4801,16.0507],[102.4812,16.0626],[102.4891,16.0635],[102.4928,16.0795],[102.5003,16.0889],[102.5045,16.0848],[102.5001,16.0781],[102.5119,16.0784],[102.5124,16.086],[102.5167,16.0882],[102.541,16.0738],[102.5493,16.0774],[102.5379,16.0803],[102.5421,16.0847],[102.5557,16.0896],[102.582,16.0901],[102.5795,16.0949],[102.5736,16.0918],[102.5695,16.0974],[102.572,16.1073],[102.5844,16.1083],[102.5756,16.113],[102.5791,16.1186],[102.5823,16.1161],[102.5801,16.1208],[102.5873,16.1301],[102.5872,16.1254],[102.5999,16.1211],[102.6038,16.1238],[102.6003,16.1273],[102.6095,16.1319],[102.6082,16.1287],[102.6129,16.1274],[102.6165,16.1345],[102.6205,16.1269],[102.6257,16.1296],[102.6222,16.1314],[102.626,16.1359],[102.6244,16.1424],[102.6304,16.1404],[102.6343,16.1455],[102.6331,16.1401],[102.639,16.1371],[102.6389,16.1181],[102.6525,16.1014],[102.6505,16.0903],[102.6527,16.0716],[102.6189,16.0201],[102.6029,16.01],[102.6017,16.0042],[102.61,15.9964],[102.6136,15.9814],[102.6371,15.949]]],"bb":[102.425,15.9069,102.6542,16.1455]},{"n":"เขาสวนกวาง","e":"Khao Suan Kwang","r":[[[102.8881,16.8654],[102.9179,16.835],[102.9183,16.8234],[102.9038,16.7977],[102.8739,16.7967],[102.8559,16.8058],[102.8461,16.7984],[102.8212,16.8146],[102.8091,16.8116],[102.7892,16.8284],[102.7775,16.8331],[102.7735,16.8312],[102.7747,16.8241],[102.7656,16.8225],[102.7538,16.834],[102.7463,16.8248],[102.7314,16.8176],[102.723,16.8267],[102.7264,16.8307],[102.7196,16.8379],[102.7346,16.8455],[102.7314,16.8599],[102.7341,16.8818],[102.7462,16.9127],[102.7368,16.9543],[102.7099,16.9606],[102.6994,16.9703],[102.6795,16.968],[102.6762,16.9818],[102.6694,16.9937],[102.6797,17.0156],[102.6796,17.0505],[102.6888,17.0639],[102.6989,17.07],[102.6996,17.087],[102.7082,17.0867],[102.7171,17.0648],[102.7156,17.0577],[102.7223,17.0498],[102.7502,17.0416],[102.7622,17.0275],[102.7872,17.0156],[102.7955,17.0081],[102.8018,16.9884],[102.8254,16.9713],[102.8042,16.9567],[102.8046,16.9518],[102.8209,16.9387],[102.809,16.9153],[102.8126,16.904],[102.8104,16.8917],[102.8202,16.8802],[102.8243,16.8621],[102.8325,16.8688],[102.8417,16.8685],[102.8413,16.8724],[102.848,16.8733],[102.8543,16.8826],[102.867,16.8786],[102.8726,16.8811],[102.8771,16.8722],[102.8833,16.8754],[102.8881,16.8654]]],"bb":[102.6694,16.7967,102.9183,17.087]},{"n":"ภูเวียง","e":"Phu Wiang","r":[[[102.5453,16.6041],[102.5419,16.5954],[102.5529,16.5815],[102.5562,16.5657],[102.5484,16.556],[102.5336,16.5584],[102.5299,16.5549],[102.5331,16.5514],[102.5287,16.5511],[102.5227,16.5547],[102.5199,16.5393],[102.5089,16.5381],[102.5,16.5446],[102.4906,16.5377],[102.4805,16.5449],[102.469,16.5447],[102.4681,16.5607],[102.4585,16.5737],[102.4495,16.5983],[102.4254,16.603],[102.412,16.5855],[102.4005,16.5793],[102.3798,16.5836],[102.3605,16.5735],[102.3487,16.5753],[102.3294,16.5698],[102.3237,16.5631],[102.3103,16.567],[102.2836,16.5618],[102.2877,16.5736],[102.305,16.5756],[102.3157,16.5832],[102.3092,16.5947],[102.287,16.6005],[102.2749,16.6146],[102.3238,16.6436],[102.3467,16.663],[102.3611,16.6995],[102.3634,16.7173],[102.3597,16.7335],[102.4022,16.7355],[102.4056,16.743],[102.4228,16.7461],[102.4221,16.7696],[102.433,16.7947],[102.4454,16.7919],[102.45,16.7948],[102.4477,16.8028],[102.4536,16.8058],[102.4536,16.8109],[102.4712,16.8025],[102.479,16.8073],[102.4965,16.8036],[102.5378,16.7846],[102.6108,16.7713],[102.6078,16.701],[102.5653,16.6572],[102.5585,16.64],[102.5585,16.618],[102.5453,16.6041]]],"bb":[102.2749,16.5377,102.6108,16.8109]},{"n":"มัญจาคีรี","e":"Mancha Khiri","r":[[[102.572,16.1073],[102.5695,16.0974],[102.5736,16.0918],[102.5795,16.0949],[102.582,16.0901],[102.5557,16.0896],[102.5421,16.0847],[102.5379,16.0803],[102.5493,16.0774],[102.541,16.0738],[102.5167,16.0882],[102.5124,16.086],[102.5119,16.0784],[102.5001,16.0781],[102.5045,16.0848],[102.5003,16.0889],[102.4928,16.0795],[102.4771,16.0981],[102.4623,16.0992],[102.4645,16.1168],[102.4495,16.1271],[102.4458,16.1544],[102.4357,16.1514],[102.4223,16.1545],[102.4144,16.1491],[102.4128,16.1401],[102.4185,16.1341],[102.4118,16.1103],[102.4159,16.1042],[102.4065,16.1092],[102.4023,16.1295],[102.3761,16.1582],[102.3454,16.1602],[102.4032,16.2428],[102.4144,16.2513],[102.4115,16.2704],[102.4247,16.3112],[102.4373,16.3287],[102.4363,16.3363],[102.446,16.353],[102.4474,16.3785],[102.4594,16.3942],[102.4706,16.3864],[102.4779,16.3883],[102.4796,16.3797],[102.4886,16.3746],[102.494,16.3636],[102.5184,16.354],[102.5293,16.3425],[102.533,16.3112],[102.5442,16.3056],[102.5717,16.3155],[102.584,16.3061],[102.594,16.2911],[102.605,16.2859],[102.6182,16.2868],[102.6284,16.2794],[102.6494,16.2754],[102.6562,16.2686],[102.664,16.2677],[102.6749,16.2605],[102.6782,16.2488],[102.6869,16.2444],[102.6933,16.2281],[102.6883,16.2294],[102.6852,16.2235],[102.6762,16.2359],[102.6766,16.2303],[102.6744,16.2329],[102.6662,16.2287],[102.6724,16.2189],[102.6676,16.218],[102.6625,16.2116],[102.6791,16.2009],[102.6772,16.198],[102.6722,16.2012],[102.6712,16.1955],[102.6818,16.1867],[102.6684,16.1871],[102.6683,16.1807],[102.6733,16.1794],[102.6671,16.179],[102.6662,16.1745],[102.6584,16.1774],[102.6561,16.1708],[102.6611,16.1648],[102.6549,16.1656],[102.6479,16.1602],[102.6506,16.1569],[102.6449,16.1575],[102.6465,16.1463],[102.639,16.1371],[102.6331,16.1401],[102.6343,16.1455],[102.6304,16.1404],[102.6244,16.1424],[102.626,16.1359],[102.6222,16.1314],[102.6257,16.1296],[102.6205,16.1269],[102.6165,16.1345],[102.6129,16.1274],[102.6082,16.1287],[102.6095,16.1319],[102.6003,16.1273],[102.6038,16.1238],[102.5999,16.1211],[102.5872,16.1254],[102.5873,16.1301],[102.5801,16.1208],[102.5823,16.1161],[102.5791,16.1186],[102.5756,16.113],[102.5844,16.1083],[102.572,16.1073]]],"bb":[102.3454,16.0738,102.6933,16.3942]},{"n":"แวงน้อย","e":"Waeng Noi","r":[[[102.4288,15.7035],[102.4205,15.6956],[102.4039,15.7006],[102.4002,15.7104],[102.3787,15.7316],[102.3612,15.7303],[102.3569,15.7404],[102.3627,15.7675],[102.3438,15.7802],[102.3279,15.8037],[102.3259,15.822],[102.3203,15.8255],[102.3247,15.8299],[102.3158,15.8471],[102.3208,15.8475],[102.3171,15.8513],[102.3221,15.857],[102.3218,15.8667],[102.3384,15.8742],[102.3377,15.8796],[102.3434,15.8822],[102.3413,15.8877],[102.3533,15.901],[102.3528,15.8938],[102.3887,15.8838],[102.4078,15.8728],[102.4238,15.8713],[102.4443,15.8815],[102.4897,15.8785],[102.516,15.8814],[102.5098,15.8545],[102.4988,15.839],[102.5072,15.8009],[102.5025,15.7859],[102.4799,15.7878],[102.4616,15.7818],[102.4564,15.7658],[102.462,15.7314],[102.4527,15.7166],[102.4288,15.7035]]],"bb":[102.3158,15.6956,102.516,15.901]},{"n":"หนองสองห้อง","e":"Nong Song Hong","r":[[[102.8487,15.6363],[102.8069,15.632],[102.7908,15.6394],[102.7861,15.633],[102.7769,15.6341],[102.78,15.645],[102.7728,15.6531],[102.7617,15.6528],[102.7489,15.6617],[102.7473,15.6713],[102.7343,15.6668],[102.7167,15.666],[102.7082,15.6863],[102.6957,15.6908],[102.6973,15.6965],[102.6887,15.7058],[102.695,15.7158],[102.6913,15.724],[102.6791,15.7283],[102.6743,15.7447],[102.6804,15.7714],[102.6889,15.7796],[102.6869,15.7914],[102.7038,15.82],[102.6951,15.8339],[102.6956,15.8427],[102.709,15.8667],[102.6956,15.9035],[102.7543,15.8915],[102.7662,15.8922],[102.7674,15.8792],[102.7809,15.8771],[102.7786,15.8706],[102.8123,15.8464],[102.8276,15.8521],[102.8474,15.8516],[102.8511,15.8577],[102.8613,15.8583],[102.8864,15.8489],[102.9008,15.8363],[102.9086,15.8084],[102.924,15.8203],[102.9319,15.8148],[102.9305,15.7962],[102.8951,15.7837],[102.8901,15.7768],[102.8833,15.7761],[102.8748,15.7359],[102.8764,15.7076],[102.8687,15.6943],[102.876,15.6758],[102.8781,15.6784],[102.878,15.675],[102.8858,15.673],[102.8841,15.6663],[102.8641,15.6562],[102.8602,15.6409],[102.8487,15.6363]]],"bb":[102.6743,15.632,102.9319,15.9035]},{"n":"หนองนาคำ","e":"Nong Na Kham","r":[[[102.3916,16.8104],[102.4057,16.8138],[102.4205,16.7952],[102.433,16.7947],[102.4221,16.7696],[102.4228,16.7461],[102.4056,16.743],[102.4022,16.7355],[102.3597,16.7335],[102.3518,16.7487],[102.3406,16.758],[102.292,16.7771],[102.2761,16.793],[102.2735,16.8202],[102.2667,16.8353],[102.2405,16.8565],[102.2285,16.8543],[102.2133,16.8614],[102.2257,16.8688],[102.2276,16.8751],[102.2333,16.8751],[102.2342,16.8802],[102.2421,16.8757],[102.2448,16.8814],[102.2493,16.8787],[102.2501,16.8915],[102.2546,16.8948],[102.2961,16.8909],[102.2907,16.8851],[102.3072,16.8842],[102.3019,16.8775],[102.3111,16.868],[102.3246,16.8674],[102.316,16.855],[102.3303,16.8552],[102.3317,16.8486],[102.3233,16.8465],[102.3397,16.8371],[102.336,16.8312],[102.3383,16.8239],[102.3465,16.8172],[102.3506,16.8303],[102.3613,16.8165],[102.3776,16.8105],[102.3781,16.8173],[102.3916,16.8104]]],"bb":[102.2133,16.7335,102.433,16.8948]},{"n":"บ้านแฮด","e":"Ban Haet","r":[[[102.8485,16.2008],[102.8465,16.1867],[102.8584,16.1637],[102.8569,16.1568],[102.846,16.1476],[102.8283,16.1601],[102.8124,16.1517],[102.7691,16.1521],[102.7506,16.1451],[102.749,16.14],[102.6855,16.1477],[102.6909,16.1706],[102.6818,16.1867],[102.6712,16.1955],[102.6722,16.2012],[102.6772,16.198],[102.6791,16.2009],[102.6625,16.2116],[102.6676,16.218],[102.6724,16.2189],[102.6662,16.2287],[102.6744,16.2329],[102.6766,16.2303],[102.6762,16.2359],[102.6852,16.2235],[102.6883,16.2294],[102.6933,16.2281],[102.6869,16.2444],[102.6907,16.2423],[102.693,16.2458],[102.6949,16.2395],[102.6978,16.2447],[102.7037,16.2416],[102.7112,16.2474],[102.7293,16.2437],[102.7295,16.2482],[102.7339,16.2434],[102.7452,16.2429],[102.7435,16.2485],[102.7537,16.2566],[102.7626,16.2738],[102.7648,16.2862],[102.7613,16.2889],[102.7667,16.2954],[102.769,16.2896],[102.7723,16.2983],[102.7757,16.2852],[102.7931,16.2853],[102.8078,16.2698],[102.8228,16.2656],[102.8303,16.2586],[102.8345,16.2441],[102.8443,16.2424],[102.8503,16.2227],[102.8446,16.208],[102.8485,16.2008]]],"bb":[102.6625,16.14,102.8584,16.2983]},{"n":"ซำสูง","e":"Sam Sung","r":[[[103.0798,16.5099],[103.0398,16.4907],[103.0316,16.5004],[103.0166,16.4738],[103.0091,16.4882],[102.9707,16.5053],[102.9591,16.5182],[102.9593,16.5347],[102.9735,16.5464],[102.9964,16.5558],[103.0072,16.5721],[103.0033,16.6015],[102.9923,16.6332],[103.0788,16.6205],[103.1392,16.6371],[103.1507,16.6272],[103.1545,16.6158],[103.1515,16.6082],[103.121,16.5925],[103.1188,16.5668],[103.1041,16.5535],[103.1006,16.5414],[103.0876,16.5282],[103.0869,16.5165],[103.0798,16.5099]]],"bb":[102.9591,16.4738,103.1545,16.6371]},{"n":"โคกโพธิ์ไชย","e":"Khok Pho Chai","r":[[[102.4462,16.0534],[102.4536,16.0434],[102.455,16.0347],[102.4504,16.0337],[102.4535,16.0294],[102.4463,16.0255],[102.4408,16.03],[102.4354,16.0274],[102.4317,16.0185],[102.433,16.0149],[102.4383,16.0156],[102.4301,16.0097],[102.4345,16.0049],[102.429,15.997],[102.425,15.9987],[102.4268,15.9961],[102.4231,15.9914],[102.4207,15.998],[102.4179,15.9908],[102.4127,15.9957],[102.4143,15.9901],[102.4114,15.9916],[102.4089,15.986],[102.4127,15.9848],[102.4045,15.9813],[102.3922,15.9871],[102.39,15.9788],[102.3851,15.9861],[102.3848,15.9973],[102.3777,15.9947],[102.3747,16.0002],[102.373,15.9961],[102.3684,16.0068],[102.3654,16.0016],[102.3552,16.0052],[102.3495,16.0229],[102.352,16.0263],[102.3447,16.0302],[102.3439,16.0353],[102.3364,16.0387],[102.3272,16.0306],[102.3117,16.0429],[102.3023,16.0391],[102.2803,16.0759],[102.2885,16.0913],[102.3272,16.13],[102.3454,16.1602],[102.3761,16.1582],[102.4023,16.1295],[102.4065,16.1092],[102.4159,16.1042],[102.4118,16.1103],[102.4185,16.1341],[102.4128,16.1401],[102.4144,16.1491],[102.4223,16.1545],[102.4357,16.1514],[102.4458,16.1544],[102.4495,16.1271],[102.4645,16.1168],[102.4623,16.0992],[102.4771,16.0981],[102.4928,16.0795],[102.4891,16.0635],[102.4812,16.0626],[102.4801,16.0507],[102.4645,16.0597],[102.4462,16.0534]]],"bb":[102.2803,15.9788,102.4928,16.1602]},{"n":"ภูผาม่าน","e":"Phu Pha Man","r":[[[101.9526,16.6698],[101.9584,16.6379],[101.9556,16.6309],[101.9391,16.6364],[101.9368,16.6321],[101.9268,16.634],[101.92,16.631],[101.9204,16.6274],[101.9135,16.6342],[101.9098,16.6332],[101.9111,16.6297],[101.9054,16.6283],[101.9028,16.638],[101.8848,16.645],[101.8735,16.6428],[101.8691,16.6495],[101.8542,16.6502],[101.8525,16.6572],[101.8401,16.6546],[101.8292,16.6577],[101.8227,16.6506],[101.8203,16.6546],[101.8056,16.6529],[101.7744,16.6287],[101.7783,16.647],[101.7641,16.6554],[101.7539,16.6523],[101.7508,16.668],[101.7516,16.6775],[101.7659,16.6799],[101.7723,16.6874],[101.7764,16.7126],[101.7916,16.7267],[101.7859,16.7428],[101.7897,16.7469],[101.7829,16.7541],[101.7879,16.7643],[101.865,16.7929],[101.8794,16.8107],[101.9049,16.8144],[101.9395,16.8382],[101.9431,16.8323],[101.9439,16.7848],[101.9348,16.7628],[101.9361,16.7387],[101.941,16.729],[101.9363,16.7183],[101.9439,16.7132],[101.9433,16.7055],[101.9527,16.6888],[101.9526,16.6698]]],"bb":[101.7508,16.6274,101.9584,16.8382]},{"n":"โนนศิลา","e":"Non Sila","r":[[[102.6642,15.9062],[102.644,15.914],[102.6371,15.949],[102.6136,15.9814],[102.61,15.9964],[102.6017,16.0042],[102.6029,16.01],[102.6189,16.0201],[102.647,16.0616],[102.6559,16.0537],[102.6543,16.0423],[102.6801,16.0402],[102.679,16.0315],[102.7108,16.011],[102.734,15.9801],[102.7487,15.9734],[102.7654,15.9573],[102.7591,15.9435],[102.7543,15.8915],[102.6956,15.9035],[102.6642,15.9062]]],"bb":[102.6017,15.8915,102.7654,16.0616]},{"n":"เวียงเก่า","e":"Wiang Kao","r":[[[102.3611,16.6995],[102.3467,16.663],[102.3238,16.6436],[102.2749,16.6146],[102.2213,16.5995],[102.2114,16.602],[102.2001,16.5886],[102.1821,16.5925],[102.1749,16.6033],[102.1601,16.6053],[102.1597,16.6246],[102.1643,16.6384],[102.1943,16.6525],[102.2022,16.6608],[102.1997,16.6676],[102.2044,16.6874],[102.2349,16.749],[102.237,16.7711],[102.225,16.8071],[102.2313,16.851],[102.2285,16.8543],[102.2405,16.8565],[102.2667,16.8353],[102.2735,16.8202],[102.2761,16.793],[102.292,16.7771],[102.3406,16.758],[102.3518,16.7487],[102.3597,16.7335],[102.3634,16.7173],[102.3611,16.6995]]],"bb":[102.1597,16.5886,102.3634,16.8565]},{"n":"เมืองขอนแก่น","e":"Mueang Khon Kaen","r":[[[102.8462,16.2728],[102.8483,16.2509],[102.8443,16.2424],[102.8345,16.2441],[102.8303,16.2586],[102.8228,16.2656],[102.8078,16.2698],[102.7931,16.2853],[102.7757,16.2852],[102.7794,16.307],[102.7779,16.3196],[102.7726,16.3226],[102.7794,16.3271],[102.784,16.3222],[102.7918,16.3378],[102.7323,16.3393],[102.7288,16.3349],[102.713,16.3362],[102.7052,16.3428],[102.6934,16.3449],[102.6846,16.3748],[102.6759,16.3795],[102.6866,16.4047],[102.667,16.4474],[102.6486,16.4653],[102.6409,16.4914],[102.6487,16.5133],[102.6428,16.5132],[102.6419,16.5231],[102.6301,16.5354],[102.6665,16.5836],[102.6818,16.5948],[102.6891,16.6046],[102.6863,16.6191],[102.6978,16.6327],[102.7227,16.6373],[102.7535,16.6074],[102.7658,16.6073],[102.7917,16.624],[102.805,16.6274],[102.8133,16.6238],[102.836,16.6345],[102.844,16.6346],[102.8587,16.6227],[102.853,16.6161],[102.8502,16.619],[102.8462,16.6164],[102.8521,16.6085],[102.8494,16.6029],[102.8565,16.6039],[102.8598,16.5991],[102.8639,16.604],[102.8656,16.5951],[102.8601,16.5944],[102.8583,16.5861],[102.8645,16.5845],[102.8639,16.5891],[102.8714,16.5945],[102.8716,16.5893],[102.8835,16.5847],[102.8737,16.5815],[102.8814,16.5696],[102.8735,16.5682],[102.8818,16.5619],[102.8721,16.5578],[102.8873,16.5449],[102.8868,16.5398],[102.8969,16.5387],[102.9042,16.5455],[102.9448,16.5331],[102.9528,16.5425],[102.9593,16.5347],[102.9591,16.5182],[102.9707,16.5053],[103.0091,16.4882],[103.0166,16.4738],[103.0063,16.4676],[102.9841,16.4646],[102.9531,16.4518],[102.9622,16.4298],[102.9755,16.4255],[102.9724,16.4198],[102.9588,16.4255],[102.9531,16.4147],[102.9565,16.413],[102.9461,16.4086],[102.946,16.4024],[102.9556,16.4018],[102.9492,16.3887],[102.9401,16.3925],[102.9396,16.3855],[102.9365,16.389],[102.9344,16.3835],[102.9376,16.3772],[102.9244,16.3798],[102.9191,16.373],[102.9269,16.3663],[102.9194,16.3652],[102.9174,16.369],[102.9139,16.3613],[102.9054,16.3595],[102.9086,16.3484],[102.8955,16.35],[102.8936,16.3155],[102.8711,16.3011],[102.8462,16.2728]]],"bb":[102.6301,16.2424,103.0166,16.6373]},{"n":"บ้านฝาง","e":"Ban Fang","r":[[[102.667,16.4474],[102.6866,16.4047],[102.6711,16.3735],[102.6537,16.3701],[102.6458,16.3786],[102.6303,16.3753],[102.6304,16.3641],[102.6119,16.3536],[102.6027,16.3573],[102.5972,16.3494],[102.5661,16.347],[102.5455,16.3564],[102.53,16.3363],[102.5293,16.3425],[102.5184,16.354],[102.5439,16.3747],[102.5506,16.3929],[102.5528,16.4411],[102.5627,16.4616],[102.5736,16.5061],[102.5835,16.5789],[102.5794,16.5928],[102.5802,16.6173],[102.5753,16.6278],[102.5812,16.6437],[102.6116,16.6553],[102.6226,16.6627],[102.6876,16.6524],[102.6978,16.6327],[102.6863,16.6191],[102.6891,16.6046],[102.6818,16.5948],[102.6665,16.5836],[102.6301,16.5354],[102.6419,16.5231],[102.6428,16.5132],[102.6487,16.5133],[102.6409,16.4914],[102.6486,16.4653],[102.667,16.4474]]],"bb":[102.5184,16.3363,102.6978,16.6627]},{"n":"กระนวน","e":"Kranuan","r":[[[103.1512,16.66],[103.1507,16.6272],[103.1392,16.6371],[103.0788,16.6205],[102.9923,16.6332],[102.9842,16.703],[102.9861,16.7232],[103.0078,16.7213],[103.0109,16.7257],[103.0103,16.7433],[103.0006,16.7498],[102.997,16.7567],[102.9989,16.7668],[103.0138,16.779],[103.016,16.8011],[103.0072,16.811],[103.0096,16.8228],[102.9982,16.8288],[103.0008,16.8473],[102.996,16.8637],[102.9982,16.872],[103.0073,16.8664],[103.0097,16.8721],[103.0252,16.8746],[103.0364,16.8858],[103.0527,16.8871],[103.0737,16.9015],[103.0824,16.8993],[103.0984,16.913],[103.1147,16.9069],[103.1237,16.8964],[103.12,16.8715],[103.112,16.8618],[103.1141,16.854],[103.1063,16.8493],[103.1072,16.8436],[103.1019,16.8397],[103.1139,16.8181],[103.1231,16.8181],[103.1377,16.8308],[103.1403,16.8386],[103.136,16.8703],[103.1733,16.8638],[103.1706,16.8486],[103.1782,16.8428],[103.1771,16.8323],[103.1842,16.8215],[103.1799,16.7864],[103.17,16.7688],[103.1521,16.7624],[103.1465,16.746],[103.1587,16.7326],[103.1458,16.701],[103.1487,16.6871],[103.1536,16.6841],[103.1581,16.6699],[103.1512,16.66]]],"bb":[102.9842,16.6205,103.1842,16.913]},{"n":"น้ำพอง","e":"Nam Phong","r":[[[103.0072,16.5721],[102.9964,16.5558],[102.9735,16.5464],[102.9593,16.5347],[102.9528,16.5425],[102.9448,16.5331],[102.9042,16.5455],[102.8969,16.5387],[102.8868,16.5398],[102.8873,16.5449],[102.8721,16.5578],[102.8818,16.5619],[102.8735,16.5682],[102.8814,16.5696],[102.8737,16.5815],[102.8835,16.5847],[102.8716,16.5893],[102.8714,16.5945],[102.8639,16.5891],[102.8645,16.5845],[102.8583,16.5861],[102.8601,16.5944],[102.8656,16.5951],[102.8639,16.604],[102.8598,16.5991],[102.8565,16.6039],[102.8494,16.6029],[102.8521,16.6085],[102.8462,16.6164],[102.8502,16.619],[102.853,16.6161],[102.8587,16.6227],[102.844,16.6346],[102.836,16.6345],[102.8133,16.6238],[102.805,16.6274],[102.7917,16.624],[102.7658,16.6073],[102.7535,16.6074],[102.7227,16.6373],[102.7227,16.6468],[102.7327,16.662],[102.7336,16.6773],[102.7385,16.679],[102.7414,16.6993],[102.7378,16.7094],[102.7484,16.7238],[102.7525,16.7232],[102.752,16.7279],[102.7355,16.7361],[102.7213,16.7517],[102.7324,16.7621],[102.7252,16.7807],[102.7338,16.7954],[102.7314,16.8176],[102.7463,16.8248],[102.7538,16.834],[102.7656,16.8225],[102.7747,16.8241],[102.7735,16.8312],[102.7775,16.8331],[102.7892,16.8284],[102.8091,16.8116],[102.8212,16.8146],[102.8461,16.7984],[102.8559,16.8058],[102.8739,16.7967],[102.9038,16.7977],[102.9183,16.8234],[102.9179,16.835],[102.9753,16.848],[102.996,16.8637],[103.0008,16.8473],[102.9982,16.8288],[103.0096,16.8228],[103.0072,16.811],[103.016,16.8011],[103.0138,16.779],[102.9989,16.7668],[102.997,16.7567],[103.0006,16.7498],[103.0103,16.7433],[103.0109,16.7257],[103.0078,16.7213],[102.9861,16.7232],[102.9842,16.703],[102.9923,16.6332],[103.0033,16.6015],[103.0072,16.5721]]],"bb":[102.7213,16.5331,103.016,16.8637]},{"n":"อุบลรัตน์","e":"Ubolratana","r":[[[102.7355,16.7361],[102.752,16.7279],[102.7525,16.7232],[102.7484,16.7238],[102.7378,16.7094],[102.7414,16.6993],[102.7385,16.679],[102.7336,16.6773],[102.7327,16.662],[102.7227,16.6468],[102.7227,16.6373],[102.6978,16.6327],[102.6876,16.6524],[102.6226,16.6627],[102.6116,16.6553],[102.5812,16.6437],[102.5753,16.6278],[102.5671,16.6268],[102.5585,16.618],[102.5585,16.64],[102.5653,16.6572],[102.6078,16.701],[102.6108,16.7713],[102.615,16.7771],[102.613,16.7989],[102.6244,16.8436],[102.671,16.9413],[102.6795,16.968],[102.6994,16.9703],[102.7099,16.9606],[102.7368,16.9543],[102.7462,16.9127],[102.7341,16.8818],[102.7314,16.8599],[102.7346,16.8455],[102.7196,16.8379],[102.7264,16.8307],[102.723,16.8267],[102.7314,16.8176],[102.7338,16.7954],[102.7252,16.7807],[102.7324,16.7621],[102.7213,16.7517],[102.7355,16.7361]]],"bb":[102.5585,16.618,102.7525,16.9703]},{"n":"ชุมแพ","e":"Chum Phae","r":[[[102.3021,16.464],[102.2932,16.4582],[102.3004,16.457],[102.2968,16.4522],[102.3004,16.4452],[102.2933,16.4461],[102.2891,16.454],[102.2778,16.4569],[102.2782,16.4605],[102.276,16.4558],[102.2689,16.4558],[102.2642,16.4619],[102.2552,16.4612],[102.2563,16.4667],[102.2434,16.4702],[102.2408,16.481],[102.2347,16.4863],[102.2278,16.4843],[102.2134,16.5012],[102.2056,16.4987],[102.2059,16.5033],[102.1985,16.5042],[102.1917,16.4986],[102.1831,16.5064],[102.1728,16.4911],[102.1701,16.4969],[102.1633,16.4975],[102.165,16.501],[102.1573,16.4982],[102.1583,16.5036],[102.1487,16.4985],[102.1412,16.5031],[102.1342,16.4954],[102.1056,16.4974],[102.0995,16.4941],[102.0942,16.498],[102.085,16.492],[102.079,16.4964],[102.0752,16.4925],[102.0678,16.4938],[102.0729,16.5028],[102.0425,16.5084],[102.03,16.5254],[102.0338,16.5321],[102.028,16.5409],[102.0324,16.5417],[102.0243,16.5451],[102.0236,16.5587],[102.0222,16.5559],[102.0191,16.5597],[102.0065,16.5579],[101.9984,16.5652],[101.9948,16.5619],[101.9889,16.5665],[101.9875,16.5777],[101.9923,16.5784],[101.9887,16.5817],[101.9924,16.5847],[101.984,16.5831],[101.9779,16.5877],[101.9835,16.5903],[101.9796,16.5924],[101.9836,16.5959],[101.9756,16.6045],[101.9777,16.6102],[101.9723,16.6148],[101.9698,16.6111],[101.9673,16.6187],[101.9644,16.6149],[101.9584,16.62],[101.9563,16.6167],[101.9543,16.6225],[101.9513,16.6231],[101.9584,16.6379],[101.9534,16.6588],[101.9527,16.6888],[101.9433,16.7055],[101.9439,16.7132],[101.9363,16.7183],[101.941,16.729],[101.9361,16.7387],[101.9348,16.7628],[101.9439,16.7848],[101.9431,16.8323],[101.9395,16.8382],[101.9488,16.8411],[101.9443,16.8531],[101.9564,16.8472],[101.9622,16.8525],[101.9706,16.842],[101.9791,16.8452],[101.9792,16.84],[101.9876,16.844],[101.9916,16.8396],[101.9989,16.8445],[101.9959,16.8502],[102.0001,16.8491],[102.0059,16.855],[101.9991,16.8599],[102.0103,16.8701],[102.0159,16.864],[102.0187,16.8685],[102.0273,16.8613],[102.0287,16.8438],[102.0341,16.8439],[102.0317,16.824],[102.0225,16.8143],[102.0143,16.7903],[102.0171,16.7447],[102.0108,16.7437],[102.0113,16.7287],[102.0059,16.7173],[102.018,16.7063],[102.0531,16.6943],[102.0575,16.6746],[102.0658,16.6619],[102.0996,16.6512],[102.1103,16.656],[102.1335,16.6242],[102.1597,16.6246],[102.1601,16.6053],[102.1749,16.6033],[102.1821,16.5925],[102.2001,16.5886],[102.2114,16.602],[102.2213,16.5995],[102.2749,16.6146],[102.287,16.6005],[102.3092,16.5947],[102.3157,16.5832],[102.305,16.5756],[102.2877,16.5736],[102.2836,16.5618],[102.2813,16.5347],[102.2915,16.5171],[102.2875,16.486],[102.2928,16.4729],[102.3021,16.464]]],"bb":[101.9348,16.4452,102.3157,16.8701]},{"n":"สีชมพู","e":"Si Chomphu","r":[[[102.2349,16.749],[102.2044,16.6874],[102.1997,16.6676],[102.2022,16.6608],[102.1943,16.6525],[102.1643,16.6384],[102.1597,16.6246],[102.1335,16.6242],[102.1103,16.656],[102.0996,16.6512],[102.0658,16.6619],[102.0575,16.6746],[102.0531,16.6943],[102.018,16.7063],[102.0059,16.7173],[102.0113,16.7287],[102.0108,16.7437],[102.0171,16.7447],[102.0143,16.7903],[102.0225,16.8143],[102.0317,16.824],[102.0341,16.8439],[102.0287,16.8438],[102.0273,16.8613],[102.0312,16.8633],[102.04,16.8582],[102.0448,16.8615],[102.0447,16.8678],[102.056,16.8675],[102.0595,16.8709],[102.0549,16.8758],[102.0627,16.8809],[102.0626,16.8868],[102.0694,16.8891],[102.0702,16.885],[102.0812,16.8894],[102.0993,16.882],[102.0968,16.8908],[102.1047,16.8973],[102.1239,16.881],[102.1442,16.8765],[102.1442,16.8807],[102.1558,16.8812],[102.1584,16.8717],[102.1675,16.8704],[102.1713,16.8652],[102.1803,16.8718],[102.1877,16.858],[102.2036,16.8625],[102.2285,16.8543],[102.2313,16.851],[102.225,16.8071],[102.237,16.7711],[102.2349,16.749]]],"bb":[102.0059,16.6242,102.237,16.8973]},{"n":"พระยืน","e":"Phra Yuen","r":[[[102.7295,16.2482],[102.7293,16.2437],[102.7112,16.2474],[102.7037,16.2416],[102.6978,16.2447],[102.6949,16.2395],[102.693,16.2458],[102.6907,16.2423],[102.6782,16.2488],[102.6749,16.2605],[102.664,16.2677],[102.6562,16.2686],[102.6494,16.2754],[102.6284,16.2794],[102.6182,16.2868],[102.605,16.2859],[102.594,16.2911],[102.584,16.3061],[102.5717,16.3155],[102.5442,16.3056],[102.533,16.3112],[102.53,16.3363],[102.5455,16.3564],[102.5661,16.347],[102.5972,16.3494],[102.6027,16.3573],[102.6119,16.3536],[102.6304,16.3641],[102.6303,16.3753],[102.6458,16.3786],[102.6537,16.3701],[102.6711,16.3735],[102.6759,16.3795],[102.6846,16.3748],[102.6934,16.3449],[102.7052,16.3428],[102.713,16.3362],[102.7288,16.3349],[102.7323,16.3393],[102.7918,16.3378],[102.784,16.3222],[102.7794,16.3271],[102.7726,16.3226],[102.7779,16.3196],[102.7794,16.307],[102.7758,16.2922],[102.7723,16.2983],[102.769,16.2896],[102.7667,16.2954],[102.7613,16.2889],[102.7648,16.2862],[102.7626,16.2738],[102.7537,16.2566],[102.7435,16.2485],[102.7452,16.2429],[102.7339,16.2434],[102.7295,16.2482]]],"bb":[102.53,16.2395,102.7918,16.3795]},{"n":"หนองเรือ","e":"Nong Ruea","r":[[[102.5528,16.4411],[102.5506,16.3929],[102.5439,16.3747],[102.5184,16.354],[102.494,16.3636],[102.4886,16.3746],[102.4796,16.3797],[102.4779,16.3883],[102.4706,16.3864],[102.4485,16.3976],[102.4422,16.4088],[102.428,16.4135],[102.4129,16.4285],[102.4056,16.4412],[102.4098,16.4623],[102.4042,16.4603],[102.4028,16.466],[102.3963,16.4664],[102.3989,16.4597],[102.3943,16.4597],[102.3976,16.4577],[102.3944,16.4549],[102.3982,16.4469],[102.3836,16.4421],[102.3824,16.4455],[102.3732,16.4364],[102.3653,16.4384],[102.3679,16.4479],[102.3646,16.4529],[102.3577,16.4484],[102.3501,16.4522],[102.3426,16.4464],[102.324,16.4455],[102.3186,16.4461],[102.3175,16.4561],[102.3002,16.448],[102.2968,16.4522],[102.3004,16.457],[102.2932,16.4582],[102.3021,16.464],[102.2928,16.4729],[102.2875,16.486],[102.2915,16.5171],[102.2813,16.5347],[102.2836,16.5618],[102.3103,16.567],[102.3237,16.5631],[102.3294,16.5698],[102.3487,16.5753],[102.3605,16.5735],[102.3798,16.5836],[102.4005,16.5793],[102.412,16.5855],[102.4254,16.603],[102.4495,16.5983],[102.4585,16.5737],[102.4681,16.5607],[102.469,16.5447],[102.4805,16.5449],[102.4906,16.5377],[102.5,16.5446],[102.5089,16.5381],[102.5199,16.5393],[102.5227,16.5547],[102.5287,16.5511],[102.5331,16.5514],[102.5299,16.5549],[102.5336,16.5584],[102.5484,16.556],[102.5562,16.5657],[102.5529,16.5815],[102.5419,16.5954],[102.5453,16.6041],[102.5671,16.6268],[102.5753,16.6278],[102.5802,16.6173],[102.5794,16.5928],[102.5835,16.5789],[102.5736,16.5061],[102.5627,16.4616],[102.5528,16.4411]]],"bb":[102.2813,16.354,102.5835,16.6278]}];
+const FIREBASE_SDK = '12.19.0';
+window.__appMain=function(){
+'use strict';
+const LANG=window.LANG||'th';
+const I18N=window.I18N||{};
+const LOCALE={th:'th-TH',lo:'lo-LA',en:'en-GB',zh:'zh-CN'}[LANG]||'th-TH';
+const GLANG={th:'th',lo:'lo',en:'en',zh:'zh-CN'}[LANG]||'th';
+function _t(x){if(LANG==='th')return x;const v=I18N[x];return v==null?x:v;}
+const EN_AMP=Object.fromEntries(GEO.districts.map(d=>[d.n,d.e]));
+const LO_AMP={"เมืองขอนแก่น":"ເມືອງຂອນແກ່ນ","บ้านฝาง":"ບ້ານຝາງ","พระยืน":"ພະຍືນ","หนองเรือ":"ໜອງເຮືອ","ชุมแพ":"ຊຸມແພ","สีชมพู":"ສີຊົມພູ","น้ำพอง":"ນ້ຳພອງ","อุบลรัตน์":"ອຸບົນລັດ","กระนวน":"ກະນວນ","บ้านไผ่":"ບ້ານໄຜ່","เปือยน้อย":"ເປືອຍນ້ອຍ","พล":"ພົນ","แวงใหญ่":"ແວງໃຫຍ່","แวงน้อย":"ແວງນ້ອຍ","หนองสองห้อง":"ໜອງສອງຫ້ອງ","ภูเวียง":"ພູວຽງ","มัญจาคีรี":"ມັນຈາຄີລີ","ชนบท":"ຊົນນະບົດ","เขาสวนกวาง":"ເຂົາສວນກວາງ","ภูผาม่าน":"ພູຜາມ່ານ","ซำสูง":"ຊຳສູງ","โคกโพธิ์ไชย":"ໂຄກໂພໄຊ","หนองนาคำ":"ໜອງນາຄຳ","บ้านแฮด":"ບ້ານແຮດ","โนนศิลา":"ໂນນສີລາ","เวียงเก่า":"ວຽງເກົ່າ"};
+function AMPN(n){n=String(n==null?'':n);if(LANG==='lo'&&LO_AMP[n])return LO_AMP[n];return (LANG==='en'||LANG==='zh')&&EN_AMP[n]?EN_AMP[n]:n;}
+function trStatic(){
+  if(LANG==='th')return;
+  const TH=/[\u0E00-\u0E7F]/;
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||p.closest('script,style,[translate="no"]'))return NodeFilter.FILTER_REJECT;return TH.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});
+  const list=[];while(w.nextNode())list.push(w.currentNode);
+  list.forEach(n=>{const raw=n.nodeValue,k=raw.trim(),v=I18N[k];if(v!=null)n.nodeValue=raw.replace(k,()=>v);});
+  document.querySelectorAll('[placeholder],[aria-label],[title],[alt]').forEach(el=>{if(el.closest('[translate="no"]'))return;['placeholder','aria-label','title','alt'].forEach(a=>{const v=el.getAttribute(a);if(v&&TH.test(v)&&I18N[v.trim()]!=null)el.setAttribute(a,I18N[v.trim()]);});});
+  if(I18N[document.title])document.title=I18N[document.title];
+  [['meta[name="description"]','content'],['meta[property="og:title"]','content'],['meta[property="og:description"]','content']].forEach(([q,a])=>{const el=document.querySelector(q);const v=el&&I18N[el.getAttribute(a)];if(v)el.setAttribute(a,v);});
+}
+let RESTORE=null;try{RESTORE=JSON.parse(sessionStorage.getItem('restore')||'null');sessionStorage.removeItem('restore');}catch(e){RESTORE=null;}
+function applyRestore(r){
+  if(!r)return;
+  if(r.mode&&r.mode!==S.mode){const b=document.querySelector('#modeSeg [data-mode="'+r.mode+'"]');if(b)b.click();}
+  if(r.view==='detail'&&r.sel&&S.listings.some(x=>x.id===r.sel))openDetail(r.sel);
+  else if(r.view&&r.view!=='search'&&r.view!=='detail')go(r.view);
+}
+function initLang(){
+  const ls=document.getElementById('langSel');ls.value=LANG;
+  ls.addEventListener('change',()=>{const L=ls.value;
+    try{localStorage.setItem('lang',L);}catch(e){}
+    try{sessionStorage.setItem('restore',JSON.stringify({view:S.view,sel:S.selected,mode:S.mode}));}catch(e){}
+    const u=new URL(location.href);u.searchParams.set('lang',L);location.href=u.toString();});
+}
+trStatic();
+const P = GEO.proj;
+const toXY = (lat,lng)=>[(lng-P.minLng)*P.c*P.k,(P.maxLat-lat)*P.k];
+const toLL = (x,y)=>[P.maxLat-y/P.k, x/(P.c*P.k)+P.minLng];
+const AMPHOE = GEO.districts.map(d=>d.n).sort((a,b)=>a==='เมืองขอนแก่น'?-1:b==='เมืองขอนแก่น'?1:AMPN(a).localeCompare(AMPN(b),LOCALE));
+const DBYN = Object.fromEntries(GEO.districts.map(d=>[d.n,d]));
+const PT = {land:_t('ที่ดินเปล่า'),house:_t('บ้านพร้อมที่ดิน'),town:_t('ทาวน์โฮม / อาคาร'),condo:_t('คอนโด'),apt:_t('อพาร์ทเม้นท์'),dorm:_t('หอพัก')};
+const ROOM = new Set(['condo','apt','dorm']);
+const KIND = {sale:_t('ขาย'),rent:_t('เช่าซื้อ'),lease:_t('ให้เช่า'),wanted:_t('ตามหา')};
+const DEED = {chanote:_t('โฉนดที่ดิน (น.ส.4 จ.)'),ns3k:_t('น.ส.3 ก.'),ns3:_t('น.ส.3'),condo:_t('หนังสือกรรมสิทธิ์ห้องชุด (อ.ช.2)'),spk:_t('ส.ป.ก. 4-01'),other:_t('อื่นๆ')};
+const BED = {studio:_t('สตูดิโอ'),1:_t('1 ห้องนอน'),2:_t('2 ห้องนอน'),3:_t('3 ห้องนอนขึ้นไป')};
+const BATH = {1:_t('ห้องน้ำในตัว'),2:_t('ห้องน้ำ 2 ห้องขึ้นไป'),shared:_t('ห้องน้ำรวม')};
+const GENDER = {mixed:_t('ชาย-หญิง (รวม)'),female:_t('หญิงล้วน'),male:_t('ชายล้วน')};
+const FLOOD = {never:[_t('ไม่เคยท่วม'),'g'],minor:[_t('เคยท่วมขังเล็กน้อย'),'o'],yes:[_t('เคยท่วม'),'r'],unknown:[_t('ไม่ทราบประวัติน้ำท่วม'),'']};
+const BUDGET = {
+  sale:[['',_t('ทุกช่วงราคา')],['0-1000000',_t('ไม่เกิน 1 ล้านบาท')],['1000000-2000000',_t('1 – 2 ล้านบาท')],['2000000-3000000',_t('2 – 3 ล้านบาท')],['3000000-',_t('มากกว่า 3 ล้านบาท')]],
+  rent:[['',_t('ทุกค่างวด')],['0-5000',_t('ไม่เกิน 5,000/เดือน')],['5000-8000',_t('5,000 – 8,000/เดือน')],['8000-',_t('มากกว่า 8,000/เดือน')]],
+  lease:[['',_t('ทุกค่าเช่า')],['0-3000',_t('ไม่เกิน 3,000/เดือน')],['3000-6000',_t('3,000 – 6,000/เดือน')],['6000-10000',_t('6,000 – 10,000/เดือน')],['10000-',_t('มากกว่า 10,000/เดือน')]],
+  wanted:[['',_t('ทุกงบประมาณ')],['0-1000000',_t('ไม่เกิน 1 ล้านบาท')],['1000000-2000000',_t('1 – 2 ล้านบาท')],['2000000-',_t('มากกว่า 2 ล้านบาท')]]
+};
+
+/* ---------- flood assessment ---------- */
+const FA_YEARS = 13; // GISTDA recurring-flood data, 2554–2566 (2011–2023)
+const TERRAIN = {high:_t('เนินสูงกว่าพื้นที่รอบข้าง'),flat:_t('ที่ราบระดับเดียวกับรอบข้าง'),low:_t('ที่ลุ่มต่ำกว่าพื้นที่รอบข้าง')};
+const RSRC = {gistda:_t('รายงานเหตุการณ์ของ GISTDA'),community:_t('ชุมชน / ผู้ใหญ่บ้าน'),owner:_t('เจ้าของแปลงแจ้ง'),survey:_t('ผู้ดูแลสำรวจเอง')};
+function floodRisk(it){
+  const fa=it&&it.fa;if(!fa||fa.years==null||fa.years==='')return null;
+  const y=Math.min(FA_YEARS,Math.max(0,Math.round(num(fa.years))));
+  const parts=[];
+  parts.push([_t('เคยท่วม ')+y+_t(' จาก ')+FA_YEARS+_t(' ปี (GISTDA)'), y===0?0:y<=2?2:y<=5?3:4, 4]);
+  if(TERRAIN[fa.terrain])parts.push([TERRAIN[fa.terrain], {high:0,flat:1,low:2}[fa.terrain], 2]);
+  if(fa.riverKm!=null&&fa.riverKm!==''){const k=num(fa.riverKm);parts.push([_t('ห่างลำน้ำ')+(fa.river?' '+str(fa.river):'')+' '+k+_t(' กม.'), k<0.5?2:k<2?1:0, 2]);}
+  parts.push([_t('เจ้าของแจ้ง: ')+(FLOOD[it.flood]||FLOOD.unknown)[0], {never:0,minor:1,yes:2}[it.flood]??1, 2]);
+  const score=parts.reduce((a,p)=>a+p[1],0), max=parts.reduce((a,p)=>a+p[2],0);
+  const ratio=max?score/max:0;
+  const lvl=ratio<=0.25?[_t('ต่ำ'),'g','low']:ratio<=0.55?[_t('ปานกลาง'),'o','mid']:[_t('สูง'),'r','high'];
+  return {y,pct:Math.round(y/FA_YEARS*100),parts,score,max,ratio,label:lvl[0],cls:lvl[1],key:lvl[2],fa};
+}
+function riskBadge(it){const r=floodRisk(it);return r?h('span',{class:'badge '+r.cls},_t('เสี่ยงน้ำท่วม')+r.label):null;}
+function gistdaKey(){try{return localStorage.getItem('gistdaKey')||'';}catch(e){return '';}}
+
+const S = {db:null,uid:null,isAdmin:false,assets:null,listings:[],mine:[],config:{},view:'search',mode:'sale',pt:'all',
+  q:'',amphoe:'',budget:'',size:'',dry:false,risk:'',sort:'new',selected:null,loaded:false,
+  post:{kind:'sale',pt:'land',approx:true,lat:null,lng:null}};
+
+/* ---------- helpers ---------- */
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+function h(tag,props,...kids){const el=document.createElement(tag);if(props)for(const[k,v]of Object.entries(props)){if(v==null||v===false)continue;if(k==='class')el.className=v;else if(k==='text')el.textContent=v;else if(k.startsWith('on')&&typeof v==='function')el.addEventListener(k.slice(2),v);else el.setAttribute(k,v===true?'':String(v));}for(const k of kids.flat()){if(k==null||k===false)continue;el.append(k.nodeType?k:document.createTextNode(String(k)));}return el;}
+const NS='http://www.w3.org/2000/svg';
+function sv(tag,attrs,...kids){const el=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs||{}))el.setAttribute(k,v);kids.flat().forEach(k=>k&&el.append(k));return el;}
+const num = v=>{const n=Number(String(v??'').replace(/[^\d.]/g,''));return isFinite(n)?n:0;};
+const fmt = n=>Number(n||0).toLocaleString('th-TH',{maximumFractionDigits:0});
+const str = v=>typeof v==='string'?v:(v==null?'':String(v));
+function areaText(it){const r=num(it.rai),n=num(it.ngan),w=num(it.wa);const p=[];if(r)p.push(r+_t(' ไร่'));if(n)p.push(n+_t(' งาน'));if(w)p.push(w+_t(' ตร.ว.'));return p.join(' ')||'-';}
+function sizeOf(it){return ROOM.has(it.ptype)?(num(it.sqm)?fmt(it.sqm)+_t(' ตร.ม.'):'-'):areaText(it);}
+function priceText(it){if(it.kind==='lease')return _t('ค่าเช่า ฿')+fmt(it.rent)+_t('/เดือน');if(it.kind==='rent')return _t('ผ่อน ฿')+fmt(it.monthly)+_t('/เดือน');if(it.kind==='wanted'){const a=num(it.budgetMin),b=num(it.budgetMax);if(a&&b)return _t('฿')+fmt(a)+' – '+fmt(b);if(b)return _t('ไม่เกิน ฿')+fmt(b);if(a)return _t('ตั้งแต่ ฿')+fmt(a);return _t('ไม่ระบุงบ');}return _t('฿')+fmt(it.price);}
+function ago(t){const s=(Date.now()-num(t))/1000;if(!t||s<0)return '';if(s<3600)return Math.max(1,Math.round(s/60))+_t(' นาทีที่แล้ว');if(s<86400)return Math.round(s/3600)+_t(' ชม. ที่แล้ว');const d=Math.round(s/86400);return d<31?d+(LANG==='en'&&d===1?' day ago':_t(' วันที่แล้ว')):new Date(num(t)).toLocaleDateString(LOCALE,{day:'numeric',month:'short',year:'2-digit'});}
+const gmaps=(lat,lng)=>'https://www.google.com/maps/search/?api=1&query='+Number(lat).toFixed(6)+','+Number(lng).toFixed(6);
+const LANDSMAPS='https://landsmaps.dol.go.th/';
+function toast(msg){const t=$('#toast');t.textContent=msg;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,3200);}
+function copyBtn(text,label){const b=h('button',{type:'button',class:'btn sm'},label||_t('คัดลอก'));b.addEventListener('click',()=>{try{navigator.clipboard.writeText(text).then(()=>{b.textContent=_t('คัดลอกแล้ว');},()=>toast(_t('คัดลอกไม่ได้ กรุณากดค้างที่ตัวเลขเพื่อคัดลอก')));}catch(e){toast(_t('คัดลอกไม่ได้ กรุณากดค้างที่ตัวเลขเพื่อคัดลอก'));}});return b;}
+function confirmBtn(label,cls,fn){const b=h('button',{type:'button',class:'btn sm '+(cls||'')},label);let armed=false,t;b.addEventListener('click',async()=>{if(!armed){armed=true;b.textContent=_t('กดอีกครั้งเพื่อยืนยัน');t=setTimeout(()=>{armed=false;b.textContent=label;},4000);return;}clearTimeout(t);b.disabled=true;try{await fn();}catch(e){toast(errText(e));b.disabled=false;armed=false;b.textContent=label;}});return b;}
+function errText(e){const c=e&&e.code;if(c==='quota_exceeded')return _t('พื้นที่เก็บประกาศเต็มแล้ว กรุณาแจ้งผู้ดูแลเว็บ');if(c==='resource_exhausted')return _t('ส่งข้อมูลถี่เกินไป กรุณารอสักครู่แล้วลองใหม่');if(c==='invalid_argument'||c==='permission-denied')return _t('ไม่มีสิทธิ์ทำรายการนี้ หรือข้อมูลไม่ถูกต้อง');if(c==='resource-exhausted')return _t('ส่งข้อมูลถี่เกินไป กรุณารอสักครู่แล้วลองใหม่');return _t('เชื่อมต่อฐานข้อมูลไม่ได้ กรุณาลองใหม่อีกครั้ง');}
+function parseCoord(text){const t=str(text).trim();if(!t)return null;if(/goo\.gl|maps\.app/.test(t))return {err:_t('ลิงก์แบบย่อของ Google Maps อ่านพิกัดไม่ได้ กรุณากดค้างบนแผนที่ใน Google Maps แล้วคัดลอกตัวเลขพิกัดมาวางแทน')};const pats=[/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/,/@(-?\d+\.\d+),\s*(-?\d+\.\d+)/,/[?&](?:q|ll|query|center)=(-?\d+\.\d+)(?:,|%2C)\s*(-?\d+\.\d+)/,/^\s*(-?\d{1,2}\.\d+)\s*[, ]\s*(-?\d{2,3}\.\d+)\s*$/];for(const p of pats){const m=t.match(p);if(m)return {lat:+m[1],lng:+m[2]};}return {err:_t('อ่านพิกัดไม่ได้ กรุณาวางในรูปแบบ 16.4530, 102.7420')};}
+
+/* ---------- map ---------- */
+function makeMap(host,opt){
+  const svg=sv('svg',{class:'map-svg',viewBox:`0 0 ${GEO.w} ${GEO.h}`,role:'img','aria-label':_t('แผนที่จังหวัดขอนแก่น แบ่งตามอำเภอ')});
+  const gD=sv('g'),gL=sv('g',{'aria-hidden':'true'}),gP=sv('g');
+  const paths={};
+  GEO.districts.forEach(d=>{const p=sv('path',{d:d.d,class:'district','data-n':d.n});const tt=sv('title');tt.textContent=_t('อ.')+AMPN(d.n);p.append(tt);paths[d.n]=p;gD.append(p);});
+  gD.append(sv('path',{d:GEO.outline,class:'outline'}));
+  const labels=GEO.districts.map(d=>{const t=sv('text',{x:d.lx,y:d.ly,class:'mlabel'});t.textContent=AMPN(d.n);gL.append(t);return t;});
+  svg.append(gD,gL,gP);host.prepend(svg);
+  let vb={x:0,y:0,w:GEO.w,h:GEO.h};const full={...vb};
+  const unit=()=>{const r=svg.getBoundingClientRect();if(!r.width)return vb.w/700;return Math.max(vb.w/r.width,vb.h/r.height);};
+  function apply(){svg.setAttribute('viewBox',`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);const u=unit();labels.forEach(l=>{l.setAttribute('font-size',(12.5*u).toFixed(2));l.setAttribute('style','stroke-width:'+(3*u).toFixed(2)+'px');});drawPins();}
+  function set(x,y,w,hh){const ar=GEO.w/GEO.h;w=Math.min(Math.max(w,12),full.w*1.2);hh=w/ar;vb={x,y,w,h:hh};apply();}
+  function zoomTo(n){const d=DBYN[n];if(!d)return;const[bx,by,bw,bh]=d.b;const pad=1.25;const ar=GEO.w/GEO.h;let w=Math.max(bw,bh*ar)*pad;set(bx+bw/2-w/2,by+bh/2-(w/ar)/2,w);}
+  function zoomBy(f,cx,cy){if(cx==null){cx=vb.x+vb.w/2;cy=vb.y+vb.h/2;}const w=vb.w*f;set(cx-(cx-vb.x)*f,cy-(cy-vb.y)*f,w);}
+  function zoomAll(){vb={...full};apply();}
+  function center(lat,lng,w){const[x,y]=toXY(lat,lng);const ar=GEO.w/GEO.h;w=w||90;set(x-w/2,y-(w/ar)/2,w);}
+  let pins=[];
+  function setPins(list){pins=list;drawPins();}
+  function drawPins(){gP.textContent='';const u=unit();pins.forEach(p=>{const[x,y]=toXY(p.lat,p.lng);const g=sv('g',{class:'pin'+(p.sel?' sel':''),transform:`translate(${x.toFixed(2)} ${y.toFixed(2)}) scale(${(u*(p.sel?1.15:1)).toFixed(3)})`,tabindex:p.onClick?'0':'-1',role:p.onClick?'button':'img','aria-label':p.label||_t('ตำแหน่ง')});g.append(sv('path',{d:'M0 0 C-2 -6 -11 -12 -11 -21 A11 11 0 1 1 11 -21 C11 -12 2 -6 0 0Z'}),sv('circle',{cy:'-21',r:'4.2'}));if(p.onClick){g.addEventListener('click',e=>{e.stopPropagation();p.onClick();});g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();p.onClick();}});}gP.append(g);});
+    gP.querySelectorAll('.pin.sel').forEach(n=>gP.append(n));}
+  function shade(map){Object.values(paths).forEach(p=>p.classList.remove('s1','s2'));Object.entries(map||{}).forEach(([n,c])=>{if(paths[n]&&c)paths[n].classList.add(c>=3?'s2':'s1');});}
+  function active(n){Object.values(paths).forEach(p=>p.classList.toggle('active',p.dataset.n===n));}
+  function pt(e){const m=svg.getScreenCTM();if(!m)return null;const q=svg.createSVGPoint();q.x=e.clientX;q.y=e.clientY;return q.matrixTransform(m.inverse());}
+  function amphoeAt(x,y){const q=svg.createSVGPoint();q.x=x;q.y=y;for(const[n,p]of Object.entries(paths)){try{if(p.isPointInFill(q))return n;}catch(e){}}return null;}
+  // drag / click
+  let drag=null;
+  svg.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={id:e.pointerId,sx:e.clientX,sy:e.clientY,vb:{...vb},moved:false};});
+  svg.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.sx,dy=e.clientY-drag.sy;if(!drag.moved&&Math.hypot(dx,dy)<6)return;if(!drag.moved){drag.moved=true;svg.setPointerCapture(e.pointerId);svg.classList.add('dragging');}const u=unit();vb.x=drag.vb.x-dx*u;vb.y=drag.vb.y-dy*u;svg.setAttribute('viewBox',`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);});
+  const end=e=>{if(!drag)return;const moved=drag.moved;drag=null;svg.classList.remove('dragging');if(moved){apply();return;}if(e.type!=='pointerup')return;if(e.target&&e.target.closest&&e.target.closest('.pin'))return;const p=pt(e);if(!p)return;const n=amphoeAt(p.x,p.y);const ll=toLL(p.x,p.y);opt.onTap&&opt.onTap({x:p.x,y:p.y,lat:ll[0],lng:ll[1],amphoe:n,target:e.target});};
+  svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  svg.addEventListener('wheel',e=>{e.preventDefault();const p=pt(e);zoomBy(e.deltaY>0?1.2:1/1.2,p&&p.x,p&&p.y);},{passive:false});
+  if(window.ResizeObserver)new ResizeObserver(()=>apply()).observe(host);
+  apply();
+  return {zoomTo,zoomBy,zoomAll,center,setPins,shade,active,amphoeAt,get vbw(){return vb.w;}};
+}
+
+/* ---------- views ---------- */
+function go(v,opts){S.view=v;['search','detail','post','mine','donate','admin'].forEach(n=>{$('#v-'+n).hidden=n!==v;});$$('.tab').forEach(t=>t.setAttribute('aria-current',t.dataset.go===v||(v==='detail'&&t.dataset.go==='search')?'page':'false'));if(!(opts&&opts.keepScroll))window.scrollTo({top:0});if(v==='mine')renderMine();if(v==='admin')loadAdmin();if(v==='donate')renderDonate();if(v==='post')prepPost();}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();go(g.dataset.go);}});
+
+/* ---------- search ---------- */
+let MAP;
+function fillSelect(sel,pairs){sel.textContent='';pairs.forEach(([v,l])=>sel.append(h('option',{value:v},l)));}
+function initSearch(){
+  fillSelect($('#fAmphoe'),[['',_t('ทุกอำเภอ')],...AMPHOE.map(a=>[a,_t('อ.')+AMPN(a)])]);
+  fillSelect($('#fBudget'),BUDGET.sale);
+  $$('#modeSeg button').forEach(b=>b.addEventListener('click',()=>{S.mode=b.dataset.mode;S.budget='';S.selected=null;$$('#modeSeg button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));fillSelect($('#fBudget'),BUDGET[S.mode]);$('#fSizeWrap').hidden=S.mode==='wanted'||S.mode==='lease';if(S.mode==='lease'){S.size='';$('#fSize').value='';}$('#fRiskWrap').hidden=S.mode==='wanted';$('#fDry').hidden=S.mode==='wanted';renderSearch();}));
+  $$('#typeChips .chip').forEach(b=>b.addEventListener('click',()=>{S.pt=b.dataset.pt;$$('#typeChips .chip').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderSearch();}));
+  $('#fq').addEventListener('input',e=>{S.q=e.target.value.trim();renderSearch();});
+  $('#fAmphoe').addEventListener('change',e=>{S.amphoe=e.target.value;if(S.amphoe)MAP.zoomTo(S.amphoe);else MAP.zoomAll();renderSearch();});
+  $('#fBudget').addEventListener('change',e=>{S.budget=e.target.value;renderSearch();});
+  $('#fSize').addEventListener('change',e=>{S.size=e.target.value;renderSearch();});
+  $('#fSort').addEventListener('change',e=>{S.sort=e.target.value;renderSearch();});
+  $('#fRisk').addEventListener('change',e=>{S.risk=e.target.value;renderSearch();});
+  $('#fDry').addEventListener('click',e=>{S.dry=!S.dry;e.currentTarget.setAttribute('aria-pressed',String(S.dry));renderSearch();});
+  MAP=mkMap($('#mapHost'),{onTap:({amphoe})=>{if(!amphoe)return;S.amphoe=amphoe;$('#fAmphoe').value=amphoe;MAP.zoomTo(amphoe);renderSearch();}});
+  $('#zIn').addEventListener('click',()=>MAP.zoomBy(1/1.6));
+  $('#zOut').addEventListener('click',()=>MAP.zoomBy(1.6));
+  $('#zAll').addEventListener('click',()=>{S.amphoe='';$('#fAmphoe').value='';MAP.zoomAll();renderSearch();});
+}
+function inRange(v,r){if(!r)return true;const[a,b]=r.split('-');return v>=num(a)&&(b===''||v<=num(b));}
+function filtered(){
+  const q=S.q.toLowerCase();
+  let L=S.listings.filter(it=>it.kind===S.mode&&(S.pt==='all'||it.ptype===S.pt));
+  if(S.mode==='wanted'){
+    if(S.amphoe)L=L.filter(it=>Array.isArray(it.amphoes)&&it.amphoes.includes(S.amphoe));
+    if(S.budget)L=L.filter(it=>{const[a,b]=S.budget.split('-');const lo=num(it.budgetMin),hi=num(it.budgetMax)||Infinity;return hi>=num(a)&&(b===''||lo<=num(b));});
+  }else{
+    if(S.amphoe)L=L.filter(it=>it.amphoe===S.amphoe);
+    if(S.budget)L=L.filter(it=>inRange(S.mode==='rent'?num(it.monthly):S.mode==='lease'?num(it.rent):num(it.price),S.budget));
+    if(S.size)L=L.filter(it=>!ROOM.has(it.ptype)&&inRange(num(it.sqw),S.size));
+    if(S.dry)L=L.filter(it=>it.flood==='never');
+    if(S.risk)L=L.filter(it=>{const r=floodRisk(it);if(!r)return false;return S.risk==='any'||(S.risk==='low'?r.key==='low':r.key!=='high');});
+  }
+  if(q)L=L.filter(it=>[it.title,it.tambon,it.amphoe,AMPN(it.amphoe),it.desc,(it.amphoes||[]).join(' '),(it.amphoes||[]).map(AMPN).join(' ')].map(str).join(' ').toLowerCase().includes(q));
+  const pv=it=>S.mode==='rent'?num(it.monthly):S.mode==='lease'?num(it.rent):S.mode==='wanted'?num(it.budgetMax):num(it.price);
+  if(S.sort==='low')L.sort((a,b)=>pv(a)-pv(b));else if(S.sort==='high')L.sort((a,b)=>pv(b)-pv(a));else L.sort((a,b)=>num(b.createdAt)-num(a.createdAt));
+  return L;
+}
+function floodBadge(it){const f=FLOOD[it.flood]||FLOOD.unknown;return h('span',{class:'badge '+f[1]},f[0]);}
+function renderSearch(){
+  const L=filtered();const list=$('#list');list.textContent='';
+  const label=S.mode==='wanted'?_t('ประกาศตามหา'):S.mode==='rent'?_t('ประกาศรับเช่าซื้อ'):S.mode==='lease'?_t('ประกาศให้เช่า'):_t('ประกาศขาย');
+  $('#count').textContent=S.loaded?(label+': '+fmt(L.length)+' '+(LANG==='en'&&L.length===1?'listing':_t('รายการ'))+' · '+(S.amphoe?_t('อ.')+AMPN(S.amphoe):_t('ทั้งจังหวัดขอนแก่น'))+(S.mode==='wanted'?_t(' · สีส้มบนแผนที่คืออำเภอที่มีคนตามหา'):'')):_t('กำลังโหลดประกาศ…');
+  if(S.mode==='wanted'){
+    const c={};S.listings.filter(it=>it.kind==='wanted').forEach(it=>(it.amphoes||[]).forEach(a=>c[a]=(c[a]||0)+1));
+    MAP.shade(c);MAP.setPins([]);
+  }else{
+    MAP.shade(null);
+    MAP.setPins(L.filter(it=>isFinite(it.lat)&&isFinite(it.lng)).map(it=>({lat:it.lat,lng:it.lng,sel:it.id===S.selected,label:str(it.title)+' '+priceText(it),onClick:()=>select(it.id,true)})));
+  }
+  MAP.active(S.amphoe);
+  renderPeek();
+  if(!S.loaded){list.append(h('div',{class:'empty'},_t('กำลังโหลด…')));return;}
+  if(!L.length){
+    const any=S.listings.some(it=>it.kind===S.mode);
+    list.append(h('div',{class:'empty'},h('h3',{text:any?_t('ไม่พบประกาศที่ตรงเงื่อนไข'):(S.mode==='wanted'?_t('ยังไม่มีประกาศตามหา'):_t('ยังไม่มีประกาศในหมวดนี้'))}),h('p',{style:'margin:0 0 12px'},any?_t('ลองล้างตัวกรองบางรายการ หรือเลือกดูทั้งจังหวัด'):_t('เป็นคนแรกที่ลงประกาศ ใช้เวลาประมาณ 5 นาที ไม่มีค่าใช้จ่าย')),h('button',{type:'button',class:'btn primary','data-go':'post'},S.mode==='wanted'?_t('ลงประกาศตามหา'):_t('ลงประกาศฟรี'))));
+    return;
+  }
+  L.forEach(it=>list.append(card(it)));
+}
+function card(it){
+  const isW=it.kind==='wanted';
+  const b=h('button',{type:'button',class:'lcard'+(it.id===S.selected?' sel':''),'data-id':it.id});
+  b.append(
+    h('div',{class:'plot'},isW?[h('span',null,_t('งบ')),h('b',null,priceText(it).replace(_t('฿'),''))]:[h('span',null,PT[it.ptype]||''),h('b',null,ROOM.has(it.ptype)?sizeOf(it):fmt(it.sqw)+_t(' ตร.ว.'))]),
+    h('div',{class:'body'},
+      h('div',{class:'row',style:'gap:6px'},h('span',{class:'badge'},(isW?_t('ตามหา · '):'')+(PT[it.ptype]||'')),isW?null:(riskBadge(it)||floodBadge(it)),it.approx?h('span',{class:'badge'},_t('ตำแหน่งประมาณ')):null),
+      h('h3',{text:str(it.title)}),
+      h('span',{class:'small muted'},isW?(_t('ทำเล: ')+((it.amphoes||[]).map(a=>_t('อ.')+AMPN(a)).join(', ')||_t('ไม่ระบุ'))):[(it.tambon?_t('ต.')+str(it.tambon)+' ':'')+_t('อ.')+AMPN(str(it.amphoe)),' · ',sizeOf(it),it.project?' · ':null,it.project?str(it.project):null,(!ROOM.has(it.ptype)&&it.deed)?' · ':null,(!ROOM.has(it.ptype)&&it.deed)?(DEED[it.deed]||''):null]),
+      h('div',{class:'row',style:'justify-content:space-between'},h('span',{class:'price'},isW?'':priceText(it)),h('span',{class:'small muted'},ago(it.createdAt)))
+    ));
+  b.addEventListener('click',()=>{if(isW){openDetail(it.id);return;}if(S.selected===it.id){openDetail(it.id);return;}select(it.id,false);});
+  return b;
+}
+function select(id,fromMap){S.selected=id;const it=S.listings.find(x=>x.id===id);if(it&&!fromMap&&isFinite(it.lat))MAP.center(it.lat,it.lng,Math.min(MAP.vbw,160));renderSearch();const el=$(`.lcard[data-id="${CSS.escape(id)}"]`);if(el&&fromMap)el.scrollIntoView({block:'nearest',behavior:'smooth'});}
+function renderPeek(){
+  const pk=$('#peek');const it=S.mode!=='wanted'&&S.listings.find(x=>x.id===S.selected&&x.kind===S.mode);
+  if(!it){pk.hidden=true;return;}
+  pk.textContent='';pk.hidden=false;
+  pk.append(h('span',{class:'small',style:'color:var(--ochre-text);font-weight:600'},(PT[it.ptype]||'')+' · '+(it.tambon?_t('ต.')+str(it.tambon)+' ':'')+_t('อ.')+AMPN(str(it.amphoe))),
+    h('strong',{style:'font-size:16.5px;line-height:1.4;overflow-wrap:anywhere'},str(it.title)),
+    h('span',{class:'price'},priceText(it)),
+    h('div',{class:'row'},h('button',{type:'button',class:'btn primary sm',onclick:()=>openDetail(it.id)},_t('ดูรายละเอียดและติดต่อ')),h('a',{class:'btn sm',href:gmaps(it.lat,it.lng),target:'_blank',rel:'noopener'},'Google Maps')));
+}
+
+/* ---------- detail ---------- */
+function openDetail(id){const it=S.listings.find(x=>x.id===id);if(!it){toast(_t('ประกาศนี้ถูกปิดแล้ว'));return;}S.selected=id;renderDetail(it);go('detail');}
+function renderDetail(it){
+  const v=$('#v-detail');v.textContent='';const isW=it.kind==='wanted';
+  v.append(h('button',{type:'button',class:'btn sm',onclick:()=>{go('search');renderSearch();}},_t('← กลับไปหน้าค้นหา')));
+  v.append(h('div',{class:'row',style:'margin-top:14px;gap:6px'},h('span',{class:'badge o'},KIND[it.kind]),h('span',{class:'badge'},PT[it.ptype]||''),isW?null:floodBadge(it),h('span',{class:'badge g'},_t('เจ้าของประกาศเอง')),it.phoneVerified?h('span',{class:'badge g'},_t('ยืนยันเบอร์โทรด้วย OTP แล้ว')):null));
+  v.append(h('h1',{style:'font-family:var(--font-display);font-size:clamp(26px,3vw,38px);margin:10px 0 4px;overflow-wrap:anywhere',text:str(it.title)}));
+  v.append(h('p',{class:'muted',style:'margin:0'},isW?(_t('ทำเลที่สนใจ: ')+((it.amphoes||[]).map(a=>_t('อ.')+AMPN(a)).join(', ')||_t('ไม่ระบุ'))):((it.tambon?_t('ต.')+str(it.tambon)+' ':'')+_t('อ.')+AMPN(str(it.amphoe))+_t(' จ.ขอนแก่น')),_t(' · ประกาศ '),ago(it.createdAt)));
+  const main=h('div',{class:'dmain'}),side=h('div',{class:'dside'});
+  v.append(h('div',{class:'dgrid'},main,side));
+  if(isW){
+    main.append(h('section',{class:'card sec'},h('h2',null,_t('ความต้องการ')),h('dl',{class:'specs'},
+      h('div',null,h('dt',null,_t('งบประมาณ')),h('dd',null,priceText(it))),
+      h('div',null,h('dt',null,_t('ขนาดที่ต้องการ')),h('dd',null,str(it.sizeText)||_t('ไม่ระบุ'))),
+      h('div',null,h('dt',null,_t('อำเภอที่สนใจ')),h('dd',null,(it.amphoes||[]).map(AMPN).join(', ')||_t('ไม่ระบุ'))),
+      h('div',null,h('dt',null,_t('ย้ายมาจาก')),h('dd',null,str(it.fromProvince)||_t('ไม่ระบุ')))),
+      (it.needs||[]).length?h('div',{class:'row',style:'margin-top:14px;gap:6px'},(it.needs||[]).map(n=>h('span',{class:'badge g'},_t(str(n))))):null,
+      it.desc?h('p',{style:'margin:14px 0 0;white-space:pre-line;overflow-wrap:anywhere',text:str(it.desc)}):null));
+  }else{
+    const room=ROOM.has(it.ptype),lease=it.kind==='lease';
+    const specs=rows=>h('dl',{class:'specs'},rows.map(([a,b])=>h('div',null,h('dt',null,a),h('dd',null,b))));
+    const descBlock=it.desc?[h('h3',{style:'margin:18px 0 6px;font-size:16px'},_t('รายละเอียดจากเจ้าของ')),h('p',{style:'margin:0;white-space:pre-line;overflow-wrap:anywhere',text:str(it.desc)})]:null;
+    const deedText=(DEED[it.deed]||'-')+(it.deedLast?_t(' · เลขที่ ••')+str(it.deedLast):'');
+    const leaseRows=()=>[[_t('ค่าเช่าต่อเดือน'),_t('฿')+fmt(it.rent)],[_t('เงินประกัน / ค่าล่วงหน้า'),str(it.deposit)||_t('สอบถามเจ้าของ')],[_t('สัญญาขั้นต่ำ'),num(it.minMonths)?fmt(it.minMonths)+_t(' เดือน'):_t('ไม่ระบุ')],[_t('ค่าน้ำ'),str(it.water)||_t('สอบถามเจ้าของ')],[_t('ค่าไฟ'),str(it.elec)||_t('สอบถามเจ้าของ')]].concat(it.vacant!=null&&it.vacant!==''?[[_t('ห้องว่างตอนนี้'),fmt(it.vacant)+_t(' ห้อง')]]:[]);
+    if(room){
+      const rows=[[_t('โครงการ / อาคาร'),str(it.project)||_t('ไม่ระบุ')],[_t('ขนาดห้อง'),sizeOf(it)],[_t('ห้องนอน / ห้องน้ำ'),(BED[it.bed]||'-')+' · '+(BATH[it.bath]||'-')],[_t('ชั้น'),str(it.floor)||_t('ไม่ระบุ')]];
+      if(it.ptype==='dorm'&&GENDER[it.gender])rows.push([_t('หอพักสำหรับ'),GENDER[it.gender]]);
+      if(it.ptype==='condo'&&num(it.commonFee))rows.push([_t('ค่าส่วนกลาง'),_t('฿')+fmt(it.commonFee)+_t('/เดือน')]);
+      if(lease)rows.push(...leaseRows());else rows.push([_t('เอกสารสิทธิ์'),deedText]);
+      if(it.kind==='rent')rows.push([_t('เงื่อนไขเช่าซื้อ'),_t('ดาวน์ ฿')+fmt(it.down)+' · '+fmt(it.months)+_t(' งวด')]);
+      if(it.kind==='sale'&&num(it.sqm))rows.push([_t('ราคาต่อตารางเมตร'),_t('≈ ฿')+fmt(num(it.price)/num(it.sqm))]);
+      rows.push([_t('ประวัติน้ำท่วมของพื้นที่ (เจ้าของแจ้ง)'),(FLOOD[it.flood]||FLOOD.unknown)[0]]);
+      main.append(h('section',{class:'card sec'},h('h2',null,_t('รายละเอียดห้อง')),specs(rows),
+        (it.fac||[]).length?[h('h3',{style:'margin:18px 0 8px;font-size:16px'},_t('สิ่งอำนวยความสะดวก')),h('div',{class:'row',style:'gap:6px'},it.fac.map(f=>h('span',{class:'badge g'},_t(str(f)))))]:null,
+        it.near?h('p',{style:'margin:14px 0 0;overflow-wrap:anywhere'},h('span',{class:'muted'},_t('ใกล้: ')),str(it.near)):null,
+        descBlock));
+    }else{
+      const rows=[[_t('เนื้อที่'),areaText(it)+' ('+fmt(it.sqw)+_t(' ตร.ว.)')]];
+      if(lease)rows.push(...leaseRows());else rows.push([_t('เอกสารสิทธิ์'),deedText]);
+      rows.push([_t('ประวัติน้ำท่วม (เจ้าของแจ้ง)'),(FLOOD[it.flood]||FLOOD.unknown)[0]]);
+      if(it.kind==='rent')rows.push([_t('เงื่อนไขเช่าซื้อ'),_t('ดาวน์ ฿')+fmt(it.down)+' · '+fmt(it.months)+_t(' งวด')]);
+      if(it.kind==='sale')rows.push([_t('ราคาต่อตารางวา'),num(it.sqw)?_t('≈ ฿')+fmt(num(it.price)/num(it.sqw)):'-']);
+      main.append(h('section',{class:'card sec'},h('h2',null,_t('รายละเอียดแปลง')),specs(rows),descBlock));
+    }
+    const mm=h('div',{class:'minimap'});
+    const lat=Number(it.lat),lng=Number(it.lng),c=lat.toFixed(5)+', '+lng.toFixed(5);
+    const landCheck=!room&&!lease;
+    main.append(h('section',{class:'card sec'},h('h2',null,room?_t('ตำแหน่งที่ตั้ง'):_t('ตำแหน่งและการตรวจสอบแปลง')),mm,
+      h('div',{style:'margin-top:14px;display:flex;flex-direction:column;gap:10px'},
+        h('div',null,h('span',{class:'small muted'},it.approx?_t('พิกัดโดยประมาณ (ขอพิกัดจริงจากเจ้าของ)'):_t('พิกัด')),h('div',{class:'row'},h('span',{class:'coord'},c),copyBtn(c,_t('คัดลอกพิกัด')))),
+        h('div',{class:'row'},h('a',{class:'btn primary',href:gmaps(lat,lng),target:'_blank',rel:'noopener'},_t('เปิดใน Google Maps')),landCheck?h('a',{class:'btn',href:LANDSMAPS,target:'_blank',rel:'noopener'},_t('ตรวจรูปแปลงใน LandsMaps')):null),
+        landCheck?h('p',{class:'small muted',style:'margin:0'},_t('ใน LandsMaps ให้ค้นด้วยเลขโฉนดเต็มที่ได้จากเจ้าของ เพื่อดูรูปแปลง เนื้อที่ และราคาประเมิน ข้อมูลในระบบใช้อ้างอิงตำแหน่งเท่านั้น ไม่ใช่หลักฐานกรรมสิทธิ์')):null)));
+    requestAnimationFrame(()=>{const m=mkMap(mm,{onTap:()=>{}});m.center(lat,lng,70);m.setPins([{lat,lng,sel:true,label:_t('ตำแหน่ง')}]);m.active(str(it.amphoe));});
+    main.append(floodSection(it));
+    const checks=lease?[_t('ไปดูห้องหรือบ้านจริงก่อนโอนเงินจอง'),_t('ขอสัญญาเช่าเป็นลายลักษณ์อักษร ระบุเงินประกัน ค่าน้ำค่าไฟ และเงื่อนไขการคืนเงินประกัน'),_t('ถ่ายรูปสภาพห้องและอุปกรณ์ทุกจุดก่อนเข้าอยู่ เก็บไว้เป็นหลักฐาน'),_t('ตรวจว่าผู้ให้เช่าเป็นเจ้าของหรือผู้จัดการอาคารจริง และโอนเงินเข้าบัญชีชื่อนั้นเท่านั้น')]
+      :it.ptype==='condo'?[_t('ดูหนังสือกรรมสิทธิ์ห้องชุด (อ.ช.2) ตัวจริง และตรวจภาระจำนองที่สำนักงานที่ดิน'),_t('ขอหนังสือรับรองการปลอดหนี้ค่าส่วนกลางจากนิติบุคคลอาคารชุดก่อนโอน'),_t('ทำสัญญาจะซื้อจะขาย และโอนเงินเข้าบัญชีชื่อเจ้าของกรรมสิทธิ์เท่านั้น'),_t('ถามนิติบุคคลเรื่องน้ำท่วมลานจอดรถหรือชั้นล่างในปีที่ผ่านมา')]
+      :[_t('ดูโฉนดตัวจริง และตรวจภาระจำนอง/อายัดที่สำนักงานที่ดินจังหวัดขอนแก่น'),_t('ชื่อผู้ขายต้องตรงกับโฉนด หรือมีหนังสือมอบอำนาจที่ถูกต้อง'),_t('ทำสัญญาจะซื้อจะขาย และโอนเงินเข้าบัญชีชื่อเจ้าของกรรมสิทธิ์เท่านั้น'),_t('ไปดูแปลงจริงช่วงฝนตก และถามเพื่อนบ้านเรื่องน้ำท่วมขัง')];
+    main.append(h('section',{class:'card sec',style:'background:var(--ochre-soft);border-color:transparent'},h('h2',{style:'color:var(--ochre-text)'},lease?_t('เช็กก่อนจ่ายเงินจองหรือเงินประกัน'):_t('เช็กก่อนวางเงินมัดจำ')),h('ul',{class:'check'},checks.map(x=>h('li',null,x)))));
+  }
+  const phone=str(it.phone),line=str(it.line);
+  side.append(h('section',{class:'card sec',style:'display:flex;flex-direction:column;gap:12px'},
+    h('span',{class:'small muted'},isW?_t('งบประมาณ'):it.kind==='rent'?_t('ค่างวดเช่าซื้อ'):it.kind==='lease'?_t('ค่าเช่าต่อเดือน'):_t('ราคาขาย')),h('p',{class:'bigprice'},priceText(it)),
+    isW?null:h('p',{class:'notice g',style:'margin:0'},_t('ไม่มีค่านายหน้า ต่อรองกับเจ้าของได้โดยตรง')),
+    h('div',{style:'border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px'},
+      h('strong',{text:(isW?_t('ผู้ตามหา: '):_t('เจ้าของ: '))+(str(it.contactName)||_t('ไม่ระบุชื่อ'))}),
+      phone?h('div',null,h('span',{class:'small muted'},_t('โทรศัพท์')),h('div',{class:'row'},h('span',{class:'contact'},phone),copyBtn(phone))):null,
+      line?h('div',null,h('span',{class:'small muted'},'LINE ID'),h('div',{class:'row'},h('span',{class:'contact'},line),copyBtn(line))):null),
+    h('p',{class:'small muted',style:'margin:0'},_t('เว็บไซต์ไม่เรียกเก็บเงินมัดจำหรือค่าจองแทนเจ้าของ อย่าโอนเงินให้บุคคลที่สาม'))));
+  side.append(reportBox(it));
+  side.append(h('section',{class:'card sec',style:'display:flex;flex-direction:column;gap:8px'},h('strong',null,_t('ประกาศนี้ฟรี เพราะมีคนช่วยสนับสนุน')),h('span',{class:'small muted'},_t('ถ้าเว็บนี้ช่วยคุณได้ ร่วมสนับสนุนค่าระบบได้ตามใจ')),h('button',{type:'button',class:'btn sm','data-go':'donate',style:'align-self:flex-start'},_t('สนับสนุนเว็บไซต์'))));
+}
+function floodSection(it){
+  const sec=h('section',{class:'card sec'},h('h2',null,_t('ประเมินความเสี่ยงน้ำท่วม')));
+  const r=floodRisk(it);
+  if(r){
+    const fa=r.fa;
+    const meter=h('div',{class:'meter','aria-hidden':'true'});for(let i=0;i<10;i++)meter.append(h('i',{class:i<Math.round(r.ratio*10)?'on':''}));
+    const has=v=>v!=null&&v!=='';
+    sec.append(h('div',{class:'risk'},
+      h('div',{class:'lvl '+r.cls},h('span',{class:'small'},_t('ระดับความเสี่ยง')),h('b',null,r.label),meter),
+      h('div',{class:'facts'},
+        h('span',{class:'big'},_t('เคยท่วม ')+r.y+_t(' จาก ')+FA_YEARS+_t(' ปี (')+r.pct+_t('% ของปีที่มีข้อมูล)')),
+        h('span',null,has(fa.recedeDays)?(_t('น้ำลดภายในประมาณ ')+fmt(fa.recedeDays)+_t(' วัน')+(RSRC[fa.recedeSrc]?_t(' · ที่มา: ')+RSRC[fa.recedeSrc]:'')):_t('ยังไม่มีข้อมูลระยะเวลาน้ำลด')),
+        h('span',{class:'small muted'},[has(fa.elev)?_t('สูงจากระดับน้ำทะเลประมาณ ')+fmt(fa.elev)+_t(' ม.'):null,TERRAIN[fa.terrain]||null].filter(Boolean).join(' · ')||''))));
+    const why=h('ul',{class:'why'});r.parts.forEach(p=>why.append(h('li',null,h('span',null,p[0]),h('span',null,p[1]+' / '+p[2]+_t(' คะแนน')))));
+    sec.append(h('h3',{style:'margin:16px 0 0;font-size:15px'},_t('ที่มาของคะแนน (คะแนนยิ่งมาก ยิ่งเสี่ยง)')),why);
+    if(fa.note)sec.append(h('p',{class:'small',style:'margin:10px 0 0;white-space:pre-line;overflow-wrap:anywhere',text:str(fa.note)}));
+    sec.append(h('p',{class:'small muted',style:'margin:10px 0 0'},_t('ประเมินเมื่อ ')+ago(fa.at)+_t(' · ข้อมูลพื้นที่น้ำท่วมซ้ำซากปี 2554–2566 ของ GISTDA เป็นสถิติในอดีต ไม่ใช่การพยากรณ์ ควรดูแปลงจริงช่วงฝนตกและถามเพื่อนบ้านประกอบ')));
+  }else{
+    sec.append(h('p',{class:'muted',style:'margin:0'},_t('แปลงนี้ยังไม่ได้ประเมินจากข้อมูล GISTDA ดูประวัติน้ำท่วมที่เจ้าของแจ้งได้ในส่วนรายละเอียดแปลง')));
+  }
+  if(S.isAdmin){const b=h('button',{type:'button',class:'btn sm',style:'margin-top:12px'},r?_t('แก้ไขการประเมิน'):_t('ประเมินน้ำท่วมแปลงนี้'));b.addEventListener('click',()=>b.replaceWith(faForm(it,()=>renderDetail(it))));sec.append(b);}
+  return sec;
+}
+function faForm(it,done){
+  const fa=it.fa||{};const p='fa-'+String(it.id).replace(/[^A-Za-z0-9]/g,'').slice(0,10)+'-';
+  const field=(lab,el)=>h('label',{class:'field',for:el.id},lab,el);
+  const opt=(pairs,first)=>[h('option',{value:''},first),...pairs.map(([k,v])=>h('option',{value:k},v))];
+  const years=h('select',{class:'input',id:p+'y'},opt(Array.from({length:FA_YEARS+1},(_,i)=>[String(i),i+_t(' ปี')]),_t('เลือกจำนวนปี')));years.value=fa.years!=null?String(fa.years):'';
+  const elev=h('input',{class:'input',id:p+'e',inputmode:'decimal',placeholder:_t('เช่น 165')});elev.value=fa.elev??'';
+  const terr=h('select',{class:'input',id:p+'t'},opt(Object.entries(TERRAIN),_t('ไม่ระบุ')));terr.value=fa.terrain||'';
+  const river=h('input',{class:'input',id:p+'rn',maxlength:'40',placeholder:_t('เช่น ลำน้ำชี')});river.value=fa.river||'';
+  const rkm=h('input',{class:'input',id:p+'rk',inputmode:'decimal',placeholder:_t('เช่น 1.2')});rkm.value=fa.riverKm??'';
+  const days=h('input',{class:'input',id:p+'d',inputmode:'numeric',placeholder:_t('เช่น 7')});days.value=fa.recedeDays??'';
+  const src=h('select',{class:'input',id:p+'s'},opt(Object.entries(RSRC),_t('ไม่ระบุ')));src.value=fa.recedeSrc||'';
+  const note=h('textarea',{class:'input',id:p+'n',maxlength:'600',placeholder:_t('เช่น ปีที่ท่วมหนัก ระดับน้ำสูงสุดที่ชาวบ้านเล่า')});note.value=fa.note||'';
+  const linkBox=h('div',{class:'row'});
+  const gOut=h('pre',{style:'margin:0;max-height:240px;overflow:auto;font-size:12.5px;background:var(--surface);border:1px solid var(--line);padding:10px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere'});gOut.hidden=true;
+  const setLink=(lat,lng,exact)=>{linkBox.textContent='';const c=Number(lat).toFixed(6)+', '+Number(lng).toFixed(6);
+    linkBox.append(h('span',{class:'small'},(exact?_t('พิกัดจริง '):_t('พิกัดบนประกาศ '))+c));
+    if(FB.callGistda){const gb=h('button',{type:'button',class:'btn sm'},_t('ดึงข้อมูล GISTDA ของพิกัดนี้'));gb.addEventListener('click',async()=>{gb.disabled=true;gOut.hidden=false;gOut.textContent=_t('กำลังดึงข้อมูล…');try{const r=await FB.callGistda({lat:Number(lat),lng:Number(lng)});gOut.textContent=JSON.stringify(r.data,null,2);}catch(e){gOut.textContent=_t('ดึงข้อมูลไม่สำเร็จ: ')+(e&&e.message||'');}gb.disabled=false;});linkBox.append(gb);}
+    else linkBox.append(h('span',{class:'hint'},_t('ดูจำนวนปีที่เคยท่วมจากข้อมูลน้ำท่วมซ้ำซากของ GISTDA แล้วกรอกด้านล่าง')));
+    linkBox.append(h('a',{class:'btn sm',href:gmaps(lat,lng),target:'_blank',rel:'noopener'},'Google Maps'));};
+  setLink(it.lat,it.lng,!it.approx);
+  if(it.approx&&it.ownerId&&it.sid&&S.db){S.db.doc('subs/'+it.ownerId+'/items/'+it.sid).get().then(s=>{const d=s.exists&&s.data();if(d&&isFinite(d.lat))setLink(d.lat,d.lng,true);}).catch(()=>{});}
+  const msg=h('span',{class:'small muted'});
+  const save=h('button',{type:'button',class:'btn primary sm'},_t('บันทึกการประเมิน'));
+  const cancel=h('button',{type:'button',class:'btn sm',onclick:()=>done&&done()},_t('ยกเลิก'));
+  save.addEventListener('click',async()=>{
+    if(years.value===''){msg.textContent=_t('กรุณาเลือกจำนวนปีที่เคยท่วม (ใส่ 0 ถ้าไม่เคยท่วม)');return;}
+    const nz=v=>v===''?null:num(v);
+    const o={years:+years.value,elev:nz(elev.value),terrain:terr.value||null,river:river.value.trim()||null,riverKm:nz(rkm.value),recedeDays:nz(days.value),recedeSrc:src.value||null,note:note.value.trim()||null,at:Date.now()};
+    save.disabled=true;msg.textContent=_t('กำลังบันทึก…');
+    try{await S.db.doc('listings/'+it.id).update({fa:o});it.fa=o;toast(_t('บันทึกการประเมินแล้ว'));done&&done();}
+    catch(e){msg.textContent=errText(e);save.disabled=false;}
+  });
+  return h('div',{class:'faform'},
+    h('strong',null,_t('ประเมินน้ำท่วม: ')+str(it.title)),linkBox,gOut,
+    h('div',{class:'two'},field(_t('จำนวนปีที่เคยท่วม ใน ')+FA_YEARS+_t(' ปี (GISTDA 2554–2566)'),years),field(_t('ความสูงจากระดับน้ำทะเล (ม.)'),elev),field(_t('สภาพพื้นที่เทียบรอบข้าง'),terr)),
+    h('div',{class:'two'},field(_t('ลำน้ำสายหลักที่ใกล้ที่สุด'),river),field(_t('ระยะห่างจากลำน้ำ (กม.)'),rkm)),
+    h('div',{class:'two'},field(_t('ระยะเวลาน้ำลด (วัน)'),days),field(_t('ที่มาของระยะเวลาน้ำลด'),src)),
+    field(_t('บันทึกเพิ่มเติม'),note),
+    h('p',{class:'hint'},_t('ความสูง: ดูได้จาก Google Earth โดยชี้ที่แปลง ค่าความสูงแสดงที่มุมล่าง · ระยะห่างลำน้ำ: ใช้เครื่องมือวัดระยะใน Google Maps')),
+    h('div',{class:'row'},save,cancel,msg));
+}
+function reportBox(it){
+  const box=h('section',{class:'card sec',style:'display:flex;flex-direction:column;gap:10px'});
+  const open=h('button',{type:'button',class:'btn sm danger',style:'align-self:flex-start'},_t('แจ้งประกาศนี้'));
+  box.append(h('strong',null,_t('พบว่าเป็นนายหน้า หรือข้อมูลไม่ตรง?')),open);
+  open.addEventListener('click',()=>{open.hidden=true;
+    const sel=h('select',{class:'input',id:'rpReason'},[_t('นายหน้าแอบอ้างเป็นเจ้าของ'),_t('ข้อมูลหรือพิกัดไม่ตรงกับแปลงจริง'),_t('ขายไปแล้ว'),_t('สงสัยว่าเป็นการหลอกลวง'),_t('อื่นๆ')].map(r=>h('option',null,r)));
+    const note=h('textarea',{class:'input',id:'rpNote',maxlength:'500',placeholder:_t('รายละเอียดเพิ่มเติม (ไม่บังคับ)')});
+    const send=h('button',{type:'button',class:'btn ochre sm'},_t('ส่งรายงาน'));
+    box.append(h('label',{class:'field',for:'rpReason'},_t('เหตุผล'),sel),h('label',{class:'field',for:'rpNote'},_t('รายละเอียด'),note),send);
+    send.addEventListener('click',async()=>{if(!S.db){toast(_t('ระบบยังเชื่อมต่อไม่ได้'));return;}if(!S.uid){openLogin();return;}send.disabled=true;
+      try{await S.db.doc('reports/'+S.uid).set({updatedAt:Date.now()});await S.db.collection('reports/'+S.uid+'/items').add({listingId:it.id,title:str(it.title).slice(0,120),reason:sel.value,note:note.value.slice(0,500),createdAt:Date.now()});box.textContent='';box.append(h('p',{class:'notice g',style:'margin:0'},_t('ส่งรายงานแล้ว ทีมงานจะตรวจสอบประกาศนี้')));}
+      catch(e){send.disabled=false;toast(errText(e));}});
+  });
+  return box;
+}
+
+/* ---------- post ---------- */
+let PMAP;
+function initPost(){
+  fillSelect($('#pAmphoe'),[['',_t('เลือกอำเภอ')],...AMPHOE.map(a=>[a,_t('อ.')+AMPN(a)])]);
+  const w=$('#wAmphoes');AMPHOE.forEach((a,i)=>w.append(h('label',{for:'wa'+i},h('input',{type:'checkbox',id:'wa'+i,value:a}),AMPN(a))));
+  $$('#kindOpts .opt').forEach(b=>b.addEventListener('click',()=>{S.post.kind=b.dataset.kind;$$('#kindOpts .opt').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));syncPost();}));
+  $$('#ptypeChips .chip').forEach(b=>b.addEventListener('click',()=>{const was=S.post.pt;S.post.pt=b.dataset.pt;$$('#ptypeChips .chip').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+    if(S.post.pt==='condo'&&was!=='condo')$('#pDeed').value='condo';else if(was==='condo'&&S.post.pt!=='condo'&&$('#pDeed').value==='condo')$('#pDeed').value='chanote';syncPost();}));
+  $('#pApprox').addEventListener('click',e=>{S.post.approx=!S.post.approx;e.currentTarget.setAttribute('aria-pressed',String(S.post.approx));});
+  $('#pDeed').addEventListener('change',syncPost);
+  $('#pCoord').addEventListener('change',()=>{const r=parseCoord($('#pCoord').value);setCoordErr('');if(!r)return;if(r.err){setCoordErr(r.err);return;}placePin(r.lat,r.lng,true);});
+  $('#pAmphoe').addEventListener('change',e=>{if(e.target.value&&PMAP)PMAP.zoomTo(e.target.value);});
+  $('#postForm').addEventListener('submit',submitPost);
+  syncPost();
+}
+function setCoordErr(m){const e=$('#coordErr');e.textContent=m;e.hidden=!m;}
+function prepPost(){
+  if(!PMAP){PMAP=mkMap($('#pickHost'),{onTap:({lat,lng,amphoe})=>{if(!amphoe){setCoordErr(_t('จุดที่แตะอยู่นอกจังหวัดขอนแก่น'));return;}if(PMAP.vbw>300){PMAP.zoomTo(amphoe);$('#pAmphoe').value=amphoe;return;}placePin(lat,lng,false);}});$('#pAll').addEventListener('click',()=>PMAP.zoomAll());}
+  const blk=$('#postBlocked');blk.textContent='';
+  if(!S.db){blk.hidden=false;blk.append(_t('ระบบยังเชื่อมต่อฐานข้อมูลไม่ได้ จึงยังส่งประกาศไม่ได้'));}
+  else if(!S.uid){blk.hidden=false;blk.append(h('span',null,_t('กรุณาเข้าสู่ระบบก่อนลงประกาศ เพื่อยืนยันตัวตนผู้ลงประกาศ ')),h('button',{type:'button',class:'btn sm primary',onclick:openLogin},_t('เข้าสู่ระบบ')));}
+  else blk.hidden=true;
+}
+function placePin(lat,lng,zoom){
+  setCoordErr('');
+  const am=amphoeAtLL(lat,lng);
+  if(!am){setCoordErr(_t('พิกัดนี้อยู่นอกจังหวัดขอนแก่น กรุณาตรวจตัวเลขอีกครั้ง'));return;}
+  S.post.lat=+lat.toFixed(6);S.post.lng=+lng.toFixed(6);
+  $('#pCoord').value=S.post.lat+', '+S.post.lng;$('#pAmphoe').value=am;
+  PMAP.setPins([{lat:S.post.lat,lng:S.post.lng,sel:true,label:_t('ตำแหน่งแปลงที่เลือก')}]);
+  if(zoom)PMAP.center(S.post.lat,S.post.lng,60);
+  $('#pickTag').textContent=_t('ปักหมุดแล้วที่ ')+_t('อ.')+AMPN(am)+_t(' · แตะใหม่เพื่อย้ายหมุด');
+}
+function syncPost(){
+  const k=S.post.kind,isW=k==='wanted';
+  $$('[data-for="offer"]').forEach(e=>e.hidden=isW);$$('[data-for="wanted"]').forEach(e=>e.hidden=!isW);
+  $$('[data-for="sale"]').forEach(e=>e.hidden=k!=='sale');$$('[data-for="rent"]').forEach(e=>e.hidden=k!=='rent');$$('[data-for="lease"]').forEach(e=>e.hidden=k!=='lease');
+  const room=ROOM.has(S.post.pt),lease=k==='lease';
+  $('#roomBox').hidden=isW||!room;$('#landArea').hidden=isW||room;$('#deedBox').hidden=isW||lease;
+  $('#rGenderWrap').hidden=S.post.pt!=='dorm';$('#rCommonWrap').hidden=S.post.pt!=='condo';
+  $('#offerLegend').textContent=room?_t('3. ข้อมูลห้องและราคา'):_t('3. ข้อมูลแปลงและราคา');
+  $('#contactLegend').textContent=isW?_t('3. ช่องทางติดต่อ'):_t('4. ช่องทางติดต่อ');
+  $('#ownerText').textContent=isW?_t('ข้าพเจ้าตามหาที่ดินหรือที่พักเพื่อตนเองหรือครอบครัว ไม่ใช่นายหน้า'):lease?_t('ข้าพเจ้าเป็นเจ้าของ หรือผู้จัดการอาคาร/ห้องที่ให้เช่าโดยตรง ไม่ใช่นายหน้า'):_t('ข้าพเจ้าเป็นเจ้าของกรรมสิทธิ์ หรือผู้รับมอบอำนาจโดยชอบ ไม่ใช่นายหน้า');
+  const spk=!isW&&!lease&&$('#pDeed').value==='spk';$('#spkWarn').hidden=!spk;
+  $('#postBtn').disabled=spk;
+  $('#postBtn').textContent=isW?_t('ลงประกาศตามหา'):k==='rent'?_t('ส่งประกาศให้เช่าซื้อ'):lease?_t('ส่งประกาศให้เช่า'):_t('ส่งประกาศขาย');
+}
+function roundApprox(v){return Math.round(v/0.005)*0.005+0.0012;}
+async function submitPost(e){
+  e.preventDefault();const err=$('#postErr');const fail=m=>{err.textContent=m;err.hidden=false;};err.hidden=true;
+  if(!S.db)return fail(_t('ระบบยังเชื่อมต่อฐานข้อมูลไม่ได้'));
+  if(!S.uid){openLogin();return fail(_t('กรุณาเข้าสู่ระบบก่อนลงประกาศ'));}
+  const k=S.post.kind,isW=k==='wanted';
+  const title=$('#pTitle').value.trim();
+  const d={kind:k,ptype:S.post.pt,title,contactName:$('#cName').value.trim(),phone:$('#cPhone').value.trim(),line:$('#cLine').value.trim(),createdAt:Date.now()};
+  d.phoneVerified=!!(S.user&&S.user.phoneNumber&&samePhone(d.phone,S.user.phoneNumber));
+  if(title.length<8)return fail(_t('กรุณาตั้งหัวข้อประกาศอย่างน้อย 8 ตัวอักษร'));
+  if(!/^[0-9\-\s+]{9,15}$/.test(d.phone))return fail(_t('กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง'));
+  if(!d.contactName)return fail(_t('กรุณากรอกชื่อที่แสดง'));
+  if(!$('#aOwner').checked||!$('#aPdpa').checked)return fail(_t('กรุณายืนยันทั้ง 2 ข้อก่อนส่งประกาศ'));
+  if(isW){
+    const amps=$$('#wAmphoes input:checked').map(i=>i.value);
+    if(!amps.length)return fail(_t('กรุณาเลือกอำเภอที่สนใจอย่างน้อย 1 อำเภอ'));
+    Object.assign(d,{amphoes:amps,budgetMin:num($('#wMin').value),budgetMax:num($('#wMax').value),sizeText:$('#wSize').value.trim(),needs:$$('#wNeeds input:checked').map(i=>i.value),desc:$('#wDesc').value.trim(),fromProvince:$('#wFrom').value.trim()});
+  }else{
+    if(S.post.lat==null)return fail(_t('กรุณาวางพิกัดหรือแตะแผนที่เพื่อปักหมุดแปลง'));
+    const am=$('#pAmphoe').value;if(!am)return fail(_t('กรุณาเลือกอำเภอ'));
+    const room=ROOM.has(S.post.pt),lease=k==='lease';
+    Object.assign(d,{amphoe:am,tambon:$('#pTambon').value.trim(),lat:S.post.lat,lng:S.post.lng,approx:S.post.approx,flood:$('#pFlood').value,desc:$('#pDesc').value.trim()});
+    if(!lease){
+      const deed=$('#pDeed').value;if(deed==='spk')return fail(_t('ระบบไม่รับประกาศที่ดิน ส.ป.ก.'));
+      const deedNo=$('#pDeedNo').value.replace(/\D/g,'');if(deedNo.length<2)return fail(_t('กรุณากรอกเลขที่โฉนด เลขที่ดิน หรือเลขห้องชุด'));
+      Object.assign(d,{deed,deedNo,deedLast:deedNo.slice(-2)});
+    }
+    if(room){
+      const sqm=num($('#rSize').value);if(!sqm)return fail(_t('กรุณากรอกขนาดห้อง (ตร.ม.)'));
+      Object.assign(d,{project:$('#rProject').value.trim(),sqm,floor:$('#rFloor').value.trim(),bed:$('#rBed').value,bath:$('#rBath').value,fac:$$('#rFac input:checked').map(i=>i.value),near:$('#rNear').value.trim()});
+      if(S.post.pt==='dorm')d.gender=$('#rGender').value;
+      if(S.post.pt==='condo')d.commonFee=num($('#rCommon').value);
+    }else{
+      const rai=num($('#pRai').value),ngan=num($('#pNgan').value),wa=num($('#pWa').value);const sqw=rai*400+ngan*100+wa;
+      if(!sqw)return fail(_t('กรุณากรอกเนื้อที่'));if(ngan>=4)return fail(_t('ช่อง "งาน" ต้องไม่เกิน 3'));
+      Object.assign(d,{rai,ngan,wa,sqw});
+    }
+    if(k==='sale'){d.price=num($('#pPrice').value);if(!d.price)return fail(_t('กรุณากรอกราคาขาย'));}
+    else if(k==='rent'){d.down=num($('#pDown').value);d.monthly=num($('#pMonthly').value);d.months=num($('#pMonths').value);if(!d.monthly||!d.months)return fail(_t('กรุณากรอกค่างวดและจำนวนงวด'));}
+    else{d.rent=num($('#lRent').value);if(!d.rent)return fail(_t('กรุณากรอกค่าเช่าต่อเดือน'));
+      Object.assign(d,{deposit:$('#lDeposit').value.trim(),minMonths:num($('#lMin').value),water:$('#lWater').value.trim(),elec:$('#lElec').value.trim()});
+      const v=$('#lVacant').value.trim();d.vacant=v===''?null:num(v);}
+  }
+  const btn=$('#postBtn');btn.disabled=true;btn.textContent=_t('กำลังส่ง…');
+  try{
+    d.status=S.isAdmin?'approved':'pending';
+    await S.db.doc('subs/'+S.uid).set({updatedAt:Date.now()});
+    const ref=S.db.collection('subs/'+S.uid+'/items').doc();
+    await ref.set(d);
+    if(S.isAdmin)await S.db.doc('listings/'+ref.id).set(publicOf(d,S.uid,ref.id));
+    $('#postForm').reset();S.post.lat=S.post.lng=null;PMAP&&PMAP.setPins([]);S.post.approx=true;$('#pApprox').setAttribute('aria-pressed','true');
+    toast(S.isAdmin?_t('เผยแพร่ประกาศแล้ว'):_t('ส่งประกาศแล้ว รอทีมงานตรวจสอบ'));go('mine');
+  }catch(ex){fail(errText(ex));}
+  finally{btn.disabled=false;syncPost();}
+}
+function publicOf(d,uid,sid){
+  const keys=['kind','ptype','title','contactName','phone','line','createdAt','amphoes','budgetMin','budgetMax','sizeText','needs','desc','fromProvince','amphoe','tambon','approx','deed','deedLast','rai','ngan','wa','sqw','flood','price','down','monthly','months','project','sqm','floor','bed','bath','gender','commonFee','fac','near','rent','deposit','minMonths','water','elec','vacant','phoneVerified'];
+  const o={};keys.forEach(k=>{if(d[k]!==undefined)o[k]=d[k];});
+  if(d.kind!=='wanted'){o.lat=d.approx?+roundApprox(d.lat).toFixed(5):d.lat;o.lng=d.approx?+roundApprox(d.lng).toFixed(5):d.lng;}
+  o.ownerId=uid;o.sid=sid;o.approvedAt=Date.now();return o;
+}
+
+/* ---------- mine ---------- */
+const STAT={pending:[_t('รอตรวจ'),'o'],approved:[_t('เผยแพร่แล้ว'),'g'],rejected:[_t('ไม่อนุมัติ'),'r'],closed:[_t('ปิดแล้ว'),'']};
+function renderMine(){
+  const box=$('#mineList');box.textContent='';
+  const ul=$('#uidLine');ul.textContent='';ul.hidden=!S.uid;if(S.uid)ul.append(_t('รหัสผู้ใช้ (UID) ของคุณ: '),h('code',{style:'user-select:all;overflow-wrap:anywhere'},S.uid),' ',copyBtn(S.uid,_t('คัดลอก UID')));
+  if(!S.uid){box.append(h('div',{class:'empty'},h('p',{style:'margin:0 0 12px'},_t('เข้าสู่ระบบเพื่อดูและจัดการประกาศของคุณ')),h('button',{type:'button',class:'btn primary',onclick:openLogin},_t('เข้าสู่ระบบ'))));return;}
+  if(!S.mine.length){box.append(h('div',{class:'empty'},h('h3',null,_t('ยังไม่มีประกาศ')),h('p',{style:'margin:0 0 12px'},_t('ลงประกาศขาย เช่าซื้อ หรือตามหาที่ดินได้ฟรี')),h('button',{type:'button',class:'btn primary','data-go':'post'},_t('ลงประกาศฟรี'))));return;}
+  S.mine.slice().sort((a,b)=>num(b.createdAt)-num(a.createdAt)).forEach(it=>{
+    const st=STAT[it.status]||STAT.pending;
+    const card=h('article',{class:'card item'},
+      h('div',{class:'row',style:'gap:6px'},h('span',{class:'badge '+st[1]},st[0]),it.withdraw&&it.status==='approved'?h('span',{class:'badge'},_t('ขอปิดแล้ว รอดำเนินการ')):null,h('span',{class:'badge'},KIND[it.kind]+' · '+(PT[it.ptype]||''))),
+      h('h3',{text:str(it.title)}),
+      h('div',{class:'kv'},h('span',null,_t('ราคา '),h('b',null,priceText(it))),it.amphoe?h('span',null,_t('อ.'),h('b',null,AMPN(it.amphoe))):null,h('span',null,_t('ส่งเมื่อ '),h('b',null,ago(it.createdAt)))),
+      it.status==='rejected'&&it.reviewNote?h('p',{class:'notice r',style:'margin:0',text:_t('เหตุผล: ')+str(it.reviewNote)}):null);
+    const act=h('div',{class:'row'});
+    if(it.status==='approved'){act.append(h('button',{type:'button',class:'btn sm',onclick:()=>openDetail(it._id)},_t('ดูประกาศ')));if(!it.withdraw)act.append(confirmBtn(_t('ขอปิดประกาศ'),'danger',async()=>{await S.db.doc(it._path).update({withdraw:true,withdrawAt:Date.now()});if(S.isAdmin){await S.db.doc('listings/'+it._id).delete();await S.db.doc(it._path).update({status:'closed'});}toast(_t('ส่งคำขอปิดประกาศแล้ว'));}));}
+    if(it.status!=='approved')act.append(confirmBtn(_t('ลบคำขอนี้'),'danger',async()=>{await S.db.doc(it._path).delete();toast(_t('ลบแล้ว'));}));
+    card.append(act);box.append(card);
+  });
+}
+
+/* ---------- donate ---------- */
+const AMTS=[39,99,199,500];let amt=99;
+function renderDonate(){
+  const c=$('#amtChips');c.textContent='';
+  AMTS.concat([0]).forEach(a=>{const b=h('button',{type:'button',class:'chip','aria-pressed':String(amt===a)},a?_t('฿')+a:_t('ตามใจ'));b.addEventListener('click',()=>{amt=a;renderDonate();});c.append(b);});
+  $('#amtText').textContent=amt?_t('สแกน QR แล้วใส่ยอด ฿')+amt+_t(' ในแอปธนาคาร'):_t('สแกน QR แล้วระบุยอดเองในแอปธนาคาร');
+  const q=$('#qrBox');q.textContent='';const cfg=S.config||{};
+  const qimg=h('img',{src:APP.QR_URL||'donate-qr.png',alt:_t('QR พร้อมเพย์สำหรับสนับสนุนเว็บไซต์')});
+  qimg.addEventListener('error',()=>qimg.replaceWith(h('div',{class:'box'},_t('ผู้ดูแลกำลังเตรียม QR สำหรับรับบริจาค'))));q.append(qimg);
+  q.append(h('strong',{class:'small'},_t('สแกนเพื่อสนับสนุน')));
+  if(cfg.payName)q.append(h('span',{class:'small muted',text:_t('ชื่อบัญชี: ')+str(cfg.payName)}));
+  const sb=$('#stripeBox');sb.textContent='';
+  const su=str(cfg.stripeUrl);
+  if(/^https:\/\/(buy|donate)\.stripe\.com\//.test(su)){
+    sb.append(h('div',{class:'row'},h('a',{class:'btn ochre',href:su,target:'_blank',rel:'noopener'},_t('สนับสนุนด้วยบัตร ผ่าน Stripe')),h('span',{class:'small muted'},_t('เปิดหน้าชำระเงินของ Stripe ในแท็บใหม่ ระบุยอดได้เอง'))));
+  }else if(S.isAdmin){
+    sb.append(h('p',{class:'hint'},_t('ยังไม่ได้ใส่ลิงก์ Stripe ตั้งค่าได้ที่หน้า "จัดการประกาศ"')));
+  }
+}
+
+/* ---------- admin ---------- */
+async function loadAdmin(){
+  if(!S.isAdmin||!S.db)return;
+  const pend=$('#admPending'),rep=$('#admReports');pend.textContent='';rep.textContent='';
+  pend.append(h('p',{class:'muted'},_t('กำลังโหลด…')));
+  $('#cfgName').value=str(S.config.payName);$('#cfgStripe').value=str(S.config.stripeUrl);
+  try{
+    const users=await S.db.collection('subs').get();const items=[];
+    for(const u of users.docs){const s=await S.db.collection('subs/'+u.id+'/items').get();s.docs.forEach(d=>{const x=d.data()||{};if(x.status==='pending'||(x.status==='approved'&&x.withdraw))items.push({...x,_id:d.id,_uid:u.id,_path:'subs/'+u.id+'/items/'+d.id});});}
+    pend.textContent='';
+    if(!items.length)pend.append(h('div',{class:'empty'},_t('ไม่มีประกาศรอตรวจ')));
+    items.sort((a,b)=>num(a.createdAt)-num(b.createdAt)).forEach(it=>pend.append(adminCard(it)));
+    const rs=await S.db.collection('reports').get();const reps=[];
+    for(const u of rs.docs){const s=await S.db.collection('reports/'+u.id+'/items').get();s.docs.forEach(d=>reps.push({...(d.data()||{}),_path:'reports/'+u.id+'/items/'+d.id}));}
+    if(!reps.length)rep.append(h('div',{class:'empty'},_t('ไม่มีรายงาน')));
+    reps.sort((a,b)=>num(b.createdAt)-num(a.createdAt)).forEach(r=>{const live=S.listings.find(x=>x.id===r.listingId);
+      const c=h('article',{class:'card item'},h('div',{class:'row'},h('span',{class:'badge r'},_t(str(r.reason))),h('span',{class:'small muted'},ago(r.createdAt))),h('h3',{text:str(r.title)}),r.note?h('p',{style:'margin:0;white-space:pre-line',text:str(r.note)}):null);
+      const act=h('div',{class:'row'});if(live){act.append(h('button',{type:'button',class:'btn sm',onclick:()=>openDetail(live.id)},_t('ดูประกาศ')),confirmBtn(_t('ปิดประกาศนี้'),'danger',async()=>{await closeListing(live);await S.db.doc(r._path).delete();loadAdmin();}));}else act.append(h('span',{class:'small muted'},_t('ประกาศนี้ปิดไปแล้ว')));
+      act.append(confirmBtn(_t('ลบรายงาน'),'',async()=>{await S.db.doc(r._path).delete();c.remove();}));c.append(act);rep.append(c);});
+  }catch(e){pend.textContent='';pend.append(h('p',{class:'notice r'},errText(e)));}
+  renderAdminLive();
+}
+function adminCard(it){
+  const isW=it.kind==='wanted';
+  const c=h('article',{class:'card item'},
+    h('div',{class:'row',style:'gap:6px'},h('span',{class:'badge o'},it.withdraw?_t('ขอปิดประกาศ'):_t('รอตรวจ')),h('span',{class:'badge'},KIND[it.kind]+' · '+(PT[it.ptype]||'')),h('span',{class:'small muted'},ago(it.createdAt))),
+    h('h3',{text:str(it.title)}),
+    h('div',{class:'kv'},h('span',null,_t('ราคา/งบ '),h('b',null,priceText(it))),isW?h('span',null,_t('ทำเล '),h('b',null,(it.amphoes||[]).map(AMPN).join(', '))):[h('span',null,_t('อ.'),h('b',null,AMPN(it.amphoe))),h('span',null,ROOM.has(it.ptype)?_t('ขนาดห้อง '):_t('เนื้อที่ '),h('b',null,sizeOf(it))),it.project?h('span',null,_t('อาคาร '),h('b',null,str(it.project))):null,it.deed?h('span',null,_t('เอกสาร '),h('b',null,(DEED[it.deed]||'')+_t(' เลขที่ ')+str(it.deedNo))):null,it.kind==='lease'?h('span',null,_t('ประกัน '),h('b',null,str(it.deposit)||'-')):null,h('span',null,_t('พิกัด '),h('b',null,str(it.lat)+', '+str(it.lng)))]),
+    h('div',{class:'kv'},h('span',null,_t('ผู้ติดต่อ '),h('b',null,str(it.contactName))),h('span',null,_t('โทร '),h('b',null,str(it.phone))),it.line?h('span',null,'LINE ',h('b',null,str(it.line))):null),
+    it.desc?h('p',{class:'small',style:'margin:0;white-space:pre-line;overflow-wrap:anywhere',text:str(it.desc)}):null);
+  const act=h('div',{class:'row'});
+  if(!isW)act.append(h('a',{class:'btn sm',href:gmaps(it.lat,it.lng),target:'_blank',rel:'noopener'},_t('ดูพิกัดใน Google Maps')));
+  if(it.withdraw){act.append(confirmBtn(_t('ปิดประกาศตามคำขอ'),'danger',async()=>{await S.db.doc('listings/'+it._id).delete();await S.db.doc(it._path).update({status:'closed'});c.remove();toast(_t('ปิดประกาศแล้ว'));}));}
+  else{
+    const note=h('input',{class:'input',placeholder:_t('เหตุผลกรณีไม่อนุมัติ (ผู้ลงประกาศจะเห็น)'),maxlength:'200','aria-label':_t('เหตุผลกรณีไม่อนุมัติ'),style:'flex:1 1 240px;min-height:38px'});
+    act.append(h('button',{type:'button',class:'btn primary sm',onclick:async e=>{const b=e.currentTarget;b.disabled=true;try{await S.db.doc('listings/'+it._id).set(publicOf(it,it._uid,it._id));await S.db.doc(it._path).update({status:'approved',reviewedAt:Date.now()});c.remove();toast(_t('อนุมัติและเผยแพร่แล้ว'));}catch(ex){toast(errText(ex));b.disabled=false;}}},_t('อนุมัติ')),
+      note,h('button',{type:'button',class:'btn sm danger',onclick:async e=>{const b=e.currentTarget;b.disabled=true;try{await S.db.doc(it._path).update({status:'rejected',reviewNote:note.value.trim()||_t('ข้อมูลไม่ครบหรือไม่ตรงเงื่อนไข'),reviewedAt:Date.now()});c.remove();toast(_t('บันทึกผลไม่อนุมัติแล้ว'));}catch(ex){toast(errText(ex));b.disabled=false;}}},_t('ไม่อนุมัติ')));
+  }
+  c.append(act);return c;
+}
+async function closeListing(l){await S.db.doc('listings/'+l.id).delete();if(l.ownerId&&l.sid){try{await S.db.doc('subs/'+l.ownerId+'/items/'+l.sid).update({status:'closed'});}catch(e){}}}
+function renderAdminLive(){
+  const box=$('#admLive');if(!box)return;box.textContent='';
+  if(!S.listings.length){box.append(h('div',{class:'empty'},_t('ยังไม่มีประกาศที่เผยแพร่')));return;}
+  S.listings.slice().sort((a,b)=>num(b.createdAt)-num(a.createdAt)).forEach(l=>{
+    const isW=l.kind==='wanted';
+    const card=h('article',{class:'card item'},h('div',{class:'row',style:'gap:6px'},h('span',{class:'badge g'},KIND[l.kind]),isW?null:(riskBadge(l)||h('span',{class:'badge o'},_t('ยังไม่ประเมินน้ำท่วม'))),h('span',{class:'small muted'},ago(l.createdAt))),h('h3',{text:str(l.title)}));
+    const act=h('div',{class:'row'},h('button',{type:'button',class:'btn sm',onclick:()=>openDetail(l.id)},_t('ดูประกาศ')));
+    if(!isW){const fb=h('button',{type:'button',class:'btn sm'},floodRisk(l)?_t('แก้ไขการประเมินน้ำท่วม'):_t('ประเมินน้ำท่วม'));fb.addEventListener('click',()=>{act.hidden=true;card.append(faForm(l,()=>renderAdminLive()));});act.append(fb);}
+    act.append(confirmBtn(_t('ปิดประกาศ'),'danger',async()=>{await closeListing(l);toast(_t('ปิดประกาศแล้ว'));}));
+    card.append(act);box.append(card);
+  });
+}
+async function saveConfig(){
+  const msg=$('#cfgMsg');msg.textContent=_t('กำลังบันทึก…');
+  try{
+    const su=$('#cfgStripe').value.trim();
+    if(su&&!/^https:\/\/(buy|donate)\.stripe\.com\/[A-Za-z0-9_\-\/?=&.]+$/.test(su)){msg.textContent=_t('ลิงก์ต้องขึ้นต้นด้วย https://buy.stripe.com/ หรือ https://donate.stripe.com/');return;}
+    await S.db.doc('config/site').set({payName:$('#cfgName').value.trim(),stripeUrl:su||null,updatedAt:Date.now()});msg.textContent=_t('บันทึกแล้ว');
+  }catch(e){msg.textContent=errText(e);}
+}
+
+/* ===== Firebase + Google Maps layer (replaces the claude.ai runtime) ===== */
+const APP = window.APP || {};
+const FB = {};
+const LOCAL_PHONE = p => { const d = String(p || '').replace(/\D/g, ''); return d.startsWith('66') && d.length === 11 ? '0' + d.slice(2) : d; };
+const samePhone = (a, b) => { const x = String(a || '').replace(/\D/g, '').slice(-9), y = String(b || '').replace(/\D/g, '').slice(-9); return x.length === 9 && x === y; };
+function toE164(input) {
+  const raw = String(input || '').trim();
+  if (raw.startsWith('+')) return '+' + raw.replace(/\D/g, '');
+  const d = raw.replace(/\D/g, '');
+  if (d.startsWith('66')) return '+' + d;
+  if (d.startsWith('0') && d.length === 10) return '+66' + d.slice(1);
+  return null;
+}
+function configReady() {
+  const c = APP.firebaseConfig || {};
+  return !!(c.apiKey && c.projectId && !/^ใส่/.test(c.apiKey));
+}
+
+/* --- Firestore adapter: same small API the page already uses --- */
+function makeDbAdapter(fs, db) {
+  const snapDoc = s => ({ id: s.id, exists: s.exists(), data: () => s.data() });
+  const docRef = p => {
+    const r = typeof p === 'string' ? fs.doc(db, p) : p;
+    return {
+      id: r.id, path: r.path,
+      get: async () => snapDoc(await fs.getDoc(r)),
+      set: d => fs.setDoc(r, d),
+      update: d => fs.updateDoc(r, d),
+      delete: () => fs.deleteDoc(r),
+      onSnapshot: (n, e) => fs.onSnapshot(r, s => n(snapDoc(s)), e)
+    };
+  };
+  const wrapQ = q => ({
+    limit: k => wrapQ(fs.query(q, fs.limit(k))),
+    get: async () => { const s = await fs.getDocs(q); return { docs: s.docs.map(snapDoc), size: s.size, empty: s.empty }; },
+    onSnapshot: (n, e) => fs.onSnapshot(q, s => n({ docs: s.docs.map(snapDoc), size: s.size, empty: s.empty }), e)
+  });
+  return {
+    doc: docRef,
+    collection: p => {
+      const c = fs.collection(db, p);
+      return Object.assign(wrapQ(c), {
+        doc: id => docRef(id ? fs.doc(c, id) : fs.doc(c)),
+        add: async d => docRef(await fs.addDoc(c, d))
+      });
+    }
+  };
+}
+async function initFirebase() {
+  const base = 'https://www.gstatic.com/firebasejs/' + FIREBASE_SDK + '/';
+  const [app, fs, au] = await Promise.all([import(base + 'firebase-app.js'), import(base + 'firebase-firestore.js'), import(base + 'firebase-auth.js')]);
+  const a = app.initializeApp(APP.firebaseConfig);
+  FB.fs = fs; FB.au = au; FB.db = fs.getFirestore(a); FB.auth = au.getAuth(a); FB.auth.languageCode = GLANG;
+  if (APP.GISTDA_FUNCTION) {
+    try { const fn = await import(base + 'firebase-functions.js'); FB.callGistda = fn.httpsCallable(fn.getFunctions(a, 'asia-southeast1'), 'gistdaFlood'); } catch (e) { FB.callGistda = null; }
+  }
+  return makeDbAdapter(fs, FB.db);
+}
+
+/* --- Google Maps (falls back to the built-in district map when no key) --- */
+let GM = null;
+function pip(lng, lat, ring) { let c = false; for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) { const [xi, yi] = ring[i], [xj, yj] = ring[j]; if (((yi > lat) !== (yj > lat)) && (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) c = !c; } return c; }
+function amphoeAtLL(lat, lng) { for (const d of GEOLL) { if (lng < d.bb[0] || lng > d.bb[2] || lat < d.bb[1] || lat > d.bb[3]) continue; if (d.r.some(r => pip(lng, lat, r))) return d.n; } return null; }
+const GBB = GEOLL.reduce((a, d) => [Math.min(a[0], d.bb[0]), Math.min(a[1], d.bb[1]), Math.max(a[2], d.bb[2]), Math.max(a[3], d.bb[3])], [999, 999, -999, -999]);
+function loadGMaps() {
+  if (!APP.GOOGLE_MAPS_KEY) return Promise.resolve(null);
+  return new Promise((res, rej) => {
+    const t = setTimeout(() => rej(new Error('timeout')), 12000);
+    window.__gmInit = async () => {
+      try { await google.maps.importLibrary('maps'); const marker = await google.maps.importLibrary('marker'); clearTimeout(t); res({ maps: google.maps, marker }); }
+      catch (e) { clearTimeout(t); rej(e); }
+    };
+    window.gm_authFailure = () => toast(_t('คีย์ Google Maps ใช้ไม่ได้ ตรวจค่า GOOGLE_MAPS_KEY ใน config.js'));
+    const s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(APP.GOOGLE_MAPS_KEY) + '&v=weekly&loading=async&language=' + GLANG + '&region=TH&callback=__gmInit';
+    s.async = true; s.onerror = () => { clearTimeout(t); rej(new Error('load')); };
+    document.head.append(s);
+  });
+}
+function makeGMap(host, opt) {
+  const el = document.createElement('div'); el.className = 'gmap'; host.prepend(el);
+  const g = GM.maps;
+  const map = new g.Map(el, { mapId: APP.GOOGLE_MAP_ID || 'DEMO_MAP_ID', gestureHandling: 'greedy', zoomControl: false, streetViewControl: false, fullscreenControl: false, clickableIcons: false, mapTypeControl: true, mapTypeControlOptions: { position: g.ControlPosition.RIGHT_BOTTOM } });
+  const toB = bb => new g.LatLngBounds({ lat: bb[1], lng: bb[0] }, { lat: bb[3], lng: bb[2] });
+  map.fitBounds(toB(GBB), 0);
+  map.data.addGeoJson({ type: 'FeatureCollection', features: GEOLL.map(d => ({ type: 'Feature', properties: { n: d.n }, geometry: { type: 'MultiPolygon', coordinates: d.r.map(r => [r]) } })) });
+  let shadeMap = {}, act = '';
+  const style = () => map.data.setStyle(f => { const n = f.getProperty('n'), c = shadeMap[n] || 0; return { fillColor: c >= 3 ? '#9A5418' : c ? '#E3A466' : '#1F5A41', fillOpacity: c ? 0.3 : (n === act ? 0.1 : 0), strokeColor: n === act ? '#1F5A41' : '#56615B', strokeOpacity: 0.8, strokeWeight: n === act ? 2.5 : 1, clickable: true }; });
+  style();
+  const tap = ll => { const lat = ll.lat(), lng = ll.lng(); opt.onTap && opt.onTap({ lat, lng, amphoe: amphoeAtLL(lat, lng) }); };
+  map.addListener('click', e => e.latLng && tap(e.latLng));
+  map.data.addListener('click', e => e.latLng && tap(e.latLng));
+  let markers = [];
+  function setPins(list) {
+    markers.forEach(m => { m.map = null; });
+    markers = list.filter(p => isFinite(p.lat) && isFinite(p.lng)).map(p => {
+      const pin = new GM.marker.PinElement({ background: p.sel ? '#9A5418' : '#1F5A41', borderColor: '#FFFFFF', glyphColor: '#FFFFFF', scale: p.sel ? 1.25 : 1 });
+      const m = new GM.marker.AdvancedMarkerElement({ map, position: { lat: Number(p.lat), lng: Number(p.lng) }, content: pin.element || pin, title: p.label || '', zIndex: p.sel ? 10 : 1, gmpClickable: !!p.onClick });
+      if (p.onClick) m.addListener('click', () => p.onClick());
+      return m;
+    });
+  }
+  const zoomOf = () => map.getZoom() || 9;
+  return {
+    zoomTo: n => { const d = GEOLL.find(x => x.n === n); if (d) map.fitBounds(toB(d.bb), 24); },
+    zoomBy: f => map.setZoom(zoomOf() + (f < 1 ? 1 : -1)),
+    zoomAll: () => map.fitBounds(toB(GBB), 0),
+    center: (lat, lng, w) => { map.setCenter({ lat: Number(lat), lng: Number(lng) }); map.setZoom(w <= 70 ? 16 : w <= 160 ? 13 : 11); },
+    setPins, shade: m => { shadeMap = m || {}; style(); }, active: n => { act = n || ''; style(); },
+    amphoeAt: () => null,
+    get vbw() { return 1000 / Math.pow(2, zoomOf() - 8.5); }
+  };
+}
+function mkMap(host, opt) { return GM ? makeGMap(host, opt) : makeMap(host, opt); }
+
+/* --- Sign-in (Google and/or phone OTP) --- */
+let unsubMine = null;
+function setWho() {
+  const w = $('#who'); w.textContent = '';
+  if (!S.db) return;
+  if (S.user) {
+    w.append(h('span', null, S.user.displayName || LOCAL_PHONE(S.user.phoneNumber) || _t('ผู้ใช้')), S.isAdmin ? h('span', { class: 'badge g' }, _t('ผู้ดูแล')) : null,
+      h('button', { type: 'button', class: 'btn sm', onclick: () => FB.au.signOut(FB.auth) }, _t('ออกจากระบบ')));
+  } else {
+    w.append(h('button', { type: 'button', class: 'btn sm', onclick: openLogin }, _t('เข้าสู่ระบบ')));
+  }
+}
+function loginErr(m) { const e = $('#loginErr'); e.textContent = m || ''; e.hidden = !m; }
+function authErrText(e) {
+  const c = e && e.code || '';
+  if (c === 'auth/invalid-phone-number' || c === 'auth/missing-phone-number') return _t('เบอร์โทรไม่ถูกต้อง เบอร์ไทยพิมพ์ 08X-XXX-XXXX เบอร์ประเทศอื่นพิมพ์ + และรหัสประเทศนำหน้า');
+  if (c === 'auth/invalid-verification-code') return _t('รหัส OTP ไม่ถูกต้อง กรุณาตรวจอีกครั้ง');
+  if (c === 'auth/code-expired') return _t('รหัส OTP หมดอายุ กรุณาขอรหัสใหม่');
+  if (c === 'auth/too-many-requests' || c === 'auth/quota-exceeded') return _t('ขอรหัสถี่เกินไป กรุณารอสักครู่แล้วลองใหม่');
+  if (c === 'auth/popup-closed-by-user' || c === 'auth/cancelled-popup-request') return '';
+  if (c === 'auth/popup-blocked') return _t('เบราว์เซอร์บล็อกหน้าต่างเข้าสู่ระบบ กรุณาอนุญาตป๊อปอัปแล้วลองใหม่');
+  if (c === 'auth/operation-not-allowed' || c === 'auth/billing-not-enabled') return _t('ยังไม่ได้เปิดวิธีเข้าสู่ระบบนี้ในโปรเจกต์ Firebase');
+  if (c === 'auth/unauthorized-domain') return _t('โดเมนนี้ยังไม่ได้รับอนุญาตใน Firebase Authentication');
+  return _t('เข้าสู่ระบบไม่สำเร็จ กรุณาลองใหม่อีกครั้ง');
+}
+function openLogin() {
+  if (!S.db) { toast(_t('ระบบยังเชื่อมต่อไม่ได้')); return; }
+  loginErr(''); $('#loginGoogle').hidden = APP.AUTH_GOOGLE === false; $('#phoneBox').hidden = !APP.AUTH_PHONE;
+  $('#otpStep2').hidden = true; $('#loginModal').hidden = false;
+  setTimeout(() => ($('#loginGoogle').hidden ? $('#otpPhone') : $('#loginGoogle')).focus(), 30);
+}
+function closeLogin() { $('#loginModal').hidden = true; }
+function initLogin() {
+  $('#loginClose').addEventListener('click', closeLogin);
+  $('#loginModal').addEventListener('click', e => { if (e.target.id === 'loginModal') closeLogin(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#loginModal').hidden) closeLogin(); });
+  $('#loginGoogle').addEventListener('click', async () => {
+    loginErr('');
+    try { await FB.au.signInWithPopup(FB.auth, new FB.au.GoogleAuthProvider()); closeLogin(); } catch (e) { loginErr(authErrText(e)); }
+  });
+  $('#otpSend').addEventListener('click', async () => {
+    loginErr(''); const phone = toE164($('#otpPhone').value);
+    if (!phone) { loginErr(_t('เบอร์โทรไม่ถูกต้อง เบอร์ไทยพิมพ์ 08X-XXX-XXXX เบอร์ประเทศอื่นพิมพ์ + และรหัสประเทศนำหน้า')); return; }
+    const b = $('#otpSend'); b.disabled = true; b.textContent = _t('กำลังส่ง…');
+    try {
+      if (!FB.verifier) FB.verifier = new FB.au.RecaptchaVerifier(FB.auth, 'recaptchaBox', { size: 'invisible' });
+      FB.confirm = await FB.au.signInWithPhoneNumber(FB.auth, phone, FB.verifier);
+      $('#otpStep2').hidden = false; $('#otpCode').focus(); b.textContent = _t('ส่งรหัสอีกครั้ง');
+    } catch (e) { loginErr(authErrText(e)); b.textContent = _t('ส่งรหัส OTP'); try { FB.verifier && FB.verifier.clear(); } catch (x) {} FB.verifier = null; }
+    finally { b.disabled = false; }
+  });
+  $('#otpVerify').addEventListener('click', async () => {
+    loginErr(''); const code = $('#otpCode').value.replace(/\D/g, '');
+    if (code.length !== 6 || !FB.confirm) { loginErr(_t('กรุณากรอกรหัส 6 หลักจาก SMS')); return; }
+    try { await FB.confirm.confirm(code); closeLogin(); } catch (e) { loginErr(authErrText(e)); }
+  });
+}
+async function onUser(u) {
+  S.user = u || null; S.uid = u ? u.uid : null; S.isAdmin = false;
+  if (u) { try { S.isAdmin = (await S.db.doc('admins/' + u.uid).get()).exists; } catch (e) { S.isAdmin = false; } }
+  $('#adminTab').hidden = !S.isAdmin; setWho();
+  if (u) {
+    if (!$('#cName').value && u.displayName) $('#cName').value = u.displayName;
+    if (u.phoneNumber && !$('#cPhone').value) $('#cPhone').value = LOCAL_PHONE(u.phoneNumber);
+  }
+  if (unsubMine) { unsubMine(); unsubMine = null; } S.mine = [];
+  if (S.uid) unsubMine = S.db.collection('subs/' + S.uid + '/items').onSnapshot(snap => { S.mine = snap.docs.map(d => ({ ...(d.data() || {}), _id: d.id, _path: 'subs/' + S.uid + '/items/' + d.id })); if (S.view === 'mine') renderMine(); }, () => {});
+  if (S.view === 'post') prepPost(); if (S.view === 'mine') renderMine(); if (S.view === 'donate') renderDonate();
+  if (S.view === 'admin') { if (S.isAdmin) loadAdmin(); else go('search'); }
+}
+
+/* ---------- boot ---------- */
+async function boot(){
+  try{GM=await loadGMaps();}catch(e){GM=null;}
+  if(GM)$$('.mapnote').forEach(n=>n.hidden=true);
+  initLang();initSearch();initPost();initLogin();renderSearch();renderDonate();
+  $('#adminReload').addEventListener('click',loadAdmin);$('#cfgSave').addEventListener('click',saveConfig);
+  if(!configReady()){S.loaded=true;renderSearch();$('#count').textContent=_t('ยังไม่ได้ตั้งค่า Firebase ในไฟล์ config.js');return;}
+  let db;try{db=await initFirebase();}catch(e){S.loaded=true;renderSearch();$('#count').textContent=_t('เชื่อมต่อ Firebase ไม่ได้ กรุณาตรวจไฟล์ config.js');return;}
+  S.db=db;setWho();
+  $('#gistdaStatus').textContent=FB.callGistda?_t('เปิดใช้งานแล้ว ในฟอร์มประเมินน้ำท่วมจะมีปุ่ม "ดึงข้อมูล GISTDA ของพิกัดนี้"'):_t('ยังไม่เปิด ต้องอัปเกรดเป็นแพ็กเกจ Blaze และ deploy ฟังก์ชัน gistdaFlood ตามคู่มือ ระหว่างนี้กรอกข้อมูลเองได้ตามปกติ');
+  db.collection('listings').limit(1000).onSnapshot(snap=>{
+    S.listings=snap.docs.map(d=>{const x=d.data()||{};return {...x,id:d.id,lat:Number(x.lat),lng:Number(x.lng)};}).filter(x=>x.kind in KIND);
+    S.loaded=true;if(S.view==='search')renderSearch();if(S.view==='admin')renderAdminLive();
+    if(RESTORE){const r=RESTORE;RESTORE=null;applyRestore(r);}
+  },e=>{S.loaded=true;$('#count').textContent=errText(e);});
+  db.doc('config/site').onSnapshot(sn=>{S.config=(sn.exists&&sn.data())||{};if(S.view==='donate')renderDonate();},()=>{});
+  FB.au.onAuthStateChanged(FB.auth,onUser);
+}
+boot();
+};
+</script>
+<script>
+(function(){
+  function go(){try{window.__appMain();}finally{document.documentElement.classList.remove('i18n-wait');}}
+  if(window.LANG==='th'){window.I18N={};go();return;}
+  var sc=document.createElement('script');sc.src='lang/'+window.LANG+'.js?v=f7bcf47b';
+  sc.onload=go;sc.onerror=function(){window.LANG='th';document.documentElement.lang='th';window.I18N={};go();};
+  document.head.appendChild(sc);
+})();
+</script>
+
+</body>
+</html>
