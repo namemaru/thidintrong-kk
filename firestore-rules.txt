@@ -1,0 +1,97 @@
+rules_version = '2';
+// กฎความปลอดภัยของ "ที่ดินตรง ขอนแก่น"
+// - ทุกคนอ่านประกาศที่อนุมัติแล้วได้ (listings) แต่มีเพียงผู้ดูแลที่เผยแพร่ได้
+// - ผู้ใช้ส่งประกาศได้เฉพาะสถานะ "รอตรวจ" และอนุมัติประกาศตัวเองไม่ได้
+// - ผู้ดูแล = ผู้ที่มีเอกสารใน admins/{uid} (สร้างเองใน Firebase Console)
+// - เบอร์โทร/LINE เก็บแยกใน contacts/{id} อ่านได้เฉพาะคนที่ล็อกอิน ไม่ถูกระงับ และมีบันทึกการดูเบอร์ใน reveals แล้ว
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isAdmin() { return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)); }
+    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
+    function isBanned() { return signedIn() && exists(/databases/$(database)/documents/banned/$(request.auth.uid)); }
+
+    function validSub(d) {
+      return d.kind in ['sale', 'rent', 'lease', 'wanted']
+        && d.title is string && d.title.size() >= 8 && d.title.size() <= 90
+        && d.phone is string && d.phone.size() <= 20
+        && d.contactName is string && d.contactName.size() <= 40
+        && (!('desc' in d) || (d.desc is string && d.desc.size() <= 1500))
+        && (!('phoneVerified' in d) || d.phoneVerified == false
+            || (d.phoneVerified == true && request.auth.token.phone_number is string));
+    }
+
+    match /listings/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /config/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /admins/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow write: if false;
+    }
+
+    // ประกาศที่ผู้ใช้ส่งเข้ามา (รอตรวจ) — เจ้าของเห็นเฉพาะของตัวเอง
+    match /subs/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create, update: if (isOwner(uid) && request.resource.data.keys().hasOnly(['updatedAt'])) || isAdmin();
+      allow delete: if isAdmin();
+
+      match /items/{id} {
+        allow read: if isOwner(uid) || isAdmin();
+        allow create: if isAdmin()
+          || (isOwner(uid) && !isBanned() && request.resource.data.status == 'pending' && validSub(request.resource.data));
+        allow update: if isAdmin()
+          || (isOwner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['withdraw', 'withdrawAt']));
+        allow delete: if isAdmin() || (isOwner(uid) && resource.data.status != 'approved');
+      }
+    }
+
+    // ช่องทางติดต่อของประกาศ — ต้องล็อกอิน ไม่ถูกระงับ และบันทึกการดูเบอร์ก่อนจึงอ่านได้
+    match /contacts/{lid} {
+      allow read: if isAdmin()
+        || (signedIn() && !isBanned()
+            && exists(/databases/$(database)/documents/reveals/$(request.auth.uid + '_' + lid)));
+      allow write: if isAdmin();
+    }
+
+    // บันทึกการดูเบอร์ — 1 เอกสารต่อ (ผู้ใช้, ประกาศ) ผู้ใช้เขียนของตัวเองได้ ผู้ดูแลอ่าน/ลบได้
+    match /reveals/{rid} {
+      allow read: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow create, update: if signedIn() && !isBanned()
+        && request.resource.data.keys().hasOnly(['uid', 'lid', 'at', 'name'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.lid is string && request.resource.data.lid.size() <= 64
+        && rid == request.auth.uid + '_' + request.resource.data.lid
+        && exists(/databases/$(database)/documents/listings/$(request.resource.data.lid))
+        && request.resource.data.at is int
+        && request.resource.data.at > request.time.toMillis() - 3600000
+        && request.resource.data.at < request.time.toMillis() + 3600000
+        && (!('name' in request.resource.data) || (request.resource.data.name is string && request.resource.data.name.size() <= 80));
+      allow delete: if isAdmin();
+    }
+
+    // บัญชีที่ถูกระงับการดูเบอร์ — ผู้ดูแลจัดการ เจ้าของบัญชีอ่านสถานะตัวเองได้
+    match /banned/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // รายงานประกาศไม่เหมาะสม — ผู้ใช้ส่งได้ ผู้ดูแลอ่าน/ลบได้
+    match /reports/{uid} {
+      allow read, delete: if isAdmin();
+      allow create, update: if (isOwner(uid) && request.resource.data.keys().hasOnly(['updatedAt'])) || isAdmin();
+
+      match /items/{id} {
+        allow read, delete: if isAdmin();
+        allow create: if isOwner(uid) && !isBanned()
+          && request.resource.data.reason is string && request.resource.data.reason.size() <= 100
+          && (!('note' in request.resource.data) || request.resource.data.note.size() <= 500);
+        allow update: if false;
+      }
+    }
+  }
+}

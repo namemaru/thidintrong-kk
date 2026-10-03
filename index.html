@@ -477,8 +477,10 @@ footer .wrap{padding-block:22px;line-height:1.7}
           <label class="field" for="cPhone">เบอร์โทรศัพท์<input class="input" id="cPhone" type="tel" inputmode="tel" maxlength="15" placeholder="08X-XXX-XXXX"></label>
           <label class="field" for="cLine">LINE ID (ไม่บังคับ)<input class="input" id="cLine" maxlength="40"></label>
         </div>
+        <p class="hint" style="margin:0">เบอร์โทรและ LINE ID จะไม่แสดงบนประกาศ ผู้สนใจต้องเข้าสู่ระบบแล้วกด "ดูเบอร์ติดต่อ" และระบบบันทึกทุกครั้ง เพื่อป้องกันมิจฉาชีพและนายหน้าเก็บเบอร์ไปใช้</p>
+        <label class="agree" for="cLineOnly"><input type="checkbox" id="cLineOnly"><span>ไม่แสดงเบอร์โทร ให้ผู้สนใจติดต่อทาง LINE เท่านั้น (ทีมงานยังใช้เบอร์นี้ติดต่อคุณได้)</span></label>
         <label class="agree" for="aOwner"><input type="checkbox" id="aOwner"><span id="ownerText">ข้าพเจ้าเป็นเจ้าของกรรมสิทธิ์ หรือผู้รับมอบอำนาจโดยชอบ ไม่ใช่นายหน้า</span></label>
-        <label class="agree" for="aPdpa"><input type="checkbox" id="aPdpa"><span>ยินยอมให้แสดงชื่อ เบอร์โทร และ LINE ID บนประกาศ และเข้าใจว่าขอปิดประกาศได้ทุกเมื่อ</span></label>
+        <label class="agree" for="aPdpa"><input type="checkbox" id="aPdpa"><span>ยินยอมให้แสดงชื่อบนประกาศ และให้แสดงเบอร์โทร / LINE ID แก่ผู้ใช้ที่เข้าสู่ระบบแล้วกดดูเบอร์ เพื่อให้ผู้สนใจติดต่อได้โดยตรง และเข้าใจว่าขอปิดประกาศได้ทุกเมื่อจากหน้า "ประกาศของฉัน"</span></label>
         <p class="err" id="postErr" hidden></p>
         <div class="row"><button class="btn primary" type="submit" id="postBtn" style="min-height:50px;padding:0 28px;font-size:17px">ส่งประกาศ</button></div>
       </fieldset>
@@ -525,6 +527,14 @@ footer .wrap{padding-block:22px;line-height:1.7}
     <div id="admReports" class="stack" style="max-width:none;width:100%"></div>
     <h2 style="margin:12px 0 0;font-size:21px">ประกาศที่เผยแพร่อยู่</h2>
     <div id="admLive" class="stack" style="max-width:none;width:100%"></div>
+    <h2 style="margin:12px 0 0;font-size:21px">การดูเบอร์ติดต่อ · 24 ชั่วโมงล่าสุด</h2>
+    <p class="hint" style="margin:0">ทุกครั้งที่ผู้ใช้กด "ดูเบอร์ติดต่อ" ระบบจะบันทึกไว้ บัญชีที่ดูเบอร์จำนวนมากผิดปกติอาจเป็นมิจฉาชีพหรือนายหน้าที่เก็บรายชื่อ ระงับได้จากรายการนี้</p>
+    <div class="card sec" style="display:flex;flex-direction:column;gap:12px">
+      <div class="row" style="align-items:flex-end"><label class="field" for="cfgRevealLimit" style="max-width:340px">แจ้งเตือนเมื่อบัญชีเดียวดูเบอร์เกิน (ประกาศต่อวัน)<input class="input" id="cfgRevealLimit" type="number" min="3" max="500" inputmode="numeric"></label><button class="btn sm" type="button" id="cfgRevealSave">บันทึก</button></div>
+      <div id="admReveals" class="stack" style="max-width:none;width:100%"></div>
+    </div>
+    <h2 style="margin:12px 0 0;font-size:21px">บัญชีที่ถูกระงับการดูเบอร์</h2>
+    <div id="admBanned" class="stack" style="max-width:none;width:100%"></div>
     <h2 style="margin:12px 0 0;font-size:21px">ตั้งค่าการรับบริจาค</h2>
     <div class="card sec" style="display:flex;flex-direction:column;gap:12px">
       <label class="field" for="cfgName">ชื่อบัญชีที่แสดงใต้ QR<input class="input" id="cfgName" maxlength="60"></label>
@@ -855,15 +865,13 @@ function renderDetail(it){
       :[_t('ดูโฉนดตัวจริง และตรวจภาระจำนอง/อายัดที่สำนักงานที่ดินจังหวัดขอนแก่น'),_t('ชื่อผู้ขายต้องตรงกับโฉนด หรือมีหนังสือมอบอำนาจที่ถูกต้อง'),_t('ทำสัญญาจะซื้อจะขาย และโอนเงินเข้าบัญชีชื่อเจ้าของกรรมสิทธิ์เท่านั้น'),_t('ไปดูแปลงจริงช่วงฝนตก และถามเพื่อนบ้านเรื่องน้ำท่วมขัง')];
     main.append(h('section',{class:'card sec',style:'background:var(--ochre-soft);border-color:transparent'},h('h2',{style:'color:var(--ochre-text)'},lease?_t('เช็กก่อนจ่ายเงินจองหรือเงินประกัน'):_t('เช็กก่อนวางเงินมัดจำ')),h('ul',{class:'check'},checks.map(x=>h('li',null,x)))));
   }
-  const phone=str(it.phone),line=str(it.line);
   side.append(h('section',{class:'card sec',style:'display:flex;flex-direction:column;gap:12px'},
     h('span',{class:'small muted'},isW?_t('งบประมาณ'):it.kind==='rent'?_t('ค่างวดเช่าซื้อ'):it.kind==='lease'?_t('ค่าเช่าต่อเดือน'):_t('ราคาขาย')),h('p',{class:'bigprice'},priceText(it)),
     isW?null:h('p',{class:'notice g',style:'margin:0'},_t('ไม่มีค่านายหน้า ต่อรองกับเจ้าของได้โดยตรง')),
     h('div',{style:'border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px'},
       h('strong',{text:(isW?_t('ผู้ตามหา: '):_t('เจ้าของ: '))+(str(it.contactName)||_t('ไม่ระบุชื่อ'))}),
-      phone?h('div',null,h('span',{class:'small muted'},_t('โทรศัพท์')),h('div',{class:'row'},h('span',{class:'contact'},phone),copyBtn(phone))):null,
-      line?h('div',null,h('span',{class:'small muted'},'LINE ID'),h('div',{class:'row'},h('span',{class:'contact'},line),copyBtn(line))):null),
-    h('p',{class:'small muted',style:'margin:0'},_t('เว็บไซต์ไม่เรียกเก็บเงินมัดจำหรือค่าจองแทนเจ้าของ อย่าโอนเงินให้บุคคลที่สาม'))));
+      contactBox(it)),
+    scamBox()));
   side.append(reportBox(it));
   side.append(h('section',{class:'card sec',style:'display:flex;flex-direction:column;gap:8px'},h('strong',null,_t('ประกาศนี้ฟรี เพราะมีคนช่วยสนับสนุน')),h('span',{class:'small muted'},_t('ถ้าเว็บนี้ช่วยคุณได้ ร่วมสนับสนุนค่าระบบได้ตามใจ')),h('button',{type:'button',class:'btn sm','data-go':'donate',style:'align-self:flex-start'},_t('สนับสนุนเว็บไซต์'))));
 }
@@ -1001,10 +1009,11 @@ async function submitPost(e){
   if(!S.uid){openLogin();return fail(_t('กรุณาเข้าสู่ระบบก่อนลงประกาศ'));}
   const k=S.post.kind,isW=k==='wanted';
   const title=$('#pTitle').value.trim();
-  const d={kind:k,ptype:S.post.pt,title,contactName:$('#cName').value.trim(),phone:$('#cPhone').value.trim(),line:$('#cLine').value.trim(),createdAt:Date.now()};
+  const d={kind:k,ptype:S.post.pt,title,contactName:$('#cName').value.trim(),phone:$('#cPhone').value.trim(),line:$('#cLine').value.trim(),lineOnly:$('#cLineOnly').checked,createdAt:Date.now()};
   d.phoneVerified=!!(S.user&&S.user.phoneNumber&&samePhone(d.phone,S.user.phoneNumber));
   if(title.length<8)return fail(_t('กรุณาตั้งหัวข้อประกาศอย่างน้อย 8 ตัวอักษร'));
   if(!/^[0-9\-\s+]{9,15}$/.test(d.phone))return fail(_t('กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง'));
+  if(d.lineOnly&&!d.line)return fail(_t('ถ้าเลือกให้ติดต่อทาง LINE เท่านั้น กรุณากรอก LINE ID'));
   if(!d.contactName)return fail(_t('กรุณากรอกชื่อที่แสดง'));
   if(!$('#aOwner').checked||!$('#aPdpa').checked)return fail(_t('กรุณายืนยันทั้ง 2 ข้อก่อนส่งประกาศ'));
   if(isW){
@@ -1043,14 +1052,14 @@ async function submitPost(e){
     await S.db.doc('subs/'+S.uid).set({updatedAt:Date.now()});
     const ref=S.db.collection('subs/'+S.uid+'/items').doc();
     await ref.set(d);
-    if(S.isAdmin)await S.db.doc('listings/'+ref.id).set(publicOf(d,S.uid,ref.id));
+    if(S.isAdmin)await publishListing(d,S.uid,ref.id);
     $('#postForm').reset();S.post.lat=S.post.lng=null;PMAP&&PMAP.setPins([]);S.post.approx=true;$('#pApprox').setAttribute('aria-pressed','true');
     toast(S.isAdmin?_t('เผยแพร่ประกาศแล้ว'):_t('ส่งประกาศแล้ว รอทีมงานตรวจสอบ'));go('mine');
   }catch(ex){fail(errText(ex));}
   finally{btn.disabled=false;syncPost();}
 }
 function publicOf(d,uid,sid){
-  const keys=['kind','ptype','title','contactName','phone','line','createdAt','amphoes','budgetMin','budgetMax','sizeText','needs','desc','fromProvince','amphoe','tambon','approx','deed','deedLast','rai','ngan','wa','sqw','flood','price','down','monthly','months','project','sqm','floor','bed','bath','gender','commonFee','fac','near','rent','deposit','minMonths','water','elec','vacant','phoneVerified'];
+  const keys=['kind','ptype','title','contactName','createdAt','amphoes','budgetMin','budgetMax','sizeText','needs','desc','fromProvince','amphoe','tambon','approx','deed','deedLast','rai','ngan','wa','sqw','flood','price','down','monthly','months','project','sqm','floor','bed','bath','gender','commonFee','fac','near','rent','deposit','minMonths','water','elec','vacant','phoneVerified'];
   const o={};keys.forEach(k=>{if(d[k]!==undefined)o[k]=d[k];});
   if(d.kind!=='wanted'){o.lat=d.approx?+roundApprox(d.lat).toFixed(5):d.lat;o.lng=d.approx?+roundApprox(d.lng).toFixed(5):d.lng;}
   o.ownerId=uid;o.sid=sid;o.approvedAt=Date.now();return o;
@@ -1071,7 +1080,7 @@ function renderMine(){
       h('div',{class:'kv'},h('span',null,_t('ราคา '),h('b',null,priceText(it))),it.amphoe?h('span',null,_t('อ.'),h('b',null,AMPN(it.amphoe))):null,h('span',null,_t('ส่งเมื่อ '),h('b',null,ago(it.createdAt)))),
       it.status==='rejected'&&it.reviewNote?h('p',{class:'notice r',style:'margin:0',text:_t('เหตุผล: ')+str(it.reviewNote)}):null);
     const act=h('div',{class:'row'});
-    if(it.status==='approved'){act.append(h('button',{type:'button',class:'btn sm',onclick:()=>openDetail(it._id)},_t('ดูประกาศ')));if(!it.withdraw)act.append(confirmBtn(_t('ขอปิดประกาศ'),'danger',async()=>{await S.db.doc(it._path).update({withdraw:true,withdrawAt:Date.now()});if(S.isAdmin){await S.db.doc('listings/'+it._id).delete();await S.db.doc(it._path).update({status:'closed'});}toast(_t('ส่งคำขอปิดประกาศแล้ว'));}));}
+    if(it.status==='approved'){act.append(h('button',{type:'button',class:'btn sm',onclick:()=>openDetail(it._id)},_t('ดูประกาศ')));if(!it.withdraw)act.append(confirmBtn(_t('ขอปิดประกาศ'),'danger',async()=>{await S.db.doc(it._path).update({withdraw:true,withdrawAt:Date.now()});if(S.isAdmin){await unpublish(it._id);await S.db.doc(it._path).update({status:'closed'});}toast(_t('ส่งคำขอปิดประกาศแล้ว'));}));}
     if(it.status!=='approved')act.append(confirmBtn(_t('ลบคำขอนี้'),'danger',async()=>{await S.db.doc(it._path).delete();toast(_t('ลบแล้ว'));}));
     card.append(act);box.append(card);
   });
@@ -1100,6 +1109,8 @@ function renderDonate(){
 /* ---------- admin ---------- */
 async function loadAdmin(){
   if(!S.isAdmin||!S.db)return;
+  try{await migrateContacts();}catch(e){toast(errText(e));}
+  try{const cs=await S.db.collection('contacts').limit(3000).get();ADMC={};cs.docs.forEach(d=>{ADMC[d.id]=d.data()||{};});}catch(e){ADMC={};}
   const pend=$('#admPending'),rep=$('#admReports');pend.textContent='';rep.textContent='';
   pend.append(h('p',{class:'muted'},_t('กำลังโหลด…')));
   $('#cfgName').value=str(S.config.payName);$('#cfgStripe').value=str(S.config.stripeUrl);
@@ -1117,7 +1128,7 @@ async function loadAdmin(){
       const act=h('div',{class:'row'});if(live){act.append(h('button',{type:'button',class:'btn sm',onclick:()=>openDetail(live.id)},_t('ดูประกาศ')),confirmBtn(_t('ปิดประกาศนี้'),'danger',async()=>{await closeListing(live);await S.db.doc(r._path).delete();loadAdmin();}));}else act.append(h('span',{class:'small muted'},_t('ประกาศนี้ปิดไปแล้ว')));
       act.append(confirmBtn(_t('ลบรายงาน'),'',async()=>{await S.db.doc(r._path).delete();c.remove();}));c.append(act);rep.append(c);});
   }catch(e){pend.textContent='';pend.append(h('p',{class:'notice r'},errText(e)));}
-  renderAdminLive();
+  renderAdminLive();loadReveals();
 }
 function adminCard(it){
   const isW=it.kind==='wanted';
@@ -1127,17 +1138,19 @@ function adminCard(it){
     h('div',{class:'kv'},h('span',null,_t('ราคา/งบ '),h('b',null,priceText(it))),isW?h('span',null,_t('ทำเล '),h('b',null,(it.amphoes||[]).map(AMPN).join(', '))):[h('span',null,_t('อ.'),h('b',null,AMPN(it.amphoe))),h('span',null,ROOM.has(it.ptype)?_t('ขนาดห้อง '):_t('เนื้อที่ '),h('b',null,sizeOf(it))),it.project?h('span',null,_t('อาคาร '),h('b',null,str(it.project))):null,it.deed?h('span',null,_t('เอกสาร '),h('b',null,(DEED[it.deed]||'')+_t(' เลขที่ ')+str(it.deedNo))):null,it.kind==='lease'?h('span',null,_t('ประกัน '),h('b',null,str(it.deposit)||'-')):null,h('span',null,_t('พิกัด '),h('b',null,str(it.lat)+', '+str(it.lng)))]),
     h('div',{class:'kv'},h('span',null,_t('ผู้ติดต่อ '),h('b',null,str(it.contactName))),h('span',null,_t('โทร '),h('b',null,str(it.phone))),it.line?h('span',null,'LINE ',h('b',null,str(it.line))):null),
     it.desc?h('p',{class:'small',style:'margin:0;white-space:pre-line;overflow-wrap:anywhere',text:str(it.desc)}):null);
+  if(!it.withdraw)c.append(adminChecks(it));
   const act=h('div',{class:'row'});
   if(!isW)act.append(h('a',{class:'btn sm',href:gmaps(it.lat,it.lng),target:'_blank',rel:'noopener'},_t('ดูพิกัดใน Google Maps')));
-  if(it.withdraw){act.append(confirmBtn(_t('ปิดประกาศตามคำขอ'),'danger',async()=>{await S.db.doc('listings/'+it._id).delete();await S.db.doc(it._path).update({status:'closed'});c.remove();toast(_t('ปิดประกาศแล้ว'));}));}
+  if(!isW&&it.kind!=='lease'&&!it.withdraw)act.append(h('a',{class:'btn sm',href:LANDSMAPS,target:'_blank',rel:'noopener'},_t('ตรวจรูปแปลงใน LandsMaps')));
+  if(it.withdraw){act.append(confirmBtn(_t('ปิดประกาศตามคำขอ'),'danger',async()=>{await unpublish(it._id);await S.db.doc(it._path).update({status:'closed'});c.remove();toast(_t('ปิดประกาศแล้ว'));}));}
   else{
     const note=h('input',{class:'input',placeholder:_t('เหตุผลกรณีไม่อนุมัติ (ผู้ลงประกาศจะเห็น)'),maxlength:'200','aria-label':_t('เหตุผลกรณีไม่อนุมัติ'),style:'flex:1 1 240px;min-height:38px'});
-    act.append(h('button',{type:'button',class:'btn primary sm',onclick:async e=>{const b=e.currentTarget;b.disabled=true;try{await S.db.doc('listings/'+it._id).set(publicOf(it,it._uid,it._id));await S.db.doc(it._path).update({status:'approved',reviewedAt:Date.now()});c.remove();toast(_t('อนุมัติและเผยแพร่แล้ว'));}catch(ex){toast(errText(ex));b.disabled=false;}}},_t('อนุมัติ')),
+    act.append(h('button',{type:'button',class:'btn primary sm',onclick:async e=>{const b=e.currentTarget;b.disabled=true;try{await publishListing(it,it._uid,it._id);await S.db.doc(it._path).update({status:'approved',reviewedAt:Date.now()});c.remove();toast(_t('อนุมัติและเผยแพร่แล้ว'));}catch(ex){toast(errText(ex));b.disabled=false;}}},_t('อนุมัติ')),
       note,h('button',{type:'button',class:'btn sm danger',onclick:async e=>{const b=e.currentTarget;b.disabled=true;try{await S.db.doc(it._path).update({status:'rejected',reviewNote:note.value.trim()||_t('ข้อมูลไม่ครบหรือไม่ตรงเงื่อนไข'),reviewedAt:Date.now()});c.remove();toast(_t('บันทึกผลไม่อนุมัติแล้ว'));}catch(ex){toast(errText(ex));b.disabled=false;}}},_t('ไม่อนุมัติ')));
   }
   c.append(act);return c;
 }
-async function closeListing(l){await S.db.doc('listings/'+l.id).delete();if(l.ownerId&&l.sid){try{await S.db.doc('subs/'+l.ownerId+'/items/'+l.sid).update({status:'closed'});}catch(e){}}}
+async function closeListing(l){await unpublish(l.id);if(l.ownerId&&l.sid){try{await S.db.doc('subs/'+l.ownerId+'/items/'+l.sid).update({status:'closed'});}catch(e){}}}
 function renderAdminLive(){
   const box=$('#admLive');if(!box)return;box.textContent='';
   if(!S.listings.length){box.append(h('div',{class:'empty'},_t('ยังไม่มีประกาศที่เผยแพร่')));return;}
@@ -1150,12 +1163,144 @@ function renderAdminLive(){
     card.append(act);box.append(card);
   });
 }
+/* ---------- contact protection (phone / LINE behind sign-in + logged reveal) ---------- */
+const REVEALED={};
+let ADMC={};
+const revealLimit=()=>Math.max(3,Math.min(500,num(S.config.revealLimit)||20));
+function maskPhone(p){const d=String(p||'').replace(/\D/g,'');if(d.length<4)return '';return d.length===10&&d[0]==='0'?d.slice(0,2)+'X-XXX-'+d.slice(-4):'•••• '+d.slice(-4);}
+function contactOf(d){const line=str(d.line).trim();return {phone:str(d.phone).trim(),line,lineOnly:!!d.lineOnly&&!!line};}
+function maskOf(d){const c=contactOf(d);return {phoneMask:c.lineOnly?'':maskPhone(c.phone),hasLine:!!c.line,lineOnly:c.lineOnly};}
+async function publishListing(d,uid,sid){
+  await S.db.doc('contacts/'+sid).set(contactOf(d));
+  await S.db.doc('listings/'+sid).set(Object.assign(publicOf(d,uid,sid),maskOf(d)));
+}
+async function unpublish(id){await S.db.doc('listings/'+id).delete();try{await S.db.doc('contacts/'+id).delete();}catch(e){}}
+async function migrateContacts(){
+  const old=S.listings.filter(l=>l.phone!==undefined||l.line!==undefined);
+  for(const l of old){
+    const {id,phone,line,...rest}=l;
+    if(!isFinite(rest.lat))delete rest.lat;if(!isFinite(rest.lng))delete rest.lng;
+    await S.db.doc('contacts/'+id).set(contactOf(l));
+    await S.db.doc('listings/'+id).set(Object.assign(rest,maskOf(l)));
+  }
+  if(old.length)toast(_t('ย้ายเบอร์ติดต่อของประกาศเดิมไปเก็บในส่วนที่ปลอดภัยแล้ว'));
+}
+function contactBox(it){
+  const box=h('div',{style:'display:flex;flex-direction:column;gap:8px'});
+  const legacy=it.phone!==undefined||it.line!==undefined;
+  const lineOnly=!!it.lineOnly,mask=legacy?maskPhone(it.phone):str(it.phoneMask),hasLine=legacy?!!str(it.line):!!it.hasLine;
+  const row=(label,val,copy,href)=>h('div',null,h('span',{class:'small muted'},label),h('div',{class:'row'},href?h('a',{class:'contact',href},val):h('span',{class:'contact'},val),copy?copyBtn(val):null));
+  const lineNote=()=>h('p',{class:'small muted',style:'margin:0'},_t('เจ้าของประกาศขอให้ติดต่อทาง LINE เท่านั้น'));
+  function draw(c){
+    box.textContent='';
+    if(c){
+      if(c.phone&&!c.lineOnly)box.append(row(_t('โทรศัพท์'),c.phone,true,'tel:'+c.phone.replace(/[^\d+]/g,'')));
+      if(c.line)box.append(row('LINE ID',c.line,true));
+      if(c.lineOnly)box.append(lineNote());
+      return;
+    }
+    if(mask&&!lineOnly)box.append(row(_t('โทรศัพท์'),mask));
+    if(hasLine)box.append(row('LINE ID','••••••'));
+    if(lineOnly)box.append(lineNote());
+    const b=h('button',{type:'button',class:'btn primary',style:'align-self:flex-start'},lineOnly?_t('ดู LINE ID'):_t('ดูเบอร์ติดต่อ'));
+    b.addEventListener('click',()=>reveal(b));
+    box.append(b,h('p',{class:'small muted',style:'margin:0'},_t('ต้องเข้าสู่ระบบก่อน และระบบบันทึกการดูเบอร์ทุกครั้ง เพื่อป้องกันการเก็บเบอร์ไปใช้ในทางมิชอบ')));
+  }
+  async function reveal(b){
+    if(!S.db)return;
+    if(!S.uid){openLogin();toast(_t('กรุณาเข้าสู่ระบบก่อนดูเบอร์ติดต่อ'));return;}
+    b.disabled=true;
+    try{
+      if(!legacy){
+        const who=str(S.user&&(S.user.displayName||S.user.email||S.user.phoneNumber)).slice(0,80);
+        await S.db.doc('reveals/'+S.uid+'_'+it.id).set({uid:S.uid,lid:it.id,at:Date.now(),name:who});
+        const sn=await S.db.doc('contacts/'+it.id).get();
+        if(!sn.exists){toast(_t('ไม่พบข้อมูลติดต่อของประกาศนี้'));b.disabled=false;return;}
+        REVEALED[it.id]=sn.data()||{};
+      }else REVEALED[it.id]=contactOf(it);
+      draw(REVEALED[it.id]);
+    }catch(e){
+      b.disabled=false;
+      let banned=false;try{banned=(await S.db.doc('banned/'+S.uid).get()).exists;}catch(x){}
+      toast(banned?_t('บัญชีนี้ถูกระงับการดูเบอร์ติดต่อ หากคิดว่าเป็นความผิดพลาด โปรดแจ้งผู้ดูแลเว็บไซต์'):/permission/i.test(String(e&&(e.code||e.message)))?_t('แสดงเบอร์ไม่ได้ กรุณาตรวจวันและเวลาในเครื่องให้ถูกต้อง แล้วลองใหม่'):errText(e));
+    }
+  }
+  draw(REVEALED[it.id]||null);return box;
+}
+function scamBox(){
+  return h('div',{class:'notice o',style:'margin:0;font-size:14px'},h('strong',null,_t('ระวังมิจฉาชีพ')),
+    h('ul',{style:'margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:4px'},
+      h('li',null,_t('อย่าโอนเงินมัดจำหรือค่าจองก่อนไปดูทรัพย์จริงและตรวจเอกสารสิทธิ์')),
+      h('li',null,_t('โอนเข้าบัญชีที่ชื่อตรงกับเจ้าของในเอกสารสิทธิ์เท่านั้น')),
+      h('li',null,_t('ทีมงานเว็บไซต์ไม่โทรหา และไม่เรียกเก็บเงินใด ๆ')),
+      h('li',null,_t('ถูกหลอกโอนเงิน โทร 1441 (ศูนย์ AOC) หรือแจ้งความออนไลน์ที่ '),h('a',{href:'https://www.thaipoliceonline.go.th',target:'_blank',rel:'noopener',style:'color:inherit'},'thaipoliceonline.go.th'))));
+}
+function adminChecks(it){
+  const isW=it.kind==='wanted',warn=[],ok=[],todo=[];
+  if(!isW&&isFinite(Number(it.lat))&&isFinite(Number(it.lng))){
+    const a=amphoeAtLL(Number(it.lat),Number(it.lng));
+    if(!a)warn.push(_t('หมุดอยู่นอกจังหวัดขอนแก่น'));
+    else if(a!==it.amphoe)warn.push(_t('หมุดอยู่คนละอำเภอกับที่เลือกไว้ (')+AMPN(a)+')');
+    else ok.push(_t('หมุดอยู่ในอำเภอที่เลือกไว้'));
+  }
+  if(it.kind==='sale'&&!ROOM.has(it.ptype)&&num(it.sqw)&&num(it.price)){
+    const per=x=>num(x.price)/num(x.sqw);
+    let pool=S.listings.filter(x=>x.kind==='sale'&&!ROOM.has(x.ptype)&&num(x.sqw)&&num(x.price)&&x.id!==it._id);
+    const same=pool.filter(x=>x.amphoe===it.amphoe);if(same.length>=3)pool=same;
+    if(pool.length>=3){const v=pool.map(per).sort((a,b)=>a-b),med=v[v.length>>1];
+      if(per(it)<med*0.4)warn.push(_t('ราคาต่อตารางวาต่ำกว่าประกาศอื่นในพื้นที่มาก ระวังประกาศล่อให้โอนเงินมัดจำ'));else ok.push(_t('ราคาใกล้เคียงประกาศอื่นในพื้นที่'));}
+  }
+  const d9=x=>String(x||'').replace(/\D/g,'').slice(-9),p=d9(it.phone);
+  if(p.length===9){
+    const used=Object.keys(ADMC).filter(id=>id!==it._id&&d9(ADMC[id].phone)===p);
+    const names=new Set(used.map(id=>str((S.listings.find(l=>l.id===id)||{}).contactName).trim()).filter(Boolean));
+    if(used.length>=3)warn.push(_t('เบอร์นี้ใช้ลงประกาศที่เผยแพร่อยู่แล้วหลายรายการ อาจเป็นนายหน้า'));
+    if([...names].some(n=>n!==str(it.contactName).trim()))warn.push(_t('เบอร์นี้เคยใช้กับชื่อผู้ติดต่ออื่น'));
+  }
+  if(!isW&&it.kind!=='lease'){if(str(it.deedNo).length<2)warn.push(_t('ไม่มีเลขเอกสารสิทธิ์'));else todo.push(_t('ค้นเลขเอกสารสิทธิ์ใน LandsMaps แล้วดูว่ารูปแปลงตรงกับหมุดหรือไม่'));}
+  if(it.phoneVerified)ok.push(_t('ยืนยันเบอร์ด้วย OTP แล้ว'));
+  todo.push(_t('โทรคุยกับผู้ลงประกาศ ถามรายละเอียดที่เจ้าของจริงต้องรู้ เช่น ทางเข้า เพื่อนบ้าน สภาพน้ำท่วม'));
+  return h('div',{class:'notice '+(warn.length?'o':'g'),style:'margin:0;font-size:14px'},
+    h('strong',null,warn.length?_t('เช็กลิสต์ก่อนอนุมัติ · พบจุดที่ต้องตรวจ'):_t('เช็กลิสต์ก่อนอนุมัติ')),
+    h('ul',{style:'margin:6px 0 0;padding-left:20px'},warn.map(x=>h('li',null,'⚠ ',x)),ok.map(x=>h('li',null,'✓ ',x)),todo.map(x=>h('li',null,'☐ ',x))));
+}
+async function loadReveals(){
+  const box=$('#admReveals');if(!box||!S.db)return;box.textContent='';
+  $('#cfgRevealLimit').value=revealLimit();
+  const tok=loadReveals.t=(loadReveals.t||0)+1;
+  try{
+    const [rs,bs]=await Promise.all([S.db.collection('reveals').where('at','>=',Date.now()-86400000).get(),S.db.collection('banned').get()]);
+    if(tok!==loadReveals.t)return;box.textContent='';
+    const banned=new Set(bs.docs.map(d=>d.id)),by={},lim=revealLimit();
+    rs.docs.forEach(d=>{const x=d.data()||{};if(!x.uid||x.uid===S.uid)return;const g=by[x.uid]||(by[x.uid]={uid:x.uid,name:'',n:0,last:0});g.n++;if(num(x.at)>=g.last){g.last=num(x.at);g.name=str(x.name);}});
+    const list=Object.values(by).sort((a,b)=>b.n-a.n),flagged=list.filter(g=>g.n>lim).length;
+    box.append(h('p',{class:'small muted',style:'margin:0'},_t('จำนวนบัญชีที่ดูเบอร์: '),h('b',null,fmt(list.length)),_t(' · ดูเกินเกณฑ์: '),h('b',null,fmt(flagged))));
+    if(!list.length)box.append(h('div',{class:'empty'},_t('ยังไม่มีการดูเบอร์ใน 24 ชั่วโมงล่าสุด')));
+    list.slice(0,20).forEach(g=>{
+      const c=h('article',{class:'card item'},
+        h('div',{class:'row',style:'gap:6px'},g.n>lim?h('span',{class:'badge r'},_t('ผิดปกติ')):null,banned.has(g.uid)?h('span',{class:'badge'},_t('ระงับแล้ว')):null,h('strong',null,g.name||_t('ไม่ทราบชื่อ')),h('span',{class:'small muted'},ago(g.last))),
+        h('div',{class:'kv'},h('span',null,_t('ดูเบอร์ '),h('b',null,fmt(g.n)),_t(' ประกาศ')),h('span',null,'UID ',h('code',{style:'overflow-wrap:anywhere'},g.uid))));
+      if(!banned.has(g.uid))c.append(h('div',{class:'row'},confirmBtn(_t('ระงับการดูเบอร์'),'danger',async()=>{await S.db.doc('banned/'+g.uid).set({at:Date.now(),name:g.name,count:g.n});toast(_t('ระงับบัญชีนี้แล้ว'));loadReveals();})));
+      box.append(c);
+    });
+    const bb=$('#admBanned');bb.textContent='';
+    if(!bs.docs.length)bb.append(h('div',{class:'empty'},_t('ยังไม่มีบัญชีที่ถูกระงับ')));
+    bs.docs.forEach(d=>{const x=d.data()||{};
+      bb.append(h('article',{class:'card item'},h('div',{class:'row',style:'gap:6px'},h('strong',null,str(x.name)||_t('ไม่ทราบชื่อ')),h('span',{class:'small muted'},ago(x.at))),
+        h('div',{class:'kv'},h('span',null,'UID ',h('code',{style:'overflow-wrap:anywhere'},d.id))),
+        h('div',{class:'row'},confirmBtn(_t('ยกเลิกการระงับ'),'',async()=>{await S.db.doc('banned/'+d.id).delete();toast(_t('ยกเลิกการระงับแล้ว'));loadReveals();}))));});
+  }catch(e){box.append(h('p',{class:'notice r'},errText(e)));}
+}
+async function saveRevealLimit(){
+  const n=Math.max(3,Math.min(500,num($('#cfgRevealLimit').value)||20));
+  try{await S.db.doc('config/site').set(Object.assign({},S.config,{revealLimit:n,updatedAt:Date.now()}));S.config.revealLimit=n;toast(_t('บันทึกแล้ว'));loadReveals();}catch(e){toast(errText(e));}
+}
 async function saveConfig(){
   const msg=$('#cfgMsg');msg.textContent=_t('กำลังบันทึก…');
   try{
     const su=$('#cfgStripe').value.trim();
     if(su&&!/^https:\/\/(buy|donate)\.stripe\.com\/[A-Za-z0-9_\-\/?=&.]+$/.test(su)){msg.textContent=_t('ลิงก์ต้องขึ้นต้นด้วย https://buy.stripe.com/ หรือ https://donate.stripe.com/');return;}
-    await S.db.doc('config/site').set({payName:$('#cfgName').value.trim(),stripeUrl:su||null,updatedAt:Date.now()});msg.textContent=_t('บันทึกแล้ว');
+    await S.db.doc('config/site').set({payName:$('#cfgName').value.trim(),stripeUrl:su||null,revealLimit:revealLimit(),updatedAt:Date.now()});msg.textContent=_t('บันทึกแล้ว');
   }catch(e){msg.textContent=errText(e);}
 }
 
@@ -1193,6 +1338,7 @@ function makeDbAdapter(fs, db) {
   };
   const wrapQ = q => ({
     limit: k => wrapQ(fs.query(q, fs.limit(k))),
+    where: (f, op, v) => wrapQ(fs.query(q, fs.where(f, op, v))),
     get: async () => { const s = await fs.getDocs(q); return { docs: s.docs.map(snapDoc), size: s.size, empty: s.empty }; },
     onSnapshot: (n, e) => fs.onSnapshot(q, s => n({ docs: s.docs.map(snapDoc), size: s.size, empty: s.empty }), e)
   });
@@ -1280,8 +1426,8 @@ function setWho() {
   const w = $('#who'); w.textContent = '';
   if (!S.db) return;
   if (S.user) {
-    w.append(h('span', null, S.user.displayName || LOCAL_PHONE(S.user.phoneNumber) || _t('ผู้ใช้')), S.isAdmin ? h('span', { class: 'badge g' }, _t('ผู้ดูแล')) : null,
-      h('button', { type: 'button', class: 'btn sm', onclick: () => FB.au.signOut(FB.auth) }, _t('ออกจากระบบ')));
+    w.append(...[h('span', null, S.user.displayName || LOCAL_PHONE(S.user.phoneNumber) || _t('ผู้ใช้')), S.isAdmin ? h('span', { class: 'badge g' }, _t('ผู้ดูแล')) : null,
+      h('button', { type: 'button', class: 'btn sm', onclick: () => FB.au.signOut(FB.auth) }, _t('ออกจากระบบ'))].filter(Boolean));
   } else {
     w.append(h('button', { type: 'button', class: 'btn sm', onclick: openLogin }, _t('เข้าสู่ระบบ')));
   }
@@ -1332,6 +1478,7 @@ function initLogin() {
   });
 }
 async function onUser(u) {
+  for (const k in REVEALED) delete REVEALED[k];
   S.user = u || null; S.uid = u ? u.uid : null; S.isAdmin = false;
   if (u) { try { S.isAdmin = (await S.db.doc('admins/' + u.uid).get()).exists; } catch (e) { S.isAdmin = false; } }
   $('#adminTab').hidden = !S.isAdmin; setWho();
@@ -1350,7 +1497,7 @@ async function boot(){
   try{GM=await loadGMaps();}catch(e){GM=null;}
   if(GM)$$('.mapnote').forEach(n=>n.hidden=true);
   initLang();initSearch();initPost();initLogin();renderSearch();renderDonate();
-  $('#adminReload').addEventListener('click',loadAdmin);$('#cfgSave').addEventListener('click',saveConfig);
+  $('#adminReload').addEventListener('click',loadAdmin);$('#cfgSave').addEventListener('click',saveConfig);$('#cfgRevealSave').addEventListener('click',saveRevealLimit);
   if(!configReady()){S.loaded=true;renderSearch();$('#count').textContent=_t('ยังไม่ได้ตั้งค่า Firebase ในไฟล์ config.js');return;}
   let db;try{db=await initFirebase();}catch(e){S.loaded=true;renderSearch();$('#count').textContent=_t('เชื่อมต่อ Firebase ไม่ได้ กรุณาตรวจไฟล์ config.js');return;}
   S.db=db;setWho();
@@ -1370,7 +1517,7 @@ boot();
 (function(){
   function go(){try{window.__appMain();}finally{document.documentElement.classList.remove('i18n-wait');}}
   if(window.LANG==='th'){window.I18N={};go();return;}
-  var paths=['lang/'+window.LANG+'.js?v=f7bcf47b',window.LANG+'.js?v=f7bcf47b'],i=0;
+  var paths=['lang/'+window.LANG+'.js?v=bf357f4a',window.LANG+'.js?v=bf357f4a'],i=0;
   function next(){
     if(i>=paths.length){window.LANG='th';document.documentElement.lang='th';window.I18N={};go();return;}
     var sc=document.createElement('script');sc.src=paths[i++];sc.onload=go;sc.onerror=next;document.head.appendChild(sc);
