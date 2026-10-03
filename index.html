@@ -542,6 +542,11 @@ footer .wrap{padding-block:22px;line-height:1.7}
       <p class="hint">รูป QR พร้อมเพย์อยู่ในไฟล์ public/donate-qr.png ถ้าจะเปลี่ยน ให้แทนที่ไฟล์นี้ด้วยรูปใหม่ชื่อเดิม แล้ว deploy อีกครั้ง</p>
       <label class="field" for="cfgStripe">ลิงก์ Stripe Payment Link (ไม่บังคับ)<input class="input" id="cfgStripe" type="url" inputmode="url" maxlength="300" placeholder="https://buy.stripe.com/..."></label>
       <p class="hint">สร้างใน Stripe Dashboard › Payment Links แล้วเลือกให้ผู้สนับสนุนระบุยอดเงินเอง จากนั้นคัดลอกลิงก์มาวางที่นี่ ห้ามวาง Secret key หรือ API key</p>
+      <h3 style="margin:14px 0 0;font-size:17px">แจ้งเตือนเข้า Telegram เมื่อมีประกาศใหม่</h3>
+      <label class="field" for="cfgNotify">ลิงก์ Apps Script (Web App URL)<input class="input" id="cfgNotify" type="url" inputmode="url" maxlength="300" placeholder="https://script.google.com/macros/s/.../exec"></label>
+      <label class="field" for="cfgNotifySecret">รหัสลับ (ต้องตรงกับที่ตั้งไว้ในสคริปต์)<input class="input" id="cfgNotifySecret" maxlength="80"></label>
+      <p class="hint">ทำตามคู่มือ "ตั้งค่าแจ้งเตือน Telegram" เพื่อสร้างบอทและลิงก์ Apps Script ว่างไว้ = ไม่ส่งแจ้งเตือนเข้า Telegram</p>
+      <div class="row"><button class="btn" type="button" id="cfgNotifyTest">ส่งข้อความทดสอบ</button><span class="small muted" id="cfgNotifyMsg"></span></div>
       <div class="row"><button class="btn primary" type="button" id="cfgSave">บันทึกการตั้งค่า</button><span class="small muted" id="cfgMsg"></span></div>
     </div>
     <h2 style="margin:12px 0 0;font-size:21px">ดึงข้อมูลน้ำท่วม GISTDA อัตโนมัติ</h2>
@@ -1054,6 +1059,7 @@ async function submitPost(e){
     const ref=S.db.collection('subs/'+S.uid+'/items').doc();
     await ref.set(d);
     if(S.isAdmin)await publishListing(d,S.uid,ref.id);
+    else notifyAdminNew(d);
     $('#postForm').reset();S.post.lat=S.post.lng=null;PMAP&&PMAP.setPins([]);S.post.approx=true;$('#pApprox').setAttribute('aria-pressed','true');
     toast(S.isAdmin?_t('เผยแพร่ประกาศแล้ว'):_t('ส่งประกาศแล้ว รอทีมงานตรวจสอบ'));go('mine');
   }catch(ex){fail(errText(ex));}
@@ -1114,7 +1120,7 @@ async function loadAdmin(){
   try{const cs=await S.db.collection('contacts').limit(3000).get();ADMC={};cs.docs.forEach(d=>{ADMC[d.id]=d.data()||{};});}catch(e){ADMC={};}
   const pend=$('#admPending'),rep=$('#admReports');pend.textContent='';rep.textContent='';
   pend.append(h('p',{class:'muted'},_t('กำลังโหลด…')));
-  $('#cfgName').value=str(S.config.payName);$('#cfgStripe').value=str(S.config.stripeUrl);
+  $('#cfgName').value=str(S.config.payName);$('#cfgStripe').value=str(S.config.stripeUrl);$('#cfgNotify').value=str(S.config.notifyUrl);$('#cfgNotifySecret').value=str(S.config.notifySecret);
   try{
     const users=await S.db.collection('subs').get();const items=[];
     for(const u of users.docs){const s=await S.db.collection('subs/'+u.id+'/items').get();s.docs.forEach(d=>{const x=d.data()||{};if(x.status==='pending'||(x.status==='approved'&&x.withdraw))items.push({...x,_id:d.id,_uid:u.id,_path:'subs/'+u.id+'/items/'+d.id});});}
@@ -1334,12 +1340,45 @@ function askNotifyPerm(){
   if(Notification.permission==='granted'){ toast(_t('เปิดการแจ้งเตือนแล้ว')); return; }
   Notification.requestPermission().then(p=>{ toast(p==='granted'?_t('เปิดการแจ้งเตือนแล้ว'):_t('ยังไม่ได้อนุญาตการแจ้งเตือน ปรับได้ที่ไอคอนรูปกุญแจข้าง URL')); }).catch(()=>{});
 }
+/* ---------- Telegram push via Google Apps Script relay ---------- */
+function notifyPayload(d){
+  return {
+    title: str(d.title).slice(0,200),
+    kind: str(d.kind),
+    ptype: str(d.ptype),
+    amphoe: d.kind==='wanted' ? (d.amphoes||[]).join(', ') : str(d.amphoe),
+    site: location.origin + location.pathname
+  };
+}
+function sendNotify(url, secret, payload){
+  const body = JSON.stringify(Object.assign({secret: str(secret)}, payload));
+  return fetch(url, {method:'POST', mode:'no-cors', keepalive:true, headers:{'Content-Type':'text/plain;charset=utf-8'}, body});
+}
+function notifyAdminNew(d){
+  try{
+    const url=str(S.config.notifyUrl);
+    if(!/^https:\/\/script\.google\.com\/macros\/s\//.test(url))return;
+    sendNotify(url, S.config.notifySecret, notifyPayload(d)).catch(()=>{});
+  }catch(e){}
+}
+async function testNotify(){
+  const msg=$('#cfgNotifyMsg');
+  const url=$('#cfgNotify').value.trim();
+  if(!/^https:\/\/script\.google\.com\/macros\/s\//.test(url)){msg.textContent=_t('กรุณาวางลิงก์ Apps Script ให้ถูกต้องก่อน');return;}
+  msg.textContent=_t('กำลังส่ง…');
+  try{
+    await sendNotify(url, $('#cfgNotifySecret').value.trim(), {title:_t('ข้อความทดสอบจากหน้าจัดการประกาศ'),kind:'sale',ptype:'land',amphoe:_t('เมืองขอนแก่น'),site:location.origin+location.pathname});
+    msg.textContent=_t('ส่งแล้ว ตรวจที่แอป Telegram ของคุณ ถ้าไม่ได้รับ ให้ตรวจโทเคน Chat ID และกด Start ที่บอทของคุณ');
+  }catch(e){msg.textContent=_t('ส่งไม่ได้ ลองตรวจลิงก์ Apps Script อีกครั้ง');}
+}
 async function saveConfig(){
   const msg=$('#cfgMsg');msg.textContent=_t('กำลังบันทึก…');
   try{
     const su=$('#cfgStripe').value.trim();
     if(su&&!/^https:\/\/(buy|donate)\.stripe\.com\/[A-Za-z0-9_\-\/?=&.]+$/.test(su)){msg.textContent=_t('ลิงก์ต้องขึ้นต้นด้วย https://buy.stripe.com/ หรือ https://donate.stripe.com/');return;}
-    await S.db.doc('config/site').set({payName:$('#cfgName').value.trim(),stripeUrl:su||null,revealLimit:revealLimit(),updatedAt:Date.now()});msg.textContent=_t('บันทึกแล้ว');
+    const nu=$('#cfgNotify').value.trim();
+    if(nu&&!/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_\-\/]+\/exec$/.test(nu)){msg.textContent=_t('ลิงก์ Apps Script ต้องขึ้นต้น https://script.google.com/macros/s/ และลงท้าย /exec');return;}
+    await S.db.doc('config/site').set(Object.assign({},S.config,{payName:$('#cfgName').value.trim(),stripeUrl:su||null,notifyUrl:nu||null,notifySecret:$('#cfgNotifySecret').value.trim()||null,revealLimit:revealLimit(),updatedAt:Date.now()}));msg.textContent=_t('บันทึกแล้ว');
   }catch(e){msg.textContent=errText(e);}
 }
 
@@ -1538,7 +1577,7 @@ async function boot(){
   try{GM=await loadGMaps();}catch(e){GM=null;}
   if(GM)$$('.mapnote').forEach(n=>n.hidden=true);
   initLang();initSearch();initPost();initLogin();renderSearch();renderDonate();
-  $('#adminReload').addEventListener('click',loadAdmin);$('#notifPerm').addEventListener('click',askNotifyPerm);$('#cfgSave').addEventListener('click',saveConfig);$('#cfgRevealSave').addEventListener('click',saveRevealLimit);
+  $('#adminReload').addEventListener('click',loadAdmin);$('#notifPerm').addEventListener('click',askNotifyPerm);$('#cfgSave').addEventListener('click',saveConfig);$('#cfgRevealSave').addEventListener('click',saveRevealLimit);$('#cfgNotifyTest').addEventListener('click',testNotify);
   if(!configReady()){S.loaded=true;renderSearch();$('#count').textContent=_t('ยังไม่ได้ตั้งค่า Firebase ในไฟล์ config.js');return;}
   let db;try{db=await initFirebase();}catch(e){S.loaded=true;renderSearch();$('#count').textContent=_t('เชื่อมต่อ Firebase ไม่ได้ กรุณาตรวจไฟล์ config.js');return;}
   S.db=db;setWho();
@@ -1558,7 +1597,7 @@ boot();
 (function(){
   function go(){try{window.__appMain();}finally{document.documentElement.classList.remove('i18n-wait');}}
   if(window.LANG==='th'){window.I18N={};go();return;}
-  var paths=['lang/'+window.LANG+'.js?v=cf256102',window.LANG+'.js?v=cf256102'],i=0;
+  var paths=['lang/'+window.LANG+'.js?v=637bd0a5',window.LANG+'.js?v=637bd0a5'],i=0;
   function next(){
     if(i>=paths.length){window.LANG='th';document.documentElement.lang='th';window.I18N={};go();return;}
     var sc=document.createElement('script');sc.src=paths[i++];sc.onload=go;sc.onerror=next;document.head.appendChild(sc);
